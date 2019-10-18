@@ -20,7 +20,7 @@ class CreateTenant extends Migration
             $table->string('title');
             $table->string('familyname');
             $table->string('surname');
-            $table->enum('gender, ['male', 'female', 'other']');
+            $table->enum('gender', ['male', 'female', 'other']);
             $table->string('phone');
             $table->string('email');
             $table->date('dateOfBirth');

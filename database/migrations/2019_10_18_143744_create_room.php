@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContract extends Migration
+class CreateRoom extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateContract extends Migration
      */
     public function up()
     {
-        Schema::create('contract', function (Blueprint $table) {
+        Schema::create('appartment', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->date('startDate');
-            $table->date('terminationDate');
-            $table->tinyInteger('tenantMapFk');
-            $table->tinyInteger('rentFk');
-            $table->tinyInteger('appartmentFk');
-            $table->boolean('isActive');
+            $table->string('appartmentName');
+            $table->double('noOfRooms');
+            $table->tinyInteger('squareMeters');
+            $table->string('Description');
+            $table->double('rentCost');
+            $table->tinyInteger('additionalCost');
+
         });
     }
 
@@ -32,6 +33,6 @@ class CreateContract extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contract');
+        Schema::dropIfExists('room');
     }
 }
