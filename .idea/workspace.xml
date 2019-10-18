@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="783fbf4c-2ba7-466f-8628-992cdc3bafb3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_18_141606_create_contract.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_18_141606_create_contract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_18_144649_create_invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_18_144649_create_invoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_18_145848_create_rent.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
