@@ -19,9 +19,9 @@ class CreateContract extends Migration
             $table->date('startDate');
             $table->date('terminationDate');
             $table->tinyInteger('tenantMapFk');
-            $table->tinyInteger('rentFk');
             $table->tinyInteger('appartmentFk');
             $table->boolean('isActive');
+            $table->tinyInteger('rentPerMonth');
         });
     }
 

@@ -17,7 +17,7 @@ class CreateInvoice extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->tinyInteger('contractFk');
-            $table->enum('type', ['rent', 'ancillary', 'other']);
+            $table->enum('type', ['rent', 'oil', 'repairs', 'energy', 'maintenance', 'other']);
             $table->double('amount');
             $table->date('dueDate');
             $table->boolean('isPayed');
