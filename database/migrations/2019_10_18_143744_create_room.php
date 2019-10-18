@@ -16,6 +16,7 @@ class CreateRoom extends Migration
         Schema::create('appartment', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->unsignedBigInteger('contractFk');
             $table->string('appartmentName');
             $table->double('noOfRooms');
             $table->tinyInteger('squareMeters');
@@ -33,6 +34,6 @@ class CreateRoom extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('room');
+        Schema::dropIfExists('appartment');
     }
 }

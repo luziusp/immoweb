@@ -16,7 +16,7 @@ class CreateTenant extends Migration
         Schema::create('tenant', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->tinyInteger('addressFk');
+            $table->unsignedBigInteger('billingAddressFk');
             $table->string('title');
             $table->string('familyname');
             $table->string('surname');

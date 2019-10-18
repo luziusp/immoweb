@@ -16,12 +16,13 @@ class CreateInvoice extends Migration
         Schema::create('invoice', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->tinyInteger('contractFk');
+            $table->unsignedBigInteger('contractFk');
             $table->enum('type', ['rent', 'oil', 'repairs', 'energy', 'maintenance', 'other']);
             $table->double('amount');
             $table->date('dueDate');
             $table->boolean('isPayed');
             $table->date('payedDate');
+
         });
     }
 
