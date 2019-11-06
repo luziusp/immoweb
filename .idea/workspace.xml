@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="783fbf4c-2ba7-466f-8628-992cdc3bafb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/billing.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/contracts.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/overview.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/rooms.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/tenants.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_18_142026_create_tenantmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_18_142026_create_tenantmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_18_142124_create_tenant.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_18_142124_create_tenant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_18_143744_create_room.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_18_143744_create_room.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_18_144649_create_invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_18_144649_create_invoice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_18_163718_create_fkset1.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_18_163718_create_fkset1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +23,19 @@
   <component name="ProjectId" id="1SNF179iiqS1IDu1FB9KIhRJYVr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views" />
+      <recent name="$PROJECT_DIR$/resources/views/layouts" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -57,7 +67,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
