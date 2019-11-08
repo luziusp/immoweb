@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/billing', 'BillingController@index');
 
-Route::get('/contracts','ContractsController@index' ) ;
+Route::get('/contracts','ContractsController@index') ;
 
 Route::get('/overview', 'OverviewController@index');
 
