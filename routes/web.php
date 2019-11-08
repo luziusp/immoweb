@@ -17,11 +17,11 @@ Route::get('/', function () {
 
 Route::get('/billing', 'BillingController@index');
 
-Route::get('/contracts','ContractsController@index' ) ;
+Route::get('/contracts','ContractsController@index') ;
 
 Route::get('/overview', 'OverviewController@index');
 
-Route::get('/rooms', 'RoomsController@index';
+Route::get('/rooms', 'RoomsController@index');
 
 Route::get('/tenants', 'TenantsController@index');
 
