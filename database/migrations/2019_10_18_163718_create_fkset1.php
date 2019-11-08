@@ -23,6 +23,7 @@ class CreateFkset1 extends Migration
 
         $table->foreign('contractFk')->references('id')->on('contract');
 });
+
     Schema::table('tenant', function (Blueprint $table) {
 
         $table->foreign('billingAddressFk')->references('id')->on('billing_address');
