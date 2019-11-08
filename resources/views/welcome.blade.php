@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Immoweb</title>
-
+        <link href="{{ asset('favicon.ico') }}">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -22,6 +22,7 @@
                 height: 100vh;
                 margin: 0;
             }
+
             .full-height {
                 height: 100vh;
             }
@@ -73,6 +74,13 @@
                 text-transform: uppercase;
             }
 
+            .footer {
+              color: white;
+              text-align: center;
+              font-size: 11px;
+              font-weight: 40;
+            }
+
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -105,4 +113,5 @@
             </div>
         </div>
     </body>
+    <footer class=footer> <p>Copyright © Immoweb 2019</p></footer>
 </html>
