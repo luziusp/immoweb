@@ -24,6 +24,7 @@ class CreateTenant extends Migration
             $table->string('phone');
             $table->string('email');
             $table->date('dateOfBirth');
+            $table->boolean('isActive');
 
         });
     }

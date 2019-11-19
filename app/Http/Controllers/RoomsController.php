@@ -20,12 +20,13 @@ class RoomsController extends Controller
          ['squareMeters' => $squareMeters],
          ['Description' => $Description],
          ['rentCost' => $rentCost],
-         ['additionalCost' => $additionalCost]
+         ['additionalCost' => $additionalCost],
+         ['isActive' => true]
          );
 
         }
         public function deleteRoom($id){
-        DB::table('appartment')->where('id', '=', $id)->delete();
+        DB::table('appartment')->where('id', '=', $id)->update(['isActive' => false]);
 
         }
         public function updateRoom($id, $appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){

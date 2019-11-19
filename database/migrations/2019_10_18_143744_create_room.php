@@ -23,6 +23,7 @@ class CreateRoom extends Migration
             $table->string('Description');
             $table->double('rentCost');
             $table->tinyInteger('additionalCost');
+            $table->boolean('isActive');
 
         });
     }
