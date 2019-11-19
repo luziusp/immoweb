@@ -16,13 +16,13 @@ class CreateRoom extends Migration
         Schema::create('appartment', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->unsignedBigInteger('contractFk');
+            $table->unsignedBigInteger('contractFk')->nullable();
             $table->string('appartmentName');
             $table->double('noOfRooms');
             $table->tinyInteger('squareMeters');
-            $table->string('Description');
-            $table->double('rentCost');
-            $table->tinyInteger('additionalCost');
+            $table->string('Description')->nullable();
+            $table->double('rentCost')->nullable();
+            $table->tinyInteger('additionalCost')->nullable();
             $table->boolean('isActive');
 
         });

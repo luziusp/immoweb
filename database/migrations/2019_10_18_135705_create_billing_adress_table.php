@@ -22,7 +22,7 @@ class CreateBillingAdressTable extends Migration
                                 $table->string('billingZipCode');
                                 $table->string('billingCityName');
                                 $table->string('billingStreetName');
-                                $table->string('billingAdditionalStreetName');
+                                $table->string('billingAdditionalStreetName')->nullable();
 
         });
 

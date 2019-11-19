@@ -16,8 +16,8 @@ class CreateTenantmap extends Migration
         Schema::create('tenantmap', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->unsignedBigInteger('contractFk');
-            $table->unsignedBigInteger('tenantFk');
+            $table->unsignedBigInteger('contractFk')->nullable();
+            $table->unsignedBigInteger('tenantFk')->nullable();
 
         });
     }

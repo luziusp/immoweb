@@ -20,8 +20,8 @@ class CreateInvoice extends Migration
             $table->enum('type', ['rent', 'oil', 'repairs', 'energy', 'maintenance', 'other']);
             $table->double('amount');
             $table->date('dueDate');
-            $table->boolean('isPayed');
-            $table->date('payedDate');
+            $table->boolean('isPayed')->nullable();
+            $table->date('payedDate')->nullable();
 
         });
     }

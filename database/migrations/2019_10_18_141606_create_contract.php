@@ -17,9 +17,9 @@ class CreateContract extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->date('startDate');
-            $table->date('terminationDate');
-            $table->tinyInteger('tenantMapFk');
-            $table->tinyInteger('appartmentFk');
+            $table->date('terminationDate')->nullable();
+            $table->tinyInteger('tenantMapFk')->nullable();
+            $table->tinyInteger('appartmentFk')->nullable();
             $table->boolean('isActive');
             $table->tinyInteger('rentPerMonth');
         });
