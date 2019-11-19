@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class TenantsController extends Controller
 {
         public function index(){
-            return view('tenants')
+                        $tenants = DB::table('tenants')->get();
+
+                               return view('tenants', ['tenants' => $tenants]);
+
         }
 }
