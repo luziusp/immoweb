@@ -31,7 +31,7 @@ class TenantsController extends Controller
         }
 
         public function deleteTenant($id){
-        DB::table('tenantmap')->where('tenantFk', '=', $id)->delete();
+        DB::table('tenantmap')->where('tenantFk', '=', $id)->update(['isActive' => false]);
         DB::table('tenant')->where('id', '=', $id)->update(['isActive' => false]);
 
         }

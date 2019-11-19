@@ -18,6 +18,7 @@ class CreateTenantmap extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('contractFk')->nullable();
             $table->unsignedBigInteger('tenantFk')->nullable();
+            $table->boolean('isActive');
 
         });
     }
