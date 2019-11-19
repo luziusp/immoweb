@@ -16,7 +16,9 @@ class RoomControllerTest extends TestCase
      */
     public function testExample()
     {
-    RoomsController.addRoom('');
+        $classA = new RoomsController();
+        $classA->addRoom();
+    
         $this->assertTrue(true);
     }
 }
