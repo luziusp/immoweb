@@ -27,7 +27,7 @@ class billingController extends Controller
 
          );
 
-        }
+    }
 
         public function deleteBilling($id){
         DB::table('invoice')->where('id', '=', $id)->update(['isActive' => false]);
