@@ -22,6 +22,8 @@ class CreateInvoice extends Migration
             $table->date('dueDate');
             $table->boolean('isPayed')->nullable();
             $table->date('payedDate')->nullable();
+            $table->boolean('isActive');
+
 
         });
     }
