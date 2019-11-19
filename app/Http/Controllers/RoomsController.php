@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class RoomsController extends Controller
 {
         public function index(){
-                $rooms = DB::table('appartment')->get();
+                $rooms = DB::table('appartment')->where('isActive',  true)->get();;
 
                        return view('rooms', ['rooms' => $rooms]);
         }
@@ -15,7 +15,7 @@ class RoomsController extends Controller
         public function addRoom($appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
         $id = DB::table('appartment')->insertGetId(
 
-         ['appartmentName' => $appartmentName ],
+         ['appartmentName' => $appartmentName],
          ['noOfRooms' => $noOfRooms],
          ['squareMeters' => $squareMeters],
          ['Description' => $Description],
@@ -42,4 +42,5 @@ class RoomsController extends Controller
                                            ['additionalCost' => $additionalCost]
                                            );
           }
+
 }

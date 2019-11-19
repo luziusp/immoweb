@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class TenantsController extends Controller
 {
         public function index(){
-                        $tenants = DB::table('tenant')->get();
+                        $tenants = DB::table('tenant')->where('isActive',  true)->get();;
 
                                return view('tenants', ['tenant' => $tenant]);
 

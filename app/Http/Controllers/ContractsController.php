@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class ContractsController extends Controller
 {
        public function index(){
-        $contracts = DB::table('contract')->get();
+        $contracts = DB::table('contract')->where('isActive',  true)->get();
 
                return view('contracts', ['contracts' => $contracts]);
 
