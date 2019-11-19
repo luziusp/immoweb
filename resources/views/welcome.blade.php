@@ -103,6 +103,7 @@
                 </div>
 
                 <div class="links">
+                    <a href="{{ route('rooms') }}">rooms</a>
                     <a href="https://laravel.com/docs">Mieter</a>
                     <a href="https://laracasts.com">Wohnungen</a>
                     <a href="https://laravel-news.com">Verträge</a>
