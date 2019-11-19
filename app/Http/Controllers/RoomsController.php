@@ -11,6 +11,7 @@ class RoomsController extends Controller
 
                        return view('rooms', ['rooms' => $rooms]);
         }
+
         public function addRoom($appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
         $id = DB::table('appartment')->insertGetId(
 
@@ -22,7 +23,7 @@ class RoomsController extends Controller
          ['additionalCost' => $additionalCost]
          );
 
- }
+        }
         public function deleteRoom($id){
         DB::table('appartment')->where('id', '=', $id)->delete();
 
@@ -39,4 +40,5 @@ class RoomsController extends Controller
                                            ['rentCost' => $rentCost],
                                            ['additionalCost' => $additionalCost]
                                            );
+          }
 }

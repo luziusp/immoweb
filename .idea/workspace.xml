@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="783fbf4c-2ba7-466f-8628-992cdc3bafb3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BillingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BillingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContractsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContractsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TenantsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TenantsController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
