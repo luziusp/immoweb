@@ -48,6 +48,23 @@ class billingController extends Controller
         );
         }
 
+        public function payBilling($id){
+            DB::table('invoice')
+                        ->where('id', $id)
+                        ->update(
+                           
+                           ['isPayed' => true]
 
+);
+}
+public function reopenBilling($id){
+    DB::table('invoice')
+                ->where('id', $id)
+                ->update(
+                   
+                   ['isPayed' => false]
+
+);
+}
 
 }
