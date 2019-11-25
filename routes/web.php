@@ -15,34 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/billing', 'BillingController@index');
+Route::get('/billing', function () {
+    return view('pages/billing.show');
+});
 
-Route::get('/contracts','ContractsController@index') ;
+Route::get('/contracts', function () {
+    return view('pages/contracts.show');
+});
 
-Route::get('/overview', 'OverviewController@index');
+Route::get('/overview', function () {
+    return view('pages/overview.overview');
+});
 
-Route::get('/rooms', 'RoomsController@index');
+Route::get('/rooms', function () {
+    return view('pages/rooms.show');
+});
 
-Route::get('/tenants', 'TenantsController@index');
-
-
-Auth::routes();
-
-Route::get('/rooms', 'RoomsController@index')->name('rooms');
-
-Auth::routes();
-
-Route::get('/tenants', 'TenantsController@index')->name('tenants');
-
-Auth::routes();
-
-Route::get('/overview', 'OverviewController@index')->name('overview');
+Route::get('/tentants', function () {
+    return view('pages/tentants.show');
+});
 
 Auth::routes();
-
-Route::get('/contracts','ContractsController@index')->name('contracts');
-
-Auth::routes();
-
-Route::get('/billing', 'BillingController@index')->name('billing');
-
