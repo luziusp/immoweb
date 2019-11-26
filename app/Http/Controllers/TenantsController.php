@@ -9,7 +9,7 @@ use App\Tenants;
 class TenantsController extends Controller
 {
         public function index(){
-                        $tenants = DB::table('tenant')->where('isActive',  true)->get();;
+                        $tenants = Tenants::getAll();
 
                                return view('tenants', ['tenant' => $tenant]);
 

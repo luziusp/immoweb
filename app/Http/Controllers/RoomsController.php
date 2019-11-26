@@ -9,7 +9,7 @@ use App\Rooms;
 class RoomsController extends Controller
 {
         public function index(){
-                $rooms = DB::table('appartment')->where('isActive',  true)->get();;
+                $rooms = Rooms::getAll();
 
                        return view('rooms', ['rooms' => $rooms]);
         }

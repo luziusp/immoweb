@@ -8,18 +8,18 @@ use Illuminate\Support\Facades\DB;
 class Billing extends Model 
 {
 
-    public function getAllOpenInvoices(){
+    public static function getAllOpenInvoices(){
         $openInvoices = DB::table('invoice')->where('isPayed',  false)->get();
         return $openInvoices;
     }
 
-   public function find($id){
+   public static function find($id){
     $billing = DB::table('invoice')->where('id',  $id)->get();
     return $billing;
 
    }
 
-    public function addBilling($contractFk, $type, $amount, $dueDate){
+    public static function addBilling($contractFk, $type, $amount, $dueDate){
         $id = DB::table('invoice')->insertGetId(
 
          ['contractFk' => $contractFk],
@@ -33,12 +33,12 @@ class Billing extends Model
 
     }
 
-        public function deleteBilling($id){
+        public static function deleteBilling($id){
         DB::table('invoice')->where('id', '=', $id)->update(['isActive' => false]);
 
         }
 
-        public function updateBilling($id, $contractFk, $type, $amount, $dueDate, $isPayed){
+        public static function updateBilling($id, $contractFk, $type, $amount, $dueDate, $isPayed){
                              DB::table('invoice')
                                          ->where('id', $id)
                                          ->update(

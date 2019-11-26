@@ -9,7 +9,7 @@ use App\Contracts;
 class ContractsController extends Controller
 {
        public function index(){
-        $contracts = DB::table('contract')->where('isActive',  true)->get();
+        $contracts = Contracts::getAll();
 
                return view('contracts', ['contracts' => $contracts]);
 

@@ -8,13 +8,17 @@ use Illuminate\Support\Facades\DB;
 class Rooms extends Model
 {
 
-  public function find($id){
+  public static function find($id){
     $room = DB::table('appartment')->where('id',  $id)->get();
     return $room;
 
    }
+   public static function getAll(){
+    $rooms = DB::table('appartment')->where('isActive',  true)->get();;
+    return $rooms;
+   }
   
-    public function addRoom($appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
+    public static function addRoom($appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
         $id = DB::table('appartment')->insertGetId(
 
          ['appartmentName' => $appartmentName],
@@ -27,11 +31,11 @@ class Rooms extends Model
          );
 
         }
-        public function deleteRoom($id){
+        public static function deleteRoom($id){
         DB::table('appartment')->where('id', '=', $id)->update(['isActive' => false]);
 
         }
-        public function updateRoom($id, $appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
+        public static function updateRoom($id, $appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
                              DB::table('appartment')
                                          ->where('id', $id)
                                          ->update(

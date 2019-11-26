@@ -7,15 +7,20 @@ use Illuminate\Support\Facades\DB;
 
 class Tenants extends Model
 {
-    public function find($id){
+    public static function find($id){
         $tenant = DB::table('tenant')->where('id',  $id)->get();
         return $tenant;
     
        }
+
+       public static function getAll(){
+        $tenants = DB::table('tenant')->where('isActive',  true)->get();
+        return tenants;
+       }
    
 
 
-    public function addTenant($title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth, $room){
+    public static function addTenant($title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth, $room){
         $id = DB::table('tenant')->insertGetId(
 
          ['title' => $title ],
@@ -30,12 +35,12 @@ class Tenants extends Model
 
         }
 
-        public function deleteTenant($id){
+        public static function deleteTenant($id){
         DB::table('tenantmap')->where('tenantFk', '=', $id)->update(['isActive' => false]);
         DB::table('tenant')->where('id', '=', $id)->update(['isActive' => false]);
 
         }
-        public function updateTenant($id, $title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth){
+        public static function updateTenant($id, $title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth){
                              DB::table('tenant')
                                          ->where('id', $id)
                                          ->update(
@@ -50,7 +55,7 @@ class Tenants extends Model
           }
 
 
-          public function addBillingAdress($billingTitle, $billingFamilyName, $billingSurName, $billingZipCode, $billingCityName, $billingStreetName, $billingAdditionalStreetName){
+          public static function addBillingAdress($billingTitle, $billingFamilyName, $billingSurName, $billingZipCode, $billingCityName, $billingStreetName, $billingAdditionalStreetName){
                 $id = DB::table('billing_adress')->insertGetId(
         
                  ['billingTitle' => $billingTitle ],
@@ -65,14 +70,14 @@ class Tenants extends Model
         
                 }
 
-                public function deleteBillingAdress($id){
+                public static function deleteBillingAdress($id){
                        
                         DB::table('billing_adress')->where('id', '=', $id)->update(['isActive' => false]);
                 
                         }
 
 
-                public function updateBillingAdress($id, $billingTitle, $billingFamilyName, $billingSurName, $billingZipCode, $billingCityName, $billingStreetName, $billingAdditionalStreetName){
+                public static function updateBillingAdress($id, $billingTitle, $billingFamilyName, $billingSurName, $billingZipCode, $billingCityName, $billingStreetName, $billingAdditionalStreetName){
                                              DB::table('billing_adress')
                                                          ->where('id', $id)
                                                          ->update(
