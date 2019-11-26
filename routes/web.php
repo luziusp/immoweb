@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/contracts', 'ContractsController@index' ) ;
 Route::get('/billing', 'BillingController@index' ); 
-Route::get('/contracts', 'ContractsController@index') ;
-Route::get('/overview', 'OverviewController@index');
-Route::get('/rooms', 'RoomsController@index');
-Route::get('/tentants', 'TenantController@index');
+Route::get('/overview', 'OverviewController@index' );
+Route::get('/rooms', 'RoomsController@index' );
+Route::get('/tentants', 'TenantsController@index' );
+
 /*
 Route::get('/billing', function () {
     return view('pages/billing.show');

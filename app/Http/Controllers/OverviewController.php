@@ -8,6 +8,6 @@ use Illuminate\Support\Facades\DB;
 class OverviewController extends Controller
 {
         public function index(){
-            return view('overview');
+            return view('pages/overview.overview');
         }
 }

@@ -15,7 +15,7 @@ class Tenants extends Model
 
        public static function getAll(){
         $tenants = DB::table('tenant')->where('isActive',  true)->get();
-        return tenants;
+        return $tenants;
        }
    
 

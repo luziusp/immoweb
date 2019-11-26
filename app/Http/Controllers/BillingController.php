@@ -10,12 +10,7 @@ class BillingController extends Controller
 {
     public function index(){
 
-        /*
-            $openInvoices = DB::table('invoice')->where('isPayed',  false)->get();
-            $invoiceAddresses = DB::table('billing_address')->get();
-*/ 
-
-$openInvoices = Billing::getAllOpenInvoices();
+                    $openInvoices = Billing::getAllOpenInvoices();
                    return view('pages/billing.show', ['openInvoices' => $openInvoices]);
 
     }
