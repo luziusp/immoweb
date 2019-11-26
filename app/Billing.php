@@ -5,9 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Billing extends Model
+class Billing extends Model 
 {
 
+    public function getAllOpenInvoices(){
+        $openInvoices = DB::table('invoice')->where('isPayed',  false)->get();
+        return $openInvoices;
+    }
 
    public function find($id){
     $billing = DB::table('invoice')->where('id',  $id)->get();

@@ -2,5 +2,8 @@
 
 @section('content')
   <h1>Billing-Page</h1>
-
+ 
+ @foreach($openInvoices as $billing)
+  <h3>ID {{$billing->id}}</h3>
+@endforeach
 @endsection

@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Billing;
 
-class billingController extends Controller
+class BillingController extends Controller
 {
     public function index(){
 
             $openInvoices = DB::table('invoice')->where('isPayed',  false)->get();
             $invoiceAddresses = DB::table('billing_address')->get();
 
-                   return view('billing', ['openInvoices' => $openInvoices]);
+                   return view('pages/billing.show', ['openInvoices' => $openInvoices]);
 
     }
 
