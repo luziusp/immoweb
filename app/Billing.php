@@ -7,6 +7,14 @@ use Illuminate\Support\Facades\DB;
 
 class Billing extends Model
 {
+
+
+   public function find($id){
+    $billing = DB::table('invoice')->where('id',  $id)->get();
+    return $billing;
+
+   }
+
     public function addBilling($contractFk, $type, $amount, $dueDate){
         $id = DB::table('invoice')->insertGetId(
 

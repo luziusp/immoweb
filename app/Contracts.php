@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\DB;
 
 class Contracts extends Model
 {
+    public function find($id){
+        $contract = DB::table('contract')->where('id',  $id)->get();
+        return $contract;
+    
+       }
     
 
 

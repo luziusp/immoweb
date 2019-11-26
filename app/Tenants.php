@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\DB;
 
 class Tenants extends Model
 {
+    public function find($id){
+        $tenant = DB::table('tenant')->where('id',  $id)->get();
+        return $tenant;
+    
+       }
    
 
 

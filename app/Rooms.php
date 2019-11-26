@@ -7,6 +7,13 @@ use Illuminate\Support\Facades\DB;
 
 class Rooms extends Model
 {
+
+  public function find($id){
+    $room = DB::table('appartment')->where('id',  $id)->get();
+    return $room;
+
+   }
+  
     public function addRoom($appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
         $id = DB::table('appartment')->insertGetId(
 
