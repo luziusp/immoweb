@@ -103,7 +103,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="http://localhost:8888/tentants">Mieter</a>
+                    <a href="http://localhost:8888/tenants">Mieter</a>
                     <a href="http://localhost:8888/rooms">Wohnungen</a>
                     <a href="http://localhost:8888/contracts">Verträge</a>
                     <a href="http://localhost:8888/billing">Rechnungen</a>

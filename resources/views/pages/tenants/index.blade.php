@@ -1,0 +1,62 @@
+  @extends('layouts.app')
+
+  @section('content')
+  <div class="container-header">
+      <div class="container-fluid">
+          <div class="col-md">
+              <div class="container-fluid mt-3">
+                  <h2 class="card-header">Mieter</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="container box">
+
+    <h3 align="left">aktuelle Mieterübersicht</h3></br>
+    <div class="panel panel-default">
+    <div class="panel-heading">Nach Mieter suchen</div>
+    <div class="panel-body">
+    <div class="form-group">
+    <input type="text" name="search" id="search" class="form-control" placeholder="Suchen" />
+    </div>
+
+  <table class="table">
+      <thead>
+      <tr>
+          <th scope="col">#</th>
+          <th scope="col">Anrede</th>
+          <th scope="col">Vorname</th>
+          <th scope="col">Name</th>
+          <th scope="col">Adresse</th>
+          <th scope="col">Stadt</th>
+          <th scope="col">PLZ</th>
+          <th scope="col">E-Mail</th>
+          <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+
+        @foreach( $tenants as $tenant )
+          <tr>
+              <td scope="col">{{$tenant->id}}</td>
+              <td scope="col">{{$tenant->title}}</td>
+              <td scope="col">{{$tenant->familyname}}</td>
+              <td scope="col">{{$tenant->surname}}</td>
+              <td scope="col">{{$tenant->billingAddressFk}}</td>
+              <td scope="col">{{$tenant->billingAddressFk}}</td>
+              <td scope="col">{{$tenant->billingAddressFk}}</td>
+
+              <td scope="col"><a href="mailto:{{$tenant->email}}">{{$tenant->email}}</a></td>
+              <td scope="col"><button type="submit" class="btn btn-primary">Details</button>
+
+        </tr>
+          @endforeach
+
+      </tbody>
+  </table>
+
+<button type="submit" class="btn btn-primary">Mieter hinzufügen</button>
+
+  @endsection

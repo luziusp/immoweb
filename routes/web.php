@@ -16,10 +16,12 @@ Route::get('/', function () {
 });
 
 Route::get('/contracts', 'ContractsController@index' ) ;
-Route::get('/billing', 'BillingController@index' ); 
+Route::get('/billing', 'BillingController@index' );
 Route::get('/overview', 'OverviewController@index' );
 Route::get('/rooms', 'RoomsController@index' );
-Route::get('/tentants', 'TenantsController@index' );
+
+Route::resource('/tenants', 'TenantsController');
+
 
 /*
 Route::get('/billing', function () {
@@ -42,4 +44,5 @@ Route::get('/tentants', function () {
     return view('pages/tentants.show');
 });
 */
+//Laravel
 Auth::routes();

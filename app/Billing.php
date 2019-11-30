@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Billing extends Model 
+class Billing extends Model
 {
 
     public static function getAllOpenInvoices(){
@@ -56,7 +56,7 @@ class Billing extends Model
             DB::table('invoice')
                         ->where('id', $id)
                         ->update(
-                           
+
                            ['isPayed' => true]
 
 );
@@ -65,7 +65,7 @@ public function reopenBilling($id){
     DB::table('invoice')
                 ->where('id', $id)
                 ->update(
-                   
+
                    ['isPayed' => false]
 
 );
