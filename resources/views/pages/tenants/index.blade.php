@@ -34,6 +34,7 @@
           <th scope="col">PLZ</th>
           <th scope="col">E-Mail</th>
           <th scope="col"></th>
+          <th scope="col"></th>
       </tr>
       </thead>
       <tbody>
@@ -49,14 +50,14 @@
               <td scope="col">{{$tenant->billingAddressFk}}</td>
 
               <td scope="col"><a href="mailto:{{$tenant->email}}">{{$tenant->email}}</a></td>
-              <td scope="col"><button type="submit" class="btn btn-primary">Details</button>
-            
+              <td scope="col"><a href={{route('tenants.show', [$tenant->id])}} type="button" class="btn btn-primary" >Details</a></td>
+              <th scope="col"><button type="submit" class="btn btn-primary disabled">Delete</button>
+
         </tr>
           @endforeach
 
       </tbody>
   </table>
 
-<button type="submit" class="btn btn-primary">Mieter hinzufügen</button>
-
+<a class="btn btn-primary" href={{route('tenants.create')}}>Mieter hinzufügen</a>
   @endsection

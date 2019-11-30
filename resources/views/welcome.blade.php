@@ -90,9 +90,11 @@
             @if (Route::has('login'))
                 <div class="top-right options">
                     @auth
-                        <a href="{{ url('/home') }}">Logout</a>
+                        <a href="{{ route('logout') }}">Abmelden</a>
+                        
                     @else
                         <a href="{{ route('login') }}">Login</a>
+
                       @endauth
                 </div>
             @endif

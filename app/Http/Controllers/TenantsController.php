@@ -12,17 +12,18 @@ class TenantsController extends Controller
                         $tenants = Tenants::getAll();
 
                                return view('pages.tenants.index', ['tenants' => $tenants]);
-
         }
-        public function details()
+
+        public function show()
           {
-            return view('pages.tenants.details');
-}
+            return view('pages.tenants.show');
+          }
 
-        public function create(Tenant $tenants){
-
+        public function create()
+          {
             return view('pages.tenants.create');
+          }
 
-        }
+
 
 }
