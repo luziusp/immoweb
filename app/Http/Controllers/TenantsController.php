@@ -14,9 +14,9 @@ class TenantsController extends Controller
                                return view('pages.tenants.index', ['tenants' => $tenants]);
 
         }
-        public function details(Tenants $tenants)
+        public function details()
           {
-            return view('pages.tenants.details', compact('tenants'));
+            return view('pages.tenants.details');
 }
 
         public function create(Tenant $tenants){

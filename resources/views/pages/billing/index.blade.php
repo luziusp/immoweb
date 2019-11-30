@@ -29,7 +29,7 @@
     </thead>
     <tbody>
 
-@foreach( $openInvoices as $invoice)
+      @foreach( $openInvoices as $invoice)
         <tr>
             <td scope="col">{{$invoice->id}}</td>
             <td scope="col">{{$invoice->type}}</td>

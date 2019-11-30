@@ -1,6 +1,17 @@
-@extends('layouts.app') //stammt von layouts/ app.blade.php
+@extends('layouts.app')
 
 @section('content')
-  <h1>Mieterangaben</h1>
+
+    <!--Content Header-->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-6">
+                <div class="container-fluid mt-3">
+                    <h2 class="m-0 text-dark">Mieter</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 @endsection

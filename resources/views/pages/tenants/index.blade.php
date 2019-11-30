@@ -50,7 +50,7 @@
 
               <td scope="col"><a href="mailto:{{$tenant->email}}">{{$tenant->email}}</a></td>
               <td scope="col"><button type="submit" class="btn btn-primary">Details</button>
-
+            
         </tr>
           @endforeach
 
