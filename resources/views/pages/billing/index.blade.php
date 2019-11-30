@@ -1,19 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-header">
-    <div class="container-fluid">
-        <div class="col-md">
-            <div class="container-fluid mt-3">
-                <h2 class="card-header">Rechnungen</h2>
-              </div>
-          </div>
-      </div>
-  </div>
-  <br />
 
   <div class="container box">
-  <h3 align="left">aktuelle Rechnungsübersicht</h3></br>
+  <h3 align="left">Rechnungsübersicht</h3></br>
   <div class="panel panel-default">
 
 <table class="table">

@@ -1,20 +1,9 @@
   @extends('layouts.app')
 
   @section('content')
-  <div class="container-header">
-      <div class="container-fluid">
-          <div class="col-md">
-              <div class="container-fluid mt-3">
-                  <h2 class="card-header">Mieter</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br />
-
     <div class="container box">
 
-    <h3 align="left">aktuelle Mieterübersicht</h3></br>
+    <h3 align="left">Mieterübersicht</h3></br>
     <div class="panel panel-default">
     <div class="panel-heading">Nach Mieter suchen</div>
     <div class="panel-body">
@@ -30,7 +19,7 @@
           <th scope="col">Vorname</th>
           <th scope="col">Name</th>
           <th scope="col">Adresse</th>
-          <th scope="col">Stadt</th>
+          <th scope="col">Ort</th>
           <th scope="col">PLZ</th>
           <th scope="col">E-Mail</th>
           <th scope="col"></th>

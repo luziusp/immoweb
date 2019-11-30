@@ -2,19 +2,8 @@
 
 @section('content')
 
-
-    <div class="container-header">
-        <div class="container-fluid">
-            <div class="col-md-8">
-                <div class="container-fluid mt-3">
-                    <h2 class="card-header">Mieterspiegel</h2></br>
-                  </div>
-              </div>
-          </div>
-      </div>
-
       <div class="container box">
-      <h3 align="left">Gesamtkosten</h3>
+      <h3 align="left">Mieterspiegel - Gesamtkosten</h3>
       <div class="panel panel-default">
 
    <table class="table">

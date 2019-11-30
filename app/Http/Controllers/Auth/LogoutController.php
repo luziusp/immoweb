@@ -7,12 +7,14 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LogoutController extends Controller
 
-{
-public function logout () {
-    //logout user
-    auth()->logout();
 
-    // redirect to homepage
-    return redirect('login');
+{
+  public function logout () {
+
+         auth()->logout();
+
+         // redirect to homepage
+         return redirect('/');
+
   }
 }

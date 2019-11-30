@@ -1,20 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-header">
-    <div class="container-fluid">
-        <div class="col-md">
-            <div class="container-fluid mt-3">
-                <h2 class="card-header">Wohnungen</h2>
-              </div>
-          </div>
-      </div>
-  </div>
-  <br />
-
   <div class="container box">
 
-  <h3 align="left">aktuelle Wohnungsübersicht</h3></br>
+  <h3 align="left">Wohnungsübersicht</h3></br>
   <div class="panel panel-default">
   <div class="panel-heading">Nach Wohnung suchen</div>
   <div class="panel-body">
