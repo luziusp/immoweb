@@ -5,7 +5,7 @@
   <div class="container box">
   <h3 align="left">Rechnungsübersicht</h3></br>
   <div class="panel panel-default">
-
+</div>
 <table class="table">
     <thead>
     <tr>
@@ -35,5 +35,5 @@
 </table>
 
 <button type="submit" class="btn btn-primary">Rechnung erfassen</button>
-
+</div>
 @endsection

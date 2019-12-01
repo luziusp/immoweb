@@ -1,15 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container box">
+<div class="container box">
+<h3 align="left">Wohnungsübersicht</h3></br>
+<div class="panel panel-default">
+</div>
 
-  <h3 align="left">Wohnungsübersicht</h3></br>
-  <div class="panel panel-default">
-  <div class="panel-heading">Nach Wohnung suchen</div>
-  <div class="panel-body">
-  <div class="form-group">
-  <input type="text" name="search" id="search" class="form-control" placeholder="Suchen" />
-  </div>
 
 <table class="table">
     <thead>
@@ -34,14 +30,13 @@
             <td scope="col">Nettokosten</td>
             <td scope="col">Nebenkosten</td>
             <td scope="col">Bruttomiete</td>
-            <td scope="col"><button type="submit" class="btn btn-primary">Details</button>
+            <td scope="col"><a href={{route('rooms.show', [$room->id])}} type="button" class="btn btn-primary" >Details</a></td>
+            <th scope="col"><button type="submit" class="btn btn-primary disabled">Delete</button>
         </tr>
-
         @endforeach
 
     </tbody>
 </table>
-
-<button type="submit" class="btn btn-primary">Wohnung hinzufügen</button>
-
+<a class="btn btn-primary" href={{route('rooms.create')}}>Wohnung hinzufügen</a>
+</div>
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-<h3 align="left">Wohnungserfassung</h3></br>
+<h3 align="left">Wohnungsdetails</h3></br>
 </div>
 
 <div class="container">
@@ -28,7 +28,8 @@
         <label for="email">Bruttomiete</label>
         <input readonly type="text" class="form-control" name="title" >
         <br>
-        <button type="submit" class="btn btn-primary disabled">Speichern</button>
+        <button type="submit" class="btn btn-primary disabled">Bearbeiten</button>
+        <button type="submit" class="btn btn-primary disabled">Löschen</button>
         <button type="submit" class="btn btn-primary disabled">Zurück</button>
       </div>
 

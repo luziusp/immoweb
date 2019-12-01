@@ -14,6 +14,15 @@ class RoomsController extends Controller
                        return view('pages.rooms.index', ['rooms' => $rooms]);
         }
 
+        public function show()
+          {
+            return view('pages.rooms.show');
+          }
+
+        public function create()
+          {
+            return view('pages.rooms.create');
+          }
 
 
 }

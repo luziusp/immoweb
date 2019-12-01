@@ -4,7 +4,7 @@
     <div class="container box">
 
     <h3 align="left">Mieterübersicht</h3></br>
-    <div class="panel panel-default">
+    <div class="panel panel-default"></div>
     <div class="panel-heading">Nach Mieter suchen</div>
     <div class="panel-body">
     <div class="form-group">
@@ -49,4 +49,5 @@
   </table>
 
 <a class="btn btn-primary" href={{route('tenants.create')}}>Mieter hinzufügen</a>
+</div>
   @endsection
