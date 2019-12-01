@@ -24,6 +24,23 @@ class TenantsController extends Controller
             return view('pages.tenants.create');
           }
 
+          public function store(Request $request)
+          {
+              $tenant = new tenant();
+              $this->validateAndSave($request, $tenant);
+              return redirect('tenants')->with('status', 'Mieter erstellt');
+          }
+          public function edit(Tenant $tenant)
+          {
 
+              return view('pages.tenants.edit')
+                  ->with('tenant', $tenant);
+
+          }
+          public function destroy(Tenant $tenant)
+          {
+            $tenant->delete();
+            return redirect('tenants')->with('status', 'Mieter gelöscht');
+          }
 
 }

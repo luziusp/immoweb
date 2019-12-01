@@ -6,25 +6,26 @@
 </div>
 
 <div class="container">
+
   <div class="row">
     <div class="col-5">
       <label for="title">Anrede</label>
-      <input readonly type="text" class="form-control" name="title" >
+      <input type="text" class="form-control" placeholder="Frau / Herr" name="title" id="title" required>
       <br>
       <label for="name">Vorname</label>
-      <input readonly type="text" class="form-control" name="title" >
+      <input type="text" class="form-control" placeholder="Vorname" name="surname" id="surname" required>
       <br>
       <label for="lastName">Name</label>
-      <input readonly type="text" class="form-control" name="title" >
+      <input type="text" class="form-control" placeholder="Name" name="familyName" id="familyName" required>
       <br>
       <label for="birthday">Geburtsdatum</label>
-      <input readonly type="text" class="form-control" name="title" >
+      <input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth">
       <br>
       <label for="phone">Telefon</label>
-      <input readonly type="text" class="form-control" name="title" >
+      <input type="text" class="form-control" placeholder="+41" name="phone" id="phone">
       <br>
       <label for="email">E-Mail</label>
-      <input readonly type="text" class="form-control" name="title" >
+      <input type="text" class="form-control" placeholder="xyz@domain.ch" name="email" id="email">
     </div>
 
     <div class="col-1">
@@ -32,24 +33,23 @@
 
     <div class="col-5">
       <label for="street">Strasse</label>
-      <input readonly type="text" class="form-control" name="title" >
+      <input type="text" class="form-control" placeholder="Strasse" name="street" id="street">
       <br>
       <label for="houseNr">Nr.</label>
-      <input readonly type="text" class="form-control" name="title" >
+      <input type="text" class="form-control" placeholder="Nr." name="houseNr" id="houseNr">
       <br>
       <label for="postal">PLZ</label>
-      <input readonly type="text" class="form-control" name="title" >
+      <input type="text" class="form-control" placeholder="PLZ" name="billingZipCode" id="billingZipCode">
       <br>
       <label for="city">Ort</label>
-      <input readonly type="text" class="form-control" name="title" >
+      <input type="text" class="form-control" placeholder="Ort" name="city" id="city">
       <br>
-      <label for="country">Land</label>
-      <input readonly type="text" class="form-control" name="title" >
-      <br>
-      <br>
-      <button type="submit" class="btn btn-primary disabled">Speichern</button>
-      <td scope="col"><a href={{route('tenants.index')}} type="button" class="btn btn-primary" >Zurück</a></td>
+
+      <button href='' type="button" class="btn btn-primary">Speichern</button>
+      <a href={{route('tenants.index')}} type="button" class="btn btn-secondary">Zurück</a>
+
     </div>
   </div>
+</form>
 </div>
 @endsection
