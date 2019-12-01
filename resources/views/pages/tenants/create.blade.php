@@ -10,7 +10,7 @@
     <div class="col-5">
       <label for="title">Anrede</label>
       <input readonly type="text" class="form-control" name="title" >
-    <br>
+      <br>
       <label for="name">Vorname</label>
       <input readonly type="text" class="form-control" name="title" >
       <br>
@@ -48,15 +48,8 @@
       <br>
       <br>
       <button type="submit" class="btn btn-primary disabled">Speichern</button>
-      <button type="submit" class="btn btn-primary disabled">Zurück</button>
-
-
-
+      <td scope="col"><a href={{route('tenants.index')}} type="button" class="btn btn-primary" >Zurück</a></td>
     </div>
   </div>
 </div>
-
-
-
-
 @endsection

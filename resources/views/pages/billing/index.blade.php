@@ -34,6 +34,6 @@
     </tbody>
 </table>
 
-<button type="submit" class="btn btn-primary">Rechnung erfassen</button>
+<a class="btn btn-primary" href={{route('billing.create')}}>Rechnung hinzufügen</a>
 </div>
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-<h3 align="left">Wohnungsdetails</h3></br>
+<h3 align="left">Rechnungsdetails</h3></br>
 </div>
 
 <div class="container">
@@ -16,21 +16,21 @@
         <label for="name">Objekt-Typ</label>
         <input readonly type="text" class="form-control" name="title" >
         <br>
-        <label for="lastName">Wohnfläche</label>
+        <label for="lastName">Mieter</label>
         <input readonly type="text" class="form-control" name="title" >
         <br>
-        <label for="birthday">Nettomiete</label>
+        <label for="birthday">Von</label>
         <input readonly type="text" class="form-control" name="title" >
         <br>
-        <label for="phone">Nebenkosten</label>
+        <label for="phone">Bis</label>
         <input readonly type="text" class="form-control" name="title" >
         <br>
-        <label for="email">Bruttomiete</label>
+        <label for="email">Mietzinseingänge</label>
         <input readonly type="text" class="form-control" name="title" >
         <br>
         <button type="submit" class="btn btn-primary disabled">Bearbeiten</button>
         <button type="submit" class="btn btn-primary disabled">Löschen</button>
-        <td scope="col"><a href={{route('rooms.index')}} type="button" class="btn btn-primary" >Zurück</a></td>
+        <button type="submit" class="btn btn-primary disabled">Zurück</button>
       </div>
 
     <div class="col-4">
@@ -39,7 +39,6 @@
 
     </div>
   </div>
-</div>
 
 
 

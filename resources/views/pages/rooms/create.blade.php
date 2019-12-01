@@ -29,7 +29,7 @@
         <input readonly type="text" class="form-control" name="title" >
         <br>
         <button type="submit" class="btn btn-primary disabled">Speichern</button>
-        <button type="submit" class="btn btn-primary disabled">Zurück</button>
+        <td scope="col"><a href={{route('rooms.index')}} type="button" class="btn btn-primary" >Zurück</a></td>
       </div>
 
     <div class="col-4">

@@ -14,6 +14,15 @@ class ContractsController extends Controller
                return view('pages/contracts.index', ['contracts' => $contracts]);
 
        }
+       public function show()
+         {
+           return view('pages.contracts.show');
+         }
+
+       public function create()
+         {
+           return view('pages.contracts.create');
+         }
 
 
 }

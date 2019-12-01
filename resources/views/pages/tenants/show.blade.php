@@ -49,7 +49,7 @@
       <br>
       <button type="submit" class="btn btn-primary disabled">Bearbeiten</button>
       <button type="submit" class="btn btn-primary disabled">Löschen</button>
-      <button type="submit" class="btn btn-primary disabled">Zurück</button>
+      <td scope="col"><a href={{route('tenants.index')}} type="button" class="btn btn-primary" >Zurück</a></td>
 
 
     </div>

@@ -31,13 +31,12 @@
             <td scope="col">{{$contract->startDate}}</td>
             <td scope="col">{{$contract->terminationDate}}</td>
             <td scope="col">Mietername aus Tabelle Mieter</td>
-            <td scope="col"><button type="submit" class="btn btn-primary">Details</button>
+            <td scope="col"><a href={{route('contracts.show', [$contract->id])}} type="button" class="btn btn-primary" >Details</a></td>
         </tr>
   @endforeach
 
 
 </table>
-
-<button type="submit" class="btn btn-primary">Vertrag hinzufügen</button>
+<a class="btn btn-primary" href={{route('contracts.create')}}>Vertrag hinzufügen</a>
 
 @endsection

@@ -14,6 +14,15 @@ class BillingController extends Controller
                    return view('pages/billing.index', ['openInvoices' => $openInvoices]);
 
     }
+    public function show()
+      {
+        return view('pages.billing.show');
+      }
+
+    public function create()
+      {
+        return view('pages.billing.create');
+      }
 
 
 }
