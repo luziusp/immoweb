@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Immoweb</title>
+        <title>ImmoWeb</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -91,7 +91,7 @@
                 <div class="top-right options">
                     @auth
                         <a href="{{ route('logout') }}">Abmelden</a>
-                        
+
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -101,7 +101,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Immoweb
+                    ImmoWeb
                 </div>
 
                 <div class="links">
@@ -114,5 +114,5 @@
             </div>
         </div>
     </body>
-    <footer class=footer> <p>Copyright © Immoweb 2019</p></footer>
+    <footer class=footer> <p>Copyright © ImmoWeb 2019</p></footer>
 </html>

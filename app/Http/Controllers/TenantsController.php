@@ -25,7 +25,7 @@ class TenantsController extends Controller
             return view('pages.tenants.create');
           }
 
-         
+
           public function delete($id)
           {
             Tenants::deleteTenant($id);

@@ -27,7 +27,7 @@
         <input readonly type="text" class="form-control" name="title"value="<?PHP echo $room->additionalCost; ?>" >
         <br>
         <label for="email">Bruttomiete</label>
-        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $room->Description; ?>">
+        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $room->rentCost+$room->additionalCost; ?>">
         <br>
         <button type="submit" class="btn btn-primary disabled">Bearbeiten</button>
         <button type="submit" class="btn btn-primary disabled">Löschen</button>

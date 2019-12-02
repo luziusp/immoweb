@@ -11,7 +11,7 @@
     <thead>
     <tr>
         <th scope="col">Nr.</th>
-        <th scope="col">Objekt-Typ</th>
+        <th scope="col">Beschreibung</th>
         <th scope="col">Wohnfläche</th>
         <th scope="col">Nettomiete</th>
         <th scope="col">Nebenkosten</th>
@@ -27,9 +27,9 @@
             <td scope="col">{{$room->id}}</td>
             <td scope="col">{{$room->appartmentName}}</td>
             <td scope="col">{{$room->squareMeters}}</td>
-            <td scope="col">Nettokosten</td>
-            <td scope="col">Nebenkosten</td>
-            <td scope="col">Bruttomiete</td>
+            <td scope="col">{{$room->rentCost}}</td>
+            <td scope="col">{{$room->additionalCost}}</td>
+            <td scope="col">{{$room->rentCost+$room->additionalCost}}</td>
             <td scope="col"><a href={{route('rooms.show', [$room->id])}} type="button" class="btn btn-primary" >Details</a></td>
             <th scope="col"><button type="submit" class="btn btn-primary disabled">Delete</button>
         </tr>

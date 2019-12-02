@@ -19,12 +19,12 @@
     </thead>
     <tbody>
 
-      @foreach( $openInvoices as $invoice)
+      @foreach( $openInvoices as $openInvoices)
         <tr>
-            <td scope="col">{{$invoice->id}}</td>
-            <td scope="col">{{$invoice->type}}</td>
-            <td scope="col">{{$invoice->dueDate}}</td>
-            <td scope="col">{{$invoice->amount}}</td>
+            <td scope="col">{{$openInvoices->id}}</td>
+            <td scope="col">{{$openInvoices->type}}</td>
+            <td scope="col">{{$openInvoices->dueDate}}</td>
+            <td scope="col">{{$openInvoices->amount}}</td>
             <td scope="col">Verteilschlüssel RG</td>
             <td scope="col"><button type="submit" class="btn btn-primary">Details</button>
         </tr>

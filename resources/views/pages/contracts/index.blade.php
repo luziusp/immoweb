@@ -15,7 +15,7 @@
     <thead>
     <tr>
         <th scope="col">Nr.</th>
-        <th scope="col">Objekt-Typ</th>
+        <th scope="col">Beschreibung</th>
         <th scope="col">Von</th>
         <th scope="col">Bis</th>
         <th scope="col">Mieter</th>
