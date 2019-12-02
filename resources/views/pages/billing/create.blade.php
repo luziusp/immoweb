@@ -8,17 +8,27 @@
 <div class="container">
   <div class="row">
   <div class="col-5">
-        <label for="lastName">Rechnungs-Typ</label>
-        <input readonly type="text" class="form-control" name="title" >
+
+            <div class="form-group">
+              <select class="form-control" id="type">
+              <option>Öl</option>
+              <option>Wasser</option>
+              <option>Strom</option>
+              <option>Hauswart</option>
+              <option>Heizung</option>
+            </select>
+            </div>
+
         <br>
-        <label for="birthday">Datum</label>
-        <input readonly type="text" class="form-control" name="title" >
+        <label for="dueDate">Datum</label>
+        <input type="date" class="form-control" name="dueDate" id="dueDate">
+
         <br>
         <label for="phone">Verteilschlüssel</label>
         <input readonly type="text" class="form-control" name="title" >
         <br>
-        <label for="email">CHF</label>
-        <input readonly type="text" class="form-control" name="title" >
+        <label for="amount">CHF</label>
+        <input type="text" class="form-control" placeholder="Rechnungsbetrag" name="amount" id="amount" required>
       </div>
 
     <div class="col-1">

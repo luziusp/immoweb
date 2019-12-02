@@ -8,20 +8,28 @@
 <div class="container">
   <div class="row">
   <div class="col-5">
-        <label for="name">Objekt-Typ</label>
-        <input readonly type="text" class="form-control" name="title" >
+        <label for="Description">Beschreibung</label>
+        <div class="form-group">
+          <select class="form-control"  id="Description" required>
+          <option>Seeblick</option>
+          <option>Hauptstrasse</option>
+          <option>Altbau</option>
+          <option>Erdgeschoss</option>
+        </select>
+        </div>
+
         <br>
-        <label for="lastName">Wohnfläche</label>
-        <input readonly type="text" class="form-control" name="title" >
+        <label for="squareMeters">Wohnfläche</label>
+        <input type="text" class="form-control" placeholder="m²" name="squareMeters" id="squareMeters" required>
         <br>
-        <label for="birthday">Mieter</label>
-        <input readonly type="text" class="form-control" name="title" >
+        <label for="surname">Mieter</label>
+        <input type="text" class="form-control" placeholder="Name" name="surname" id="surname" required>
         <br>
-        <label for="phone">Von</label>
-        <input readonly type="text" class="form-control" name="title" >
+        <label for="startDate">Von</label>
+        <input type="date" class="form-control" placeholder="Vertragsstart" name="startDate" id="startDate" required>
         <br>
-        <label for="email">Bis</label>
-        <input readonly type="text" class="form-control" name="title" >
+        <label for="terminationDate">Bis</label>
+        <input type="date" class="form-control" placeholder="Vertragsende" name="terminationDate" id="terminationDate" required>
       </div>
 
     <div class="col-1">

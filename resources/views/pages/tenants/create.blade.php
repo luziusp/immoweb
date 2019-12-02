@@ -12,13 +12,13 @@
       <label for="title">Anrede</label>
       <input type="text" class="form-control" placeholder="Frau / Herr" name="title" id="title" required>
       <br>
-      <label for="name">Vorname</label>
+      <label for="surname">Vorname</label>
       <input type="text" class="form-control" placeholder="Vorname" name="surname" id="surname" required>
       <br>
-      <label for="lastName">Name</label>
-      <input type="text" class="form-control" placeholder="Name" name="familyName" id="familyName" required>
+      <label for="familyName">Name</label>
+      <input type="text" class="form-control" placeholder="Nachname" name="familyName" id="familyName" required>
       <br>
-      <label for="birthday">Geburtsdatum</label>
+      <label for="dateOfBirth">Geburtsdatum</label>
       <input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth">
       <br>
       <label for="phone">Telefon</label>
@@ -32,17 +32,17 @@
     </div>
 
     <div class="col-5">
-      <label for="street">Strasse</label>
-      <input type="text" class="form-control" placeholder="Strasse" name="street" id="street">
+      <label for="billingStreetName">Strasse</label>
+      <input type="text" class="form-control" placeholder="Strasse" name="billingStreetName" id="billingStreetName">
       <br>
       <label for="houseNr">Nr.</label>
-      <input type="text" class="form-control" placeholder="Nr." name="houseNr" id="houseNr">
+      <input type="number" class="form-control" placeholder="Nr." name="houseNr" id="houseNr">
       <br>
-      <label for="postal">PLZ</label>
+      <label for="billingZipCode">PLZ</label>
       <input type="text" class="form-control" placeholder="PLZ" name="billingZipCode" id="billingZipCode">
       <br>
-      <label for="city">Ort</label>
-      <input type="text" class="form-control" placeholder="Ort" name="city" id="city">
+      <label for="billingCityName">Ort</label>
+      <input type="text" class="form-control" placeholder="Ort" name="billingCityName" id="billingCityName">
       <br>
 
       <button href='' type="button" class="btn btn-primary">Speichern</button>
