@@ -14,15 +14,25 @@ class RoomsController extends Controller
                        return view('pages.rooms.index', ['rooms' => $rooms]);
         }
 
-        public function show()
+        public function show($id)
           {
-            return view('pages.rooms.show');
+            $room = Rooms::find($id);
+            return view('pages.rooms.show', ['room' => $room]);
           }
 
         public function create()
           {
             return view('pages.rooms.create');
           }
+
+          public function delete($id)
+          {
+            Rooms::deleteRoom($id);
+            $rooms = Rooms::getAll();
+            return view('pages.rooms.index', ['rooms' => $rooms]);
+          }
+
+
 
 
 }

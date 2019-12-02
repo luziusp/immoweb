@@ -14,10 +14,6 @@ class Billing extends Model
         $openInvoices = DB::table('invoice')->where('isPayed',  false)->get();
         return $openInvoices;
     }
-    public static function getAllClosedInvoices(){
-        $openInvoices = DB::table('invoice')->where('isPayed',  true)->get();
-        return $openInvoices;
-    }
 
    public static function find($id){
     $billing = DB::table('invoice')->where('id',  $id)->get();
@@ -25,7 +21,7 @@ class Billing extends Model
 
    }
 
-    public static function add($contractFk, $type, $amount, $dueDate){
+    public static function addBilling($contractFk, $type, $amount, $dueDate){
         $id = DB::table('invoice')->insertGetId(
 
          ['contractFk' => $contractFk],
@@ -39,12 +35,12 @@ class Billing extends Model
 
     }
 
-        public static function delete($id){
+        public static function deleteBilling($id){
         DB::table('invoice')->where('id', '=', $id)->update(['isActive' => false]);
 
         }
 
-        public static function update($id, $contractFk, $type, $amount, $dueDate, $isPayed){
+        public static function updateBilling($id, $contractFk, $type, $amount, $dueDate, $isPayed){
                              DB::table('invoice')
                                          ->where('id', $id)
                                          ->update(
@@ -58,7 +54,7 @@ class Billing extends Model
         );
         }
 
-        public function pay($id){
+        public function payBilling($id){
             DB::table('invoice')
                         ->where('id', $id)
                         ->update(
@@ -67,7 +63,7 @@ class Billing extends Model
 
 );
 }
-public function reopen($id){
+public function reopenBilling($id){
     DB::table('invoice')
                 ->where('id', $id)
                 ->update(

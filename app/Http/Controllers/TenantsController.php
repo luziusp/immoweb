@@ -14,9 +14,10 @@ class TenantsController extends Controller
                                return view('pages.tenants.index', ['tenants' => $tenants]);
         }
 
-        public function show()
+        public function show($id)
           {
-            return view('pages.tenants.show');
+            $tenant = Tenants::find($id);
+            return view('pages.tenants.show', ['tenant' => $tenant]);
           }
 
         public function create()
@@ -24,23 +25,13 @@ class TenantsController extends Controller
             return view('pages.tenants.create');
           }
 
-          public function store(Request $request)
+         
+          public function delete($id)
           {
-              $tenant = new tenant();
-              $this->validateAndSave($request, $tenant);
-              return redirect('tenants')->with('status', 'Mieter erstellt');
-          }
-          public function edit(Tenant $tenant)
-          {
+            Tenants::deleteTenant($id);
+            $tenants = Tenants::getAll();
 
-              return view('pages.tenants.edit')
-                  ->with('tenant', $tenant);
-
-          }
-          public function destroy(Tenant $tenant)
-          {
-            $tenant->delete();
-            return redirect('tenants')->with('status', 'Mieter gelöscht');
+            return view('pages.tenants.index', ['tenants' => $tenants]);
           }
 
 }

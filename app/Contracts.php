@@ -19,7 +19,7 @@ public static function getAll(){
     return $contracts;
 }
 
-    public static function add($startDate, $terminationDate, $rentPerMonth, $tenantMapFk, $appartmentFk){
+    public static function addContract($startDate, $terminationDate, $rentPerMonth, $tenantMapFk, $appartmentFk){
         $id = DB::table('contract')->insertGetId(
 
          ['startDate' => $startDate],
@@ -33,12 +33,12 @@ public static function getAll(){
 
         }
 
-        public static function delete($id){
+        public static function deleteContract($id){
         DB::table('contract')->where('id', '=', $id)->update(['isActive' => false]);
 
         }
 
-        public static function update($id, $startDate, $tenantMapFk, $appartmentFk){
+        public static function updateContract($id, $startDate, $tenantMapFk, $appartmentFk){
                              DB::table('contract')
                                          ->where('id', $id)
                                          ->update(

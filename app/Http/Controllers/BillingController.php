@@ -14,14 +14,21 @@ class BillingController extends Controller
                    return view('pages/billing.index', ['openInvoices' => $openInvoices]);
 
     }
-    public function show()
+    public function show($id)
       {
-        return view('pages.billing.show');
+        $billing = Billing::find($id);
+        return view('pages.billing.show', ['openInvoice' => $openInvoice]);
       }
 
     public function create()
       {
         return view('pages.billing.create');
+      }
+      public function delete($id)
+      {
+        Billing::deleteBilling($id);
+        $openInvoices = Billing::getAllOpenInvoices();
+        return view('pages/billing.index', ['openInvoices' => $openInvoices]);
       }
 
 
