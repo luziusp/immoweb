@@ -11,17 +11,27 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
-Route::get('/contracts', 'ContractsController@index' ) ;
-Route::get('/billing', 'BillingController@index' ); 
-Route::get('/overview', 'OverviewController@index' );
-Route::get('/rooms', 'RoomsController@index' );
-Route::get('/tentants', 'TenantsController@index' );
+Route::resource('tenants', 'TenantsController')->middleware('auth');
+Route::resource('rooms', 'RoomsController')->middleware('auth');
+Route::resource('contracts', 'ContractsController')->middleware('auth');
+Route::resource('billing', 'BillingController')->middleware('auth');
+Route::resource('overview', 'OverviewController')->middleware('auth');
+
+
+//Laravel
+Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LogoutController@logout');
+
 
 /*
+Route::get('/contracts', 'ContractsController@index' ) ;
+Route::get('/billing', 'BillingController@index' );
+Route::get('/overview', 'OverviewController@index' );
+Route::get('/rooms', 'RoomsController@index' );
+
+
 Route::get('/billing', function () {
     return view('pages/billing.show');
 });
@@ -42,4 +52,3 @@ Route::get('/tentants', function () {
     return view('pages/tentants.show');
 });
 */
-Auth::routes();

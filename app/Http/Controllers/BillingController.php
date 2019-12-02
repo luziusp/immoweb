@@ -11,9 +11,18 @@ class BillingController extends Controller
     public function index(){
 
                     $openInvoices = Billing::getAllOpenInvoices();
-                   return view('pages/billing.show', ['openInvoices' => $openInvoices]);
+                   return view('pages/billing.index', ['openInvoices' => $openInvoices]);
 
     }
+    public function show()
+      {
+        return view('pages.billing.show');
+      }
 
-    
+    public function create()
+      {
+        return view('pages.billing.create');
+      }
+
+
 }

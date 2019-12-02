@@ -2,22 +2,59 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
+<h3 align="left">Mieterdetails</h3></br>
 </div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-5">
+      <label for="title">Anrede</label>
+      <input readonly type="text" class="form-control" name="title" value="{ $tenants->title }">
+    <br>
+      <label for="name">Vorname</label>
+      <input readonly type="text" class="form-control" name="surname" value="{ $tenants->surname }">
+      <br>
+      <label for="lastName">Name</label>
+      <input readonly type="text" class="form-control" name="familyname" value="{ $tenants->familyname }">
+      <br>
+      <label for="birthday">Geburtsdatum</label>
+      <input readonly type="text" class="form-control" name="dateOfBirth" value="{ $tenants->dateOfBirth }">
+      <br>
+      <label for="phone">Telefon</label>
+      <input readonly type="text" class="form-control" name="phone" value="{ $tenants->phone }">
+      <br>
+      <label for="email">E-Mail</label>
+      <input readonly type="text" class="form-control" name="email" value="E-Mail">
+    </div>
+
+    <div class="col-1">
+    </div>
+
+    <div class="col-5">
+      <label for="street">Strasse</label>
+      <input readonly type="text" class="form-control" name="billingStreetName" value="{ $tenants->billing_address->billingStreetName }">
+      <br>
+      <label for="houseNr">Nr.</label>
+      <input readonly type="text" class="form-control" name="title" value="{ $tenants->billing_address->billingStreet }">
+      <br>
+      <label for="postal">PLZ</label>
+      <input readonly type="text" class="form-control" name="title" value="{ $tenants->billing_address->billingZipCode }">
+      <br>
+      <label for="city">Ort</label>
+      <input readonly type="text" class="form-control" name="title" value="{ $tenants->billing_address->billingCityName }">
+      <br>
+
+      <button href='' type="submit" class="btn btn-primary">Bearbeiten</button>
+      <button type="button" class="btn btn-warning" onclick="return confirm('Mieter wirklich löschen?')">Löschen</button>
+      <a href={{route('tenants.index')}} type="button" class="btn btn-secondary">Zurück</a>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
 @endsection

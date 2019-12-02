@@ -11,14 +11,14 @@ class Tenants extends Model
     public static function find($id){
         $tenant = DB::table('tenant')->where('id',  $id)->get();
         return $tenant;
-    
+
        }
 
        public static function getAll(){
         $tenants = DB::table('tenant')->where('isActive',  true)->get();
         return $tenants;
        }
-   
+
 
 
     public static function addTenant($title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth, $room){
@@ -58,7 +58,7 @@ class Tenants extends Model
 
           public static function addBillingAdress($billingTitle, $billingFamilyName, $billingSurName, $billingZipCode, $billingCityName, $billingStreetName, $billingAdditionalStreetName){
                 $id = DB::table('billing_adress')->insertGetId(
-        
+
                  ['billingTitle' => $billingTitle ],
                  ['billingFamilyName' => $billingFamilyName],
                  ['billingSurName' => $billingSurName],
@@ -68,13 +68,13 @@ class Tenants extends Model
                  ['dateOfBirth' => $dateOfBirth],
                  ['isActive' => true]
                  );
-        
+
                 }
 
                 public static function deleteBillingAdress($id){
-                       
+
                         DB::table('billing_adress')->where('id', '=', $id)->update(['isActive' => false]);
-                
+
                         }
 
 

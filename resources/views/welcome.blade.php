@@ -90,9 +90,11 @@
             @if (Route::has('login'))
                 <div class="top-right options">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ route('logout') }}">Abmelden</a>
+                        
                     @else
                         <a href="{{ route('login') }}">Login</a>
+
                       @endauth
                 </div>
             @endif
@@ -103,7 +105,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="http://localhost:8888/tentants">Mieter</a>
+                    <a href="http://localhost:8888/tenants">Mieter</a>
                     <a href="http://localhost:8888/rooms">Wohnungen</a>
                     <a href="http://localhost:8888/contracts">Verträge</a>
                     <a href="http://localhost:8888/billing">Rechnungen</a>
