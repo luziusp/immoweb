@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 class Billing extends Model 
 {
 
+    protected $table = 'invoice';
+
     public static function getAllOpenInvoices(){
         $openInvoices = DB::table('invoice')->where('isPayed',  false)->get();
         return $openInvoices;

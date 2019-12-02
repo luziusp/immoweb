@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class Rooms extends Model
 {
 
+  protected $table = 'appartment';
   public static function find($id){
     $room = DB::table('appartment')->where('id',  $id)->get();
     return $room;
