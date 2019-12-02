@@ -19,7 +19,7 @@ class Rooms extends Model
     return $rooms;
    }
   
-    public static function addRoom($appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
+    public static function add($appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
         $id = DB::table('appartment')->insertGetId(
 
          ['appartmentName' => $appartmentName],
@@ -32,11 +32,11 @@ class Rooms extends Model
          );
 
         }
-        public static function deleteRoom($id){
+        public static function delete($id){
         DB::table('appartment')->where('id', '=', $id)->update(['isActive' => false]);
 
         }
-        public static function updateRoom($id, $appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
+        public static function update($id, $appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
                              DB::table('appartment')
                                          ->where('id', $id)
                                          ->update(

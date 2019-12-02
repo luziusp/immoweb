@@ -21,7 +21,7 @@ class Tenants extends Model
 
 
 
-    public static function addTenant($title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth, $room){
+    public static function add($title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth, $room){
         $id = DB::table('tenant')->insertGetId(
 
          ['title' => $title ],
@@ -36,12 +36,12 @@ class Tenants extends Model
 
         }
 
-        public static function deleteTenant($id){
+        public static function delete($id){
         DB::table('tenantmap')->where('tenantFk', '=', $id)->update(['isActive' => false]);
         DB::table('tenant')->where('id', '=', $id)->update(['isActive' => false]);
 
         }
-        public static function updateTenant($id, $title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth){
+        public static function update($id, $title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth){
                              DB::table('tenant')
                                          ->where('id', $id)
                                          ->update(
