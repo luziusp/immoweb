@@ -47,14 +47,17 @@
     @endforeach
     </tbody>
 </table>
-
+<!-- OLD, delete?-->
 <!--<a class="btn btn-primary" href={{route('rooms.create')}}>Wohnung hinzufügen</a>-->
-<!-- Button trigger modal -->
 
+
+<!-- Button to open new Appartment creation -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newAppartment">
 Wohnung hinzufügen
 </button>
 
+
+<!-- Modals-->
 <!-- Modal  Create-->
 <div class="modal fade" id="newAppartment" tabindex="-1" role="dialog" aria-labelledby="newAppartmentLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
