@@ -37,5 +37,20 @@ class TenantsController extends Controller
 
             return view('pages.tenants.index', ['tenants' => $tenants]);
           }
+          public static function updateBillingAdress($id, $billingTitle, $billingFamilyName, $billingSurName, $billingZipCode, $billingCityName, $billingStreetName, $billingAdditionalStreetName){
+            
+              Tenants::updateBillingAdress($id, $billingTitle, $billingFamilyName, $billingSurName, $billingZipCode, $billingCityName, $billingStreetName, $billingAdditionalStreetName);
+              $tenants = Tenants::getAll();
+  
+              return view('pages.tenants.index', ['tenants' => $tenants]);
+            }
 
+         public function updateTenant($id, $title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth){
+
+              Tenants::updateTenant($id, $title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth);
+              $tenants = Tenants::getAll();
+  
+              return view('pages.tenants.index', ['tenants' => $tenants]);
+            }
+          
 }

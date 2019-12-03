@@ -30,6 +30,10 @@ class BillingController extends Controller
         $openInvoices = Billing::getAllOpenInvoices();
         return view('pages/billing.index', ['openInvoices' => $openInvoices]);
       }
-
+      
+     public function updateBilling($id, $contractFk, $type, $amount, $dueDate, $isPayed){
+      $openInvoices = Billing::updateBilling($id, $contractFk, $type, $amount, $dueDate, $isPayed);
+      return view('pages/billing.index', ['openInvoices' => $openInvoices]);
+     }
 
 }
