@@ -108,8 +108,6 @@ Vertrag hinzufügen
 
 
 
-
-
 <!-- Modal  Edit-->
 <div class="modal fade" id="editContract" tabindex="-1" role="dialog" aria-labelledby="editContract" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -129,7 +127,7 @@ Vertrag hinzufügen
 
       <label for="Description">Beschreibung</label>
       <div class="form-group">
-        <select class="form-control"  id="Description" value="<?php echo $room->Description; ?>" id="Description" required>
+        <select class="form-control">
         <option>Seeblick</option>
         <option>Hauptstrasse</option>
         <option>Altbau</option>
@@ -141,16 +139,16 @@ Vertrag hinzufügen
       <input class="form-control" type="text" value="<?php echo $contract->id; ?>" id="id" required>
       <br>
         <label for="familyName">Name</label>
-        <input type="text" class="form-control" value="<?php echo $tenant->familyName; ?>" name="familyName" id="familyName" required>
+        <input type="text" class="form-control">
         <br>
         <label for="squareMeters">Wohnfläche</label>
-        <input type="text" class="form-control" value="<?php echo $contract->squareMeters; ?>" name="squareMeters" id="squareMeters" required>
+        <input type="text" class="form-control">
         <br>
         <label for="rentCost">Nettomiete</label>
-        <input type="text" class="form-control" value="<?php echo $contract->rentCost; ?>" name="rentCost" id="rentCost" required>
+        <input type="text" class="form-control">
         <br>
         <label for="additionalCost">Nebenkosten</label>
-        <input type="text" class="form-control" value="<?php echo $contract->additionalCost; ?>" name="additionalCost" id="additionalCost" required>
+        <input type="text" class="form-control">
         <br>
         <label for="title">Bruttomiete</label>
         <input type="text" class="form-control"  name="title" id="title" required>
