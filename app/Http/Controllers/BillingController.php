@@ -24,7 +24,7 @@ class BillingController extends Controller
       {
         return view('pages.billing.create');
       }
-      public function delete($id)
+      public function destroy($id)
       {
         Billing::deleteBilling($id);
         $openInvoices = Billing::getAllOpenInvoices();

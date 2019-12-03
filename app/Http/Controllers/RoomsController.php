@@ -25,12 +25,13 @@ class RoomsController extends Controller
             return view('pages.rooms.create');
           }
 
-          public function delete($id)
+          public function destroy($id)
           {
             Rooms::deleteRoom($id);
             $rooms = Rooms::getAll();
             return view('pages.rooms.index', ['rooms' => $rooms]);
           }
+          
           public function updateRoom($id, $appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
             Rooms::updateRoom($id, $appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost);
             $rooms = Rooms::getAll();

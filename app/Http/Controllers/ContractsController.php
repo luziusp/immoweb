@@ -26,7 +26,7 @@ class ContractsController extends Controller
            return view('pages.contracts.create');
          }
 
-         public function delete($id)
+         public function destroy($id)
          {
            Contracts::deleteContract($id);
            $contracts = Contracts::getAll();

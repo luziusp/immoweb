@@ -30,7 +30,7 @@ class TenantsController extends Controller
             }
 
 
-          public function delete($id)
+          public function destroy($id)
           {
             Tenants::deleteTenant($id);
             $tenants = Tenants::getAll();
