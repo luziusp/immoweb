@@ -31,7 +31,7 @@
         <br>
 
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAppartment">Bearbeiten</button>
-        <button type="button" class="btn btn-warning disabled" onclick="return confirm('Mieter wirklich löschen?')">Löschen</button>
+        <button type="button" class="btn btn btn-warning disabled" onclick="return confirm('Mieter wirklich löschen?')">Löschen</button>
         <td scope="col"><a href={{route('rooms.index')}} type="button" class="btn btn-primary" >Zurück</a></td>
         @endforeach
       </div>
