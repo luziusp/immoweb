@@ -26,8 +26,8 @@
           <tr>
               <td scope="col">{{$tenant->id}}</td>
               <td scope="col">{{$tenant->title}}</td>
-              <td scope="col">{{$tenant->familyname}}</td>
               <td scope="col">{{$tenant->surname}}</td>
+              <td scope="col">{{$tenant->familyname}}</td>
               <td scope="col">{{$tenant->billingAddressFk}}</td>
               <td scope="col">{{$tenant->billingAddressFk}}</td>
               <td scope="col">{{$tenant->billingAddressFk}}</td>
@@ -84,8 +84,8 @@
           <label for="surname">Vorname</label>
           <input class="form-control" type="text" placeholder="Vorname" name="surname" id="surname" required>
           <br>
-          <label for="familyName">Name</label>
-          <input class="form-control" type="text" placeholder="Nachname" name="familyName" id="familyName" required>
+          <label for="familyname">Name</label>
+          <input class="form-control" type="text" placeholder="Nachname" name="familyname" id="familyname" required>
           <br>
           <label for="dateOfBirth">Geburtsdatum</label>
           <input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth">

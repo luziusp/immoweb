@@ -32,11 +32,151 @@
             <td scope="col">{{$contract->terminationDate}}</td>
             <td scope="col">Mietername aus Tabelle Mieter</td>
             <td scope="col"><a href={{route('contracts.show', [$contract->id])}} type="button" class="btn btn-primary" >Details</a></td>
+
+
+            <td scope="col">
+            @if ($contract->id)
+                <form action="{{ url("/contracts/$contract->id") }}" method="POST">
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+                <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-warning disabled">Löschen</button>
+                </form>
+            </td>
+            <td scope="col">
+            <!-- Button with sending attributes to modal-->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editContract">Bearbeiten</button>
+            </td>
+            @endif
         </tr>
   @endforeach
 
 
 </table>
-<a class="btn btn-primary" href={{route('contracts.create')}}>Vertrag hinzufügen</a>
+<!-- OLD, delete?-->
+<!--<a class="btn btn-primary" href={{route('contracts.create')}}>Wohnung hinzufügen</a>-->
+
+<!-- Button to open new Contract creation -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newContract">
+Vertrag hinzufügen
+</button>
+
+
+<!-- Modals-->
+<!-- Modal  Create-->
+<div class="modal fade" id="newContract" tabindex="-1" role="dialog" aria-labelledby="newContractLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newContractLabel">Neuer Vertrag erstellen</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="save.php" method="post">
+      <div class="modal-body">
+      <br>
+      <label for="Description">Beschreibung</label>
+      <div class="form-group">
+        <select class="form-control"  id="Description" required>
+        <option>Seeblick</option>
+        <option>Hauptstrasse</option>
+        <option>Altbau</option>
+        <option>Erdgeschoss</option>
+      </select>
+      </div>
+      <br>
+      <label for="squareMeters">Wohnfläche</label>
+      <input type="text" class="form-control" placeholder="m²" name="squareMeters" id="squareMeters" required>
+      <br>
+      <label for="familyname">Mieter</label>
+      <input type="text" class="form-control" placeholder="Name" name="familyname" id="familyname" required>
+      <br>
+      <label for="startDate">Von</label>
+      <input type="date" class="form-control" placeholder="Vertragsstart" name="startDate" id="startDate" required>
+      <br>
+      <label for="terminationDate">Bis</label>
+      <input type="date" class="form-control" placeholder="Vertragsende" name="terminationDate" id="terminationDate" required>
+      </div>
+      </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+        <button type="button" class="btn btn-primary" type="submit">Speichern</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Modal  Edit-->
+<div class="modal fade" id="editContract" tabindex="-1" role="dialog" aria-labelledby="editContract" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editContract">Vertragsdaten bearbeiten</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="save.php" method="post">
+      <div class="modal-body">
+
+      <br>
+      <span id="modal-myvar"></span>
+      <br>
+
+      <label for="Description">Beschreibung</label>
+      <div class="form-group">
+        <select class="form-control"  id="Description" value="<?php echo $room->Description; ?>" id="Description" required>
+        <option>Seeblick</option>
+        <option>Hauptstrasse</option>
+        <option>Altbau</option>
+        <option>Erdgeschoss</option>
+      </select>
+      </div>
+
+      <label for="id">ID</label>
+      <input class="form-control" type="text" value="<?php echo $contract->id; ?>" id="id" required>
+      <br>
+        <label for="familyName">Name</label>
+        <input type="text" class="form-control" value="<?php echo $tenant->familyName; ?>" name="familyName" id="familyName" required>
+        <br>
+        <label for="squareMeters">Wohnfläche</label>
+        <input type="text" class="form-control" value="<?php echo $contract->squareMeters; ?>" name="squareMeters" id="squareMeters" required>
+        <br>
+        <label for="rentCost">Nettomiete</label>
+        <input type="text" class="form-control" value="<?php echo $contract->rentCost; ?>" name="rentCost" id="rentCost" required>
+        <br>
+        <label for="additionalCost">Nebenkosten</label>
+        <input type="text" class="form-control" value="<?php echo $contract->additionalCost; ?>" name="additionalCost" id="additionalCost" required>
+        <br>
+        <label for="title">Bruttomiete</label>
+        <input type="text" class="form-control"  name="title" id="title" required>
+        <br>
+
+      </div>
+      </form>
+      <div class="modal-footer">
+      <!-- Buttons for Update NOT WORKING -->
+                <form id="userForm" action="/contracts/{{ $contract->id }}" method="post">
+                    @csrf
+                    @method('PUT')
+                    <input type="hidden" name="id">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
+                    <button type="submit" class="btn btn-danger">Speichern</button>     </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+
+
 
 @endsection
