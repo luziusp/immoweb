@@ -10,8 +10,7 @@ class TenantsController extends Controller
 {
         public function index(){
                         $tenants = Tenants::getAll();
-
-                               return view('pages.tenants.index', ['tenants' => $tenants]);
+                        return view('pages.tenants.index', ['tenants' => $tenants]);
         }
 
         public function show($id)
@@ -24,6 +23,11 @@ class TenantsController extends Controller
           {
             return view('pages.tenants.create');
           }
+
+          public function edit()
+            {
+              return view('pages.tenants.edit');
+            }
 
 
           public function delete($id)

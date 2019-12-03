@@ -6,7 +6,6 @@
 </div>
 
 <div class="container">
-
   <div class="row">
     <div class="col-5">
       @foreach($tenant as $tenant)
