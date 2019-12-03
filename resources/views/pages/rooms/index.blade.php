@@ -41,7 +41,10 @@
                 </form>
             </td>
             <td scope="col"> 
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAppartment" data-id="@room">Edit</button>
+            <!-- Button with sending attributes to modal-->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAppartment" 
+            
+            >Edit</button>
             </td>
             @endif
     @endforeach
@@ -55,6 +58,9 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newAppartment">
 Wohnung hinzufügen
 </button>
+
+
+
 
 
 <!-- Modals-->
@@ -120,17 +126,20 @@ Wohnung hinzufügen
       </div>
       <form action="save.php" method="post">
       <div class="modal-body">
-      
+
+      <br>
+      <span id="modal-myvar"></span> 
+      <br>
       <label for="appartmentId">ID</label>
-      <input class="form-control" type="text" placeholder="$room->id" readonly>
+      <input class="form-control" type="text" value="<?php echo $room->id; ?>" id="id" readonly>
       <br>
         <label for="appartmentName">Name</label>
-        <input type="text" class="form-control" placeholder="$room->appartmentName" name="appartmentName" id="appartmentName" required>
+        <input type="text" class="form-control" value="<?php echo $room->appartmentName; ?>" name="appartmentName" id="appartmentName" required>
         <br>
   
         <label for="Description">Beschreibung</label>
         <div class="form-group">
-          <select class="form-control"  id="Description" placeholder="$room->Description" required>
+          <select class="form-control"  id="Description" value="<?php echo $room->Description; ?>" required>
           <option>Seeblick</option>
           <option>Hauptstrasse</option>
           <option>Altbau</option>
@@ -139,32 +148,31 @@ Wohnung hinzufügen
         </div>
 
         <label for="squareMeters">Wohnfläche</label>
-        <input type="text" class="form-control" placeholder="$room->squareMeters" name="squareMeters" id="squareMeters" required>
+        <input type="text" class="form-control" value="<?php echo $room->squareMeters; ?>" name="squareMeters" id="squareMeters" required>
         <br>
         <label for="rentCost">Nettomiete</label>
-        <input type="text" class="form-control" placeholder="$room->rentCost" name="rentCost" id="rentCost" required>
+        <input type="text" class="form-control" value="<?php echo $room->rentCost; ?>" name="rentCost" id="rentCost" required>
         <br>
         <label for="additionalCost">Nebenkosten</label>
-        <input type="text" class="form-control" placeholder="$room->additionalCost" name="additionalCost" id="additionalCost" required>
+        <input type="text" class="form-control" value="<?php echo $room->additionalCost; ?>" name="additionalCost" id="additionalCost" required>
         <br>
         <label for="title">Bruttomiete</label>
-        <input type="text" class="form-control" placeholder="$room->additionalCost" name="title" id="title" required>
+        <input type="text" class="form-control"  name="title" id="title" required>
         <br>
       </div>
       </form>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-        <button type="button" class="btn btn-primary" type="submit">Speichern</button>
-      </div>
+      <!-- Buttons for Update NOT WORKING -->
+                <form id="userForm" action="/rooms/{{ $room->id }}" method="post">
+                    @csrf
+                    @method('PUT')
+                    <input type="hidden" name="id">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger">Update</button>     </div>
     </div>
   </div>
 </div>
 
-
-
-
-
-
-
 </div>
+
 @endsection
