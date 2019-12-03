@@ -31,16 +31,15 @@
             <td scope="col">{{$room->additionalCost}}</td>
             <td scope="col">{{$room->rentCost+$room->additionalCost}}</td>
             <td scope="col"><a href={{route('rooms.show', [$room->id])}} type="button" class="btn btn-primary" >Details</a></td>
-
+            <td scope="col">
             
-
-
-            @if ($room->id)
+          @if ($room->id)
             <form action="{{ url("/rooms/$room->id") }}" method="POST">
     {{ csrf_field() }}
     {{ method_field('DELETE') }}
-    <button type="submit">delete</button>
+    <button type="submit" onclick="return confirm('Are you sure?')">delete</button>
 </form>
+</td>
     @endif
     @endforeach
 
