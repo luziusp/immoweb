@@ -127,7 +127,7 @@ Wohnung hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="{{ route('rooms.update') }}" method="post">
+      <form action="{{ route('rooms.update')/<?php echo $room->id; ?> }}" method="post">
       <div class="modal-body">
 
       <br>

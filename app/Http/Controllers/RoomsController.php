@@ -42,9 +42,9 @@ class RoomsController extends Controller
 
           }
           public function store (request $request){
-            return $request->all();
-            //Rooms::addRooms($request->all());
-           // return back();
+           
+            Rooms::addRooms($request->all());
+            return back();
             
           }
 

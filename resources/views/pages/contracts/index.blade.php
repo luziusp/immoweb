@@ -119,7 +119,7 @@ Vertrag hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="{{ route('contracts.update') }}" method="post">
+      <form action="{{ route('contracts.update')/<?php echo $contract->id; ?> }}" method="post">
       <div class="modal-body">
 
       <br>

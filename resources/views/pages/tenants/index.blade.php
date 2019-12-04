@@ -132,7 +132,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="{{ route('tenants.update') }}" method="post">
+        <form action="{{ route('tenants.update')/<?php echo $tenant->id; ?> }}" method="post">
         <div class="modal-body">
         <br>
         <span id="modal-myvar"></span>

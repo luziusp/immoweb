@@ -117,7 +117,7 @@ Rechnung hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="{{ route('billing.update') }}" method="post">
+      <form action="{{ route('billing.update')/<?php echo $billing->id; ?> }}" method="post">
       <div class="modal-body">
 
       </div>
