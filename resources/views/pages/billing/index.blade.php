@@ -21,10 +21,10 @@
 
       @foreach( $openInvoices as $openInvoice)
         <tr>
-            <td scope="col">{{$openInvoices->id}}</td>
-            <td scope="col">{{$openInvoices->type}}</td>
-            <td scope="col">{{$openInvoices->dueDate}}</td>
-            <td scope="col">{{$openInvoices->amount}}</td>
+            <td scope="col">{{$openInvoice->id}}</td>
+            <td scope="col">{{$openInvoice->type}}</td>
+            <td scope="col">{{$openInvoice->dueDate}}</td>
+            <td scope="col">{{$openInvoice->amount}}</td>
             <td scope="col">Verteilschlüssel RG</td>
             <td scope="col"><a href={{route('billing.show', [$billing->id])}} type="button" class="btn btn-primary" >Details</a></td>
 
@@ -32,8 +32,8 @@
 
 
             <td scope="col">
-            @if ($billing->id)
-                <form action="{{ url("/billing/$billings->id") }}" method="POST">
+            @if ($openInvoice->id)
+                <form action="{{ url("/billing/$openInvoice->id") }}" method="POST">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
                 <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-warning disabled">Löschen</button>
