@@ -44,10 +44,8 @@
       <label for="billingCityName">Ort</label>
       <input type="text" class="form-control" placeholder="Ort" name="billingCityName" id="billingCityName">
       <br>
-
       <button href='' type="button" class="btn btn-primary">Speichern</button>
       <a href={{route('tenants.index')}} type="button" class="btn btn-secondary">Zurück</a>
-
     </div>
   </div>
 </form>

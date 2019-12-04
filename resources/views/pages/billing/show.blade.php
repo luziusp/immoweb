@@ -13,17 +13,14 @@
         <label for="title">Nr.</label>
         <input readonly type="text" class="form-control" name="title" >
         <br>
-        <label for="name">Objekt-Typ</label>
+        <label for="name">Beschreibung</label>
         <input readonly type="text" class="form-control" name="title" >
         <br>
         <label for="lastName">Mieter</label>
         <input readonly type="text" class="form-control" name="title" >
         <br>
-        <label for="birthday">Von</label>
-        <input readonly type="text" class="form-control" name="title" >
-        <br>
-        <label for="phone">Bis</label>
-        <input readonly type="text" class="form-control" name="title" >
+        <label for="dueDate">Rechnungsdatum</label>
+        <input readonly type="text" class="form-control" name="dueDate" >
         <br>
         <label for="email">Mietzinseingänge</label>
         <input readonly type="text" class="form-control" name="title" >

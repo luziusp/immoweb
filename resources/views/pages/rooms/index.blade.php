@@ -3,8 +3,6 @@
 @section('content')
 <div class="container box">
 <h3 align="left">Wohnungsübersicht</h3></br>
-<div class="panel panel-default">
-</div>
 
 
 <table class="table">
@@ -31,22 +29,23 @@
             <td scope="col">{{$room->additionalCost}}</td>
             <td scope="col">{{$room->rentCost+$room->additionalCost}}</td>
             <td scope="col"><a href={{route('rooms.show', [$room->id])}} type="button" class="btn btn-primary" >Details</a></td>
-           
-            <td scope="col"> 
+
+            <td scope="col">
             @if ($room->id)
                 <form action="{{ url("/rooms/$room->id") }}" method="POST">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
-                <button type="submit" onclick="return confirm('Are you sure?')">Löschen</button>
+                <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-warning disabled">Löschen</button>
                 </form>
             </td>
-            <td scope="col"> 
+            <td scope="col">
             <!-- Button with sending attributes to modal-->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAppartment" 
-            
-            >Edit</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAppartment"
+
+            >Bearbeiten</button>
             </td>
             @endif
+          </tr>
     @endforeach
     </tbody>
 </table>
@@ -83,6 +82,7 @@ Wohnung hinzufügen
         <label for="appartmentName">Name</label>
         <input type="text" class="form-control" placeholder="Name" name="appartmentName" id="appartmentName" required>
         <br>
+
         <label for="Description">Beschreibung</label>
         <div class="form-group">
           <select class="form-control"  id="Description" required>
@@ -132,7 +132,7 @@ Wohnung hinzufügen
       <div class="modal-body">
 
       <br>
-      <span id="modal-myvar"></span> 
+      <span id="modal-myvar"></span>
       <br>
       <label for="appartmentId">ID</label>
       <input class="form-control" type="text" value="<?php echo $room->id; ?>" id="id" readonly>
@@ -140,7 +140,7 @@ Wohnung hinzufügen
         <label for="appartmentName">Name</label>
         <input type="text" class="form-control" value="<?php echo $room->appartmentName; ?>" name="appartmentName" id="appartmentName" required>
         <br>
-  
+
         <label for="Description">Beschreibung</label>
         <div class="form-group">
           <select class="form-control"  id="Description" value="<?php echo $room->Description; ?>" required>
@@ -171,8 +171,8 @@ Wohnung hinzufügen
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="id">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-danger">Update</button>     </div>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
+                    <button type="submit" class="btn btn-danger">Speichern</button>     </div>
     </div>
   </div>
 </div>
