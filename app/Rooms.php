@@ -32,7 +32,7 @@ class Rooms extends Model
     $rooms = DB::table('appartment')->where('isActive',  true)->get();;
     return $rooms;
    }
-  /*
+  
     public static function addRooms($appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
         $id = DB::table('appartment')->insertGetId(
 
@@ -46,7 +46,7 @@ class Rooms extends Model
          );
 
         }
-*/
+
         public function store(Request $request)
         {
 

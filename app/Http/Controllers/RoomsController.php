@@ -25,11 +25,13 @@ class RoomsController extends Controller
             return view('pages.rooms.create');
           }
 
-          public function destory($id)
+          public function destroy($id)
           {
             Rooms::deleteRoom($id);
             $rooms = Rooms::getAll();
             return view('pages.rooms.index', ['rooms' => $rooms]);
+
+        
           }
 /*
           public function updateRoom($id, $appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
@@ -42,9 +44,18 @@ class RoomsController extends Controller
 
           }
           public function store (request $request){
-           
-            Rooms::addRooms($request->all());
+           /*
+            Rooms::addRooms(
+              $request->appartmentName, 
+              $request->noOfRooms, 
+              $request->squareMeters, 
+              $request->Description, 
+              $request->rentCost, 
+              $request->additionalCost
+            );
             return back();
+            */
+            return $request->all();
             
           }
 

@@ -80,6 +80,10 @@ Wohnung hinzufügen
         <label for="appartmentName">Name</label>
         <input type="text" class="form-control" placeholder="Name" name="appartmentName" id="appartmentName" required>
         <br>
+        
+        <label for="noOfRooms">Anzahl Zimmer</label>
+        <input type="text" class="form-control" placeholder="Anzahl Zimmer" name="noOfRooms" id="noOfRooms" required>
+        <br>
 
         <label for="Description">Beschreibung</label>
         <div class="form-group">
@@ -139,7 +143,9 @@ Wohnung hinzufügen
         <label for="appartmentName">Name</label>
         <input type="text" class="form-control" value="<?php echo $room->appartmentName; ?>" name="appartmentName" id="appartmentName" required>
         <br>
-
+        <label for="noOfRooms">Name</label>
+        <input type="text" class="form-control" value="<?php echo $room->noOfRooms; ?>" name="noOfRooms" id="noOfRooms" required>
+        <br>
         <label for="Description">Beschreibung</label>
         <div class="form-group">
           <select class="form-control"  id="Description" value="<?php echo $room->Description; ?>" required>
