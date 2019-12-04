@@ -75,6 +75,9 @@ Wohnung hinzufügen
         </button>
       </div>
       <form action="save.php" method="post">
+
+
+
       <div class="modal-body">
       <br>
         <label for="appartmentName">Name</label>
@@ -89,7 +92,6 @@ Wohnung hinzufügen
           <option>Erdgeschoss</option>
         </select>
         </div>
-
         <label for="squareMeters">Wohnfläche</label>
         <input type="text" class="form-control" placeholder="Wohnfläche" name="squareMeters" id="squareMeters" required>
         <br>
@@ -103,6 +105,8 @@ Wohnung hinzufügen
         <input type="text" class="form-control" placeholder="Bruttomiete" name="title" id="title" required>
         <br>
       </div>
+      
+
       </form>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
