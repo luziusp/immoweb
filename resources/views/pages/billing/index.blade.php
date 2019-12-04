@@ -117,14 +117,14 @@ Rechnung hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="{{ route('billing.update')/<?php echo $billing->id; ?> }}" method="post">
+      <form action="{{ route('billing.update')/<?php echo $openInvoice->id; ?> }}" method="post">
       <div class="modal-body">
 
       </div>
 
       <div class="modal-footer">
       <!-- Buttons for Update NOT WORKING -->
-                <form id="userForm" action="/billing/{{ $billing->id }}" method="post">
+                <form id="userForm" action="/billing/{{ $openInvoice->id }}" method="post">
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="id">
