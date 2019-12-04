@@ -73,9 +73,7 @@ Wohnung hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="save.php" method="post">
-
-
+      <form action="{{ route('rooms.store') }}" method="post">
 
       <div class="modal-body">
       <br>
@@ -107,11 +105,12 @@ Wohnung hinzufügen
       </div>
       
 
-      </form>
+     
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-        <button type="button" class="btn btn-primary" type="submit">Speichern</button>
+        <button type="submit" class="btn btn-primary" >Speichern</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
@@ -128,7 +127,7 @@ Wohnung hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="save.php" method="post">
+      <form action="{{ route('rooms.update') }}" method="post">
       <div class="modal-body">
 
       <br>
@@ -164,7 +163,7 @@ Wohnung hinzufügen
         <input type="text" class="form-control"  name="title" id="title" required>
         <br>
       </div>
-      </form>
+   
       <div class="modal-footer">
       <!-- Buttons for Update NOT WORKING -->
                 <form id="userForm" action="/rooms/{{ $room->id }}" method="post">
@@ -174,6 +173,7 @@ Wohnung hinzufügen
                     <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
                     <button type="submit" class="btn btn-danger">Speichern</button>     </div>
     </div>
+    </form>
   </div>
 </div>
 

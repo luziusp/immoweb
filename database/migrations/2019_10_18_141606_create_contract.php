@@ -21,7 +21,7 @@ class CreateContract extends Migration
             $table->tinyInteger('tenantMapFk')->nullable();
             $table->tinyInteger('appartmentFk')->nullable();
             $table->boolean('isActive');
-            $table->tinyInteger('rentPerMonth');
+            $table->double('rentPerMonth');
         });
     }
 

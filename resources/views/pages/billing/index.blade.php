@@ -73,7 +73,7 @@ Rechnung hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="save.php" method="post">
+      <form action="{{ route('billing.store') }}" method="post">
       <div class="modal-body">
       <br>
       <label for="id">Nr.</label>
@@ -96,11 +96,12 @@ Rechnung hinzufügen
       <input type="text" class="form-control" placeholder="CHF" name="amount" id="amount" required>
       <br>
 </div>
-</form>
+
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-  <button type="button" class="btn btn-primary" type="submit">Speichern</button>
+  <button type="submit" class="btn btn-primary" >Speichern</button>
 </div>
+</form>
 </div>
 </div>
 </div>
@@ -116,11 +117,11 @@ Rechnung hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="save.php" method="post">
+      <form action="{{ route('billing.update') }}" method="post">
       <div class="modal-body">
 
       </div>
-      </form>
+
       <div class="modal-footer">
       <!-- Buttons for Update NOT WORKING -->
                 <form id="userForm" action="/billing/{{ $billing->id }}" method="post">
@@ -130,6 +131,7 @@ Rechnung hinzufügen
                     <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
                     <button type="submit" class="btn btn-danger">Speichern</button>     </div>
     </div>
+    </form>
   </div>
 </div>
 </div>

@@ -72,7 +72,7 @@ Vertrag hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="save.php" method="post">
+      <form action="{{ route('contracts.store') }}" method="post">
       <div class="modal-body">
       <br>
       <label for="Description">Beschreibung</label>
@@ -97,11 +97,12 @@ Vertrag hinzufügen
       <label for="terminationDate">Bis</label>
       <input type="date" class="form-control" placeholder="Vertragsende" name="terminationDate" id="terminationDate" required>
       </div>
-      </form>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-        <button type="button" class="btn btn-primary" type="submit">Speichern</button>
+        <button  class="btn btn-primary" type="submit">Speichern</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
@@ -118,7 +119,7 @@ Vertrag hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="save.php" method="post">
+      <form action="{{ route('contracts.update') }}" method="post">
       <div class="modal-body">
 
       <br>
@@ -155,7 +156,7 @@ Vertrag hinzufügen
         <br>
 
       </div>
-      </form>
+
       <div class="modal-footer">
       <!-- Buttons for Update NOT WORKING -->
                 <form id="userForm" action="/contracts/{{ $contract->id }}" method="post">
@@ -165,6 +166,7 @@ Vertrag hinzufügen
                     <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
                     <button type="submit" class="btn btn-danger">Speichern</button>     </div>
     </div>
+    </form>
   </div>
 </div>
 
