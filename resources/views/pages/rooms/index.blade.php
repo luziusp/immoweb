@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+<head>
+  <title>Wohnungen - ImmoWeb</title>
+</head>
 @section('content')
 <div class="container box">
 <h3 align="left">Wohnungsübersicht</h3></br>
@@ -8,7 +10,7 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">Nr.</th>
+        <th scope="col">#</th>
         <th scope="col">Beschreibung</th>
         <th scope="col">Wohnfläche</th>
         <th scope="col">Nettomiete</th>
@@ -35,14 +37,12 @@
                 <form action="{{ url("/rooms/$room->id") }}" method="POST">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
-                <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-warning disabled">Löschen</button>
+                <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
                 </form>
             </td>
             <td scope="col">
             <!-- Button with sending attributes to modal-->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAppartment"
-
-            >Bearbeiten</button>
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editAppartment">Bearbeiten</button>
             </td>
             @endif
           </tr>
@@ -76,9 +76,6 @@ Wohnung hinzufügen
       <form action="save.php" method="post">
       <div class="modal-body">
       <br>
-        <label for="appartmentName">Name</label>
-        <input type="text" class="form-control" placeholder="Name" name="appartmentName" id="appartmentName" required>
-        <br>
 
         <label for="Description">Beschreibung</label>
         <div class="form-group">
@@ -91,7 +88,7 @@ Wohnung hinzufügen
         </div>
 
         <label for="squareMeters">Wohnfläche</label>
-        <input type="text" class="form-control" placeholder="Wohnfläche" name="squareMeters" id="squareMeters" required>
+        <input type="text" class="form-control" placeholder="m²" name="squareMeters" id="squareMeters" required>
         <br>
         <label for="rentCost">Nettomiete</label>
         <input type="text" class="form-control" placeholder="Nettomiete" name="rentCost" id="rentCost" required>
@@ -106,7 +103,7 @@ Wohnung hinzufügen
       </form>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-        <button type="button" class="btn btn-primary" type="submit">Speichern</button>
+        <button type="button" class="btn btn-success" type="submit">Speichern</button>
       </div>
     </div>
   </div>
@@ -126,16 +123,9 @@ Wohnung hinzufügen
       </div>
       <form action="save.php" method="post">
       <div class="modal-body">
-
       <br>
       <span id="modal-myvar"></span>
       <br>
-      <label for="appartmentId">ID</label>
-      <input class="form-control" type="text" value="<?php echo $room->id; ?>" id="id" readonly>
-      <br>
-        <label for="appartmentName">Name</label>
-        <input type="text" class="form-control" value="<?php echo $room->appartmentName; ?>" name="appartmentName" id="appartmentName" required>
-        <br>
 
         <label for="Description">Beschreibung</label>
         <div class="form-group">
@@ -167,8 +157,8 @@ Wohnung hinzufügen
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="id">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
-                    <button type="submit" class="btn btn-danger">Speichern</button>     </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+                    <button type="submit" class="btn btn-success">Speichern</button>     </div>
     </div>
   </div>
 </div>

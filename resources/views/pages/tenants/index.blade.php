@@ -1,5 +1,9 @@
   @extends('layouts.app')
 
+<head>
+  <title>Mieter - ImmoWeb</title>
+</head>
+
   @section('content')
     <div class="container box">
 
@@ -40,13 +44,13 @@
                     <form action="{{ url("/tenants/$tenant->id") }}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
-                    <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-warning disabled">Löschen</button>
+                    <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
 
                     </form>
                 </td>
                 <td scope="col">
                 <!-- Button with sending attributes to modal-->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editTenant">Bearbeiten</button>
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editTenant">Bearbeiten</button>
                 </td>
                 @endif
         </tr>
@@ -99,9 +103,6 @@
           <label for="billingStreetName">Strasse</label>
           <input type="text" class="form-control" placeholder="Strasse" name="billingStreetName" id="billingStreetName">
           <br>
-          <label for="houseNr">Nr.</label>
-          <input type="number" class="form-control" placeholder="Nr." name="houseNr" id="houseNr">
-          <br>
           <label for="billingZipCode">PLZ</label>
           <input type="text" class="form-control" placeholder="PLZ" name="billingZipCode" id="billingZipCode">
           <br>
@@ -113,7 +114,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-          <button type="button" class="btn btn-primary" type="submit">Speichern</button>
+          <button type="button" class="btn btn-success" type="submit">Speichern</button>
         </div>
 
       </div>
@@ -173,8 +174,8 @@
                       @csrf
                       @method('PUT')
                       <input type="hidden" name="id">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
-                      <button type="submit" class="btn btn-danger">Speichern</button>     </div>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+                      <button type="submit" class="btn btn-success">Speichern</button>     </div>
       </div>
     </div>
   </div>

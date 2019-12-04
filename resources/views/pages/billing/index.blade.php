@@ -21,27 +21,24 @@
 
       @foreach( $openInvoices as $openInvoice)
         <tr>
-            <td scope="col">{{$openInvoices->id}}</td>
-            <td scope="col">{{$openInvoices->type}}</td>
-            <td scope="col">{{$openInvoices->dueDate}}</td>
-            <td scope="col">{{$openInvoices->amount}}</td>
+            <td scope="col">{{$openInvoice->id}}</td>
+            <td scope="col">{{$openInvoice->type}}</td>
+            <td scope="col">{{$openInvoice->dueDate}}</td>
+            <td scope="col">{{$openInvoice->amount}}</td>
             <td scope="col">Verteilschlüssel RG</td>
-            <td scope="col"><a href={{route('billing.show', [$billing->id])}} type="button" class="btn btn-primary" >Details</a></td>
-
-
-
+            <td scope="col"><a href={{route('billing.show', [$openInvoice->id])}} type="button" class="btn btn-primary" >Details</a></td>
 
             <td scope="col">
-            @if ($billing->id)
-                <form action="{{ url("/billing/$billings->id") }}" method="POST">
+            @if ($openInvoice->id)
+                <form action="{{ url("/billing/$openInvoice->id") }}" method="POST">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
-                <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-warning disabled">Löschen</button>
+                <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
                 </form>
             </td>
             <td scope="col">
             <!-- Button with sending attributes to modal-->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editBilling"
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editBilling"
 
             >Bearbeiten</button>
             </td>
@@ -99,7 +96,7 @@ Rechnung hinzufügen
 </form>
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-  <button type="button" class="btn btn-primary" type="submit">Speichern</button>
+  <button type="button" class="btn btn-success" type="submit">Speichern</button>
 </div>
 </div>
 </div>
@@ -123,12 +120,12 @@ Rechnung hinzufügen
       </form>
       <div class="modal-footer">
       <!-- Buttons for Update NOT WORKING -->
-                <form id="userForm" action="/billing/{{ $billing->id }}" method="post">
+                <form id="userForm" action="/billing/{{ $openInvoice->id }}" method="post">
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="id">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
-                    <button type="submit" class="btn btn-danger">Speichern</button>     </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+                    <button type="submit" class="btn btn-success">Speichern</button>     </div>
     </div>
   </div>
 </div>

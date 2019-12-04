@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+<head>
+  <title>Overview - ImmoWeb</title>
+</head>
 @section('content')
 
       <div class="container box">

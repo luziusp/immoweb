@@ -37,7 +37,7 @@ class RoomsController extends Controller
             $rooms = Rooms::getAll();
             return view('pages.rooms.index', ['rooms' => $rooms]);
           }
-          
+
           public function createNewRoom($appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
             Rooms::addRooms($appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost);
             $rooms = Rooms::getAll();

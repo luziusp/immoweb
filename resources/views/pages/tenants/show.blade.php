@@ -42,10 +42,23 @@
       <input readonly type="text" class="form-control" name="title" value="<?PHP echo $tenant->billingAddressFk; ?>">
       <br>
 
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editTenant">Bearbeiten</button>
-
-      <button type="button" class="btn btn-warning disabled" onclick="return confirm('Mieter wirklich löschen?')">Löschen</button>
+<div class="btn-group">
+  <td scope="col">
+      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editTenant">Bearbeiten</button>
+      <div scope="col">
+      @if ($tenant->id)
+          <form action="{{ url("/tenants/$tenant->id") }}" method="POST">
+          {{ csrf_field() }}
+          {{ method_field('DELETE') }}
+          <button type="button" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
+          </form>
+      </div>
+      @endif
+      <br>
       <a href={{route('tenants.index')}} type="button" class="btn btn-secondary">Zurück</a>
+  </div>
+
+
       @endforeach
     </div>
   </div>
@@ -101,8 +114,8 @@
                       @csrf
                       @method('PUT')
                       <input type="hidden" name="id">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
-                      <button type="submit" class="btn btn-danger">Speichern</button>     </div>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+                      <button type="submit" class="btn btn-success">Speichern</button>     </div>
       </div>
     </div>
   </div>

@@ -30,9 +30,22 @@
         <input readonly type="text" class="form-control" name="title" value="<?PHP echo $room->rentCost+$room->additionalCost; ?>">
         <br>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAppartment">Bearbeiten</button>
-        <button type="button" class="btn btn btn-warning disabled" onclick="return confirm('Mieter wirklich löschen?')">Löschen</button>
-        <td scope="col"><a href={{route('rooms.index')}} type="button" class="btn btn-primary" >Zurück</a></td>
+
+        <div class="btn-group">
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editAppartment">Bearbeiten</button>
+        <br>
+        <br>
+        <div scope="col">
+        @if ($room->id)
+            <form action="{{ url("/rooms/$room->id") }}" method="POST">
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
+            <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
+            </form>
+        </div>
+        @endif
+        <br>
+        <td scope="col"><a href={{route('rooms.index')}} type="button" class="btn btn-secondary" >Zurück</a></td>
         @endforeach
       </div>
 
@@ -57,13 +70,6 @@
           <br>
           <span id="modal-myvar"></span>
           <br>
-          <label for="appartmentId">ID</label>
-          <input class="form-control" type="text" value="<?php echo $room->id; ?>" id="id" readonly>
-          <br>
-            <label for="appartmentName">Name</label>
-            <input type="text" class="form-control" value="<?php echo $room->appartmentName; ?>" name="appartmentName" id="appartmentName" required>
-            <br>
-
             <label for="Description">Beschreibung</label>
             <div class="form-group">
               <select class="form-control"  id="Description" value="<?php echo $room->Description; ?>" required>
@@ -94,8 +100,9 @@
                         @csrf
                         @method('PUT')
                         <input type="hidden" name="id">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
-                        <button type="submit" class="btn btn-danger">Speichern</button>     </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+                        <button type="submit" class="btn btn-success">Speichern</button>
+                      </div>
         </div>
       </div>
     </div>

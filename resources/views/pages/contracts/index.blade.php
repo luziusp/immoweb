@@ -1,15 +1,14 @@
 @extends('layouts.app')
 
+<head>
+  <title>Verträge - ImmoWeb</title>
+</head>
+
 @section('content')
   <div class="container box">
 
   <h3 align="left">Vertragsübersicht</h3></br>
   <div class="panel panel-default">
-  <div class="panel-heading">Nach Vertrag suchen</div>
-  <div class="panel-body">
-  <div class="form-group">
-  <input type="text" name="search" id="search" class="form-control" placeholder="Suchen" />
-  </div>
 
 <table class="table">
     <thead>
@@ -39,12 +38,12 @@
                 <form action="{{ url("/contracts/$contract->id") }}" method="POST">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
-                <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-warning disabled">Löschen</button>
+                <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
                 </form>
             </td>
             <td scope="col">
             <!-- Button with sending attributes to modal-->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editContract">Bearbeiten</button>
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editContract">Bearbeiten</button>
             </td>
             @endif
         </tr>
@@ -100,7 +99,7 @@ Vertrag hinzufügen
       </form>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-        <button type="button" class="btn btn-primary" type="submit">Speichern</button>
+        <button type="button" class="btn btn-success" type="submit">Speichern</button>
       </div>
     </div>
   </div>
@@ -162,8 +161,8 @@ Vertrag hinzufügen
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="id">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
-                    <button type="submit" class="btn btn-danger">Speichern</button>     </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+                    <button type="submit" class="btn btn-success">Speichern</button>     </div>
     </div>
   </div>
 </div>

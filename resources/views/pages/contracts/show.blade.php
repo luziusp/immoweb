@@ -29,15 +29,26 @@
         <label for="email">Mietzinseingänge</label>
         <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->id; ?>">
         <br>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editContract">Bearbeiten</button>
-        <button type="submit" class="btn btn-warning disabled">Löschen</button>
-        <td scope="col"><a href={{route('contracts.index')}} type="button" class="btn btn-primary" >Zurück</a></td>
+        <div class="btn-group">
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editContract">Bearbeiten</button>
+        <br>
+        <div scope="col">
+        @if ($contract->id)
+            <form action="{{ url("/contracts/$contract->id") }}" method="POST">
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
+            <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
+            </form>
+        </div>
+        @endif
+        <td scope="col"><a href={{route('contracts.index')}} type="button" class="btn btn-secondary" >Zurück</a></td>
         @endforeach
       </div>
+    </div>
 
-    <div class="col-4">
-    </div>
-    </div>
+
+
+
     <!-- Modal  Edit-->
     <div class="modal fade" id="editContract" tabindex="-1" role="dialog" aria-labelledby="editContract" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -92,13 +103,13 @@
                         @csrf
                         @method('PUT')
                         <input type="hidden" name="id">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
-                        <button type="submit" class="btn btn-danger">Speichern</button>     </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+                        <button type="submit" class="btn btn-success">Speichern</button>     </div>
         </div>
       </div>
     </div>
   </div>
-
+  </div>
 
 
 

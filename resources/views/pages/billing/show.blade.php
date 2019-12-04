@@ -25,9 +25,9 @@
         <label for="email">Mietzinseingänge</label>
         <input readonly type="text" class="form-control" name="title" >
         <br>
-        <button type="submit" class="btn btn-primary disabled">Bearbeiten</button>
-        <button type="submit" class="btn btn-primary disabled">Löschen</button>
-        <button type="submit" class="btn btn-primary disabled">Zurück</button>
+        <button type="submit" class="btn btn-warning">Bearbeiten</button>
+        <button type="submit" class="btn btn-danger">Löschen</button>
+        <button type="submit" class="btn btn-secondary">Zurück</button>
       </div>
 
     <div class="col-4">
