@@ -94,15 +94,18 @@
             <br>
           </div>
           </form>
-          <div class="modal-footer">
+          <!-- Formstruktur?? -->
           <!-- Buttons for Update NOT WORKING -->
                     <form id="userForm" action="/rooms/{{ $room->id }}" method="post">
+                      <div class="modal-footer">
                         @csrf
                         @method('PUT')
                         <input type="hidden" name="id">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
                         <button type="submit" class="btn btn-success">Speichern</button>
                       </div>
+                      </form>
+
         </div>
       </div>
     </div>

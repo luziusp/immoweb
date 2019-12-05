@@ -42,26 +42,25 @@
       <input readonly type="text" class="form-control" name="title" value="<?PHP echo $tenant->billingAddressFk; ?>">
       <br>
 
-<div class="btn-group">
-  <td scope="col">
+<tr>
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editTenant">Bearbeiten</button>
-      <div scope="col">
+      <td scope="col">
       @if ($tenant->id)
           <form action="{{ url("/tenants/$tenant->id") }}" method="POST">
           {{ csrf_field() }}
           {{ method_field('DELETE') }}
-          <button type="button" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
+          <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
           </form>
-      </div>
+      </td>
       @endif
-      <br>
       <a href={{route('tenants.index')}} type="button" class="btn btn-secondary">Zurück</a>
-  </div>
-
-
       @endforeach
+    </tr>
+      </div>
     </div>
   </div>
+
+
 
 <!-- Modal  Edit-->
   <div class="modal fade" id="editTenant" tabindex="-1" role="dialog" aria-labelledby="editTenant" aria-hidden="true">
@@ -108,14 +107,17 @@
         <br>
         </div>
         </form>
-        <div class="modal-footer">
+        <!-- Formstruktur?? -->
         <!-- Buttons for Update NOT WORKING -->
                   <form id="userForm" action="/tenants/{{ $tenant->id }}" method="post">
+                      <div class="modal-footer">
                       @csrf
                       @method('PUT')
                       <input type="hidden" name="id">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
-                      <button type="submit" class="btn btn-success">Speichern</button>     </div>
+                      <button type="submit" class="btn btn-success">Speichern</button>
+                    </div>
+                    </form>
       </div>
     </div>
   </div>
