@@ -92,11 +92,9 @@ Rechnung hinzufügen
 
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-<<<<<<< HEAD
+
   <button type="button" class="btn btn-success" type="submit">Speichern</button>
-=======
-  <button type="submit" class="btn btn-primary" >Speichern</button>
->>>>>>> 584b15c5f55b2591cab5d21da9e4b9dfa0d6c375
+
 </div>
 </form>
 </div>

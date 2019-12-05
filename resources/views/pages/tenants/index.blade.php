@@ -107,15 +107,13 @@
           <input type="text" class="form-control" placeholder="Ort" name="billingCityName" id="billingCityName">
           <br>
         </div>
-   
+
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-<<<<<<< HEAD
+
           <button type="button" class="btn btn-success" type="submit">Speichern</button>
-=======
-          <button  class="btn btn-primary" type="submit">Speichern</button>
->>>>>>> 584b15c5f55b2591cab5d21da9e4b9dfa0d6c375
+
         </div>
 </form>
       </div>
@@ -168,7 +166,7 @@
         <input type="text" class="form-control" value="<?PHP echo $tenant->billingAddressFk; ?>" id="billingCityName" required>
         <br>
         </div>
-        
+
         <div class="modal-footer">
         <!-- Buttons for Update NOT WORKING -->
                   <form id="userForm" action="/tenants/{{ $tenant->id }}" method="post">

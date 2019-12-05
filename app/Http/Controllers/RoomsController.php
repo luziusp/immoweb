@@ -31,7 +31,7 @@ class RoomsController extends Controller
             $rooms = Rooms::getAll();
             return view('pages.rooms.index', ['rooms' => $rooms]);
 
-        
+
           }
 /*
           public function updateRoom($id, $appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
@@ -53,18 +53,18 @@ class RoomsController extends Controller
           public function store (request $request){
            /*
             Rooms::addRooms(
-              $request->appartmentName, 
-              $request->noOfRooms, 
-              $request->squareMeters, 
-              $request->Description, 
-              $request->rentCost, 
+              $request->appartmentName,
+              $request->noOfRooms,
+              $request->squareMeters,
+              $request->Description,
+              $request->rentCost,
               $request->additionalCost
             );
             return back();
             */
             return $request->all();
-            
->>>>>>> 584b15c5f55b2591cab5d21da9e4b9dfa0d6c375
+
+
           }
 
 

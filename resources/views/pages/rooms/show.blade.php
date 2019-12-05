@@ -73,7 +73,7 @@
             <br>
             <label for="Description">Beschreibung</label>
             <div class="form-group">
-              <select class="form-control" type="text">
+              <select class="form-control">
               <option>Seeblick</option>
               <option>Hauptstrasse</option>
               <option>Altbau</option>

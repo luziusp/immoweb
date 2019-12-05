@@ -74,20 +74,17 @@ Wohnung hinzufügen
 
       <div class="modal-body">
       <br>
-<<<<<<< HEAD
-=======
         <label for="appartmentName">Name</label>
         <input type="text" class="form-control" placeholder="Name" name="appartmentName" id="appartmentName" required>
         <br>
-        
+
         <label for="noOfRooms">Anzahl Zimmer</label>
         <input type="text" class="form-control" placeholder="Anzahl Zimmer" name="noOfRooms" id="noOfRooms" required>
         <br>
->>>>>>> 584b15c5f55b2591cab5d21da9e4b9dfa0d6c375
 
         <label for="Description">Beschreibung</label>
-        <div class="form-group" type="text">
-          <select class="form-control"  id="Description" required>
+        <div class="form-group">
+          <select class="form-control"id="Description" required>
           <option>Seeblick</option>
           <option>Hauptstrasse</option>
           <option>Altbau</option>
@@ -107,16 +104,14 @@ Wohnung hinzufügen
         <input type="text" class="form-control" placeholder="Bruttomiete" name="title" id="title" required>
         <br>
       </div>
-      
 
-     
+
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-<<<<<<< HEAD
+
         <button type="button" class="btn btn-success" type="submit">Speichern</button>
-=======
-        <button type="submit" class="btn btn-primary" >Speichern</button>
->>>>>>> 584b15c5f55b2591cab5d21da9e4b9dfa0d6c375
+
       </div>
       </form>
     </div>
@@ -142,12 +137,11 @@ Wohnung hinzufügen
         <label for="title">#</label>
         <input type="text" class="form-control" value="<?PHP echo $room->id; ?>" >
         <br>
-<<<<<<< HEAD
-=======
+
         <label for="noOfRooms">Name</label>
         <input type="text" class="form-control" value="<?php echo $room->noOfRooms; ?>" name="noOfRooms" id="noOfRooms" required>
         <br>
->>>>>>> 584b15c5f55b2591cab5d21da9e4b9dfa0d6c375
+
         <label for="Description">Beschreibung</label>
         <input readonly type="text" class="form-control" name="Description" value="<?PHP echo $room->Description; ?>" >
         <br>
@@ -164,7 +158,7 @@ Wohnung hinzufügen
         <input type="text" class="form-control"  name="title" id="title" required>
         <br>
       </div>
-   
+
       <div class="modal-footer">
       <!-- Buttons for Update NOT WORKING -->
                 <form id="userForm" action="/rooms/{{ $room->id }}" method="post">
