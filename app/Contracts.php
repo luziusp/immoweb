@@ -7,6 +7,14 @@ use Illuminate\Support\Facades\DB;
 
 class Contracts extends Model
 {
+
+
+
+    public function user()
+    {
+        return $this->belongsTo('App\Rooms', 'id');
+    }
+
     protected $table = 'contract';
     public static function find($id){
         $contract = DB::table('contract')->where('id',  $id)->get();

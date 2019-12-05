@@ -74,7 +74,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="save.php" method="post">
+        <form action="{{ route('tenants.store') }}" method="post">
         <div class="modal-body">
           <br>
           <span id="modal-myvar"></span>
@@ -107,13 +107,17 @@
           <input type="text" class="form-control" placeholder="Ort" name="billingCityName" id="billingCityName">
           <br>
         </div>
-        </form>
+   
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+<<<<<<< HEAD
           <button type="button" class="btn btn-success" type="submit">Speichern</button>
+=======
+          <button  class="btn btn-primary" type="submit">Speichern</button>
+>>>>>>> 584b15c5f55b2591cab5d21da9e4b9dfa0d6c375
         </div>
-
+</form>
       </div>
     </div>
   </div>
@@ -130,7 +134,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="save.php" method="post">
+        <form action="{{ route('tenants.update')/<?php echo $tenant->id; ?> }}" method="post">
         <div class="modal-body">
         <br>
         <span id="modal-myvar"></span>
@@ -164,7 +168,7 @@
         <input type="text" class="form-control" value="<?PHP echo $tenant->billingAddressFk; ?>" id="billingCityName" required>
         <br>
         </div>
-        </form>
+        
         <div class="modal-footer">
         <!-- Buttons for Update NOT WORKING -->
                   <form id="userForm" action="/tenants/{{ $tenant->id }}" method="post">
@@ -174,6 +178,7 @@
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
                       <button type="submit" class="btn btn-success">Speichern</button>     </div>
       </div>
+      </form>
     </div>
   </div>
 </div>

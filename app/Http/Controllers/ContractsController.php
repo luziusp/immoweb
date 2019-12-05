@@ -11,13 +11,14 @@ class ContractsController extends Controller
 {
        public function index(){
         $contracts = Contracts::getAll();
-
-               return view('pages/contracts.index', ['contracts' => $contracts]);
+        $tenants = Tenants::getAll();
+               return view('pages/contracts.index', ['contracts' => $contracts], ['tenants' => $tenants]);
 
        }
        public function show($id)
          {
           $contract = Contracts::find($id);
+          
            return view('pages.contracts.show', ['contract' => $contract]);
          }
 

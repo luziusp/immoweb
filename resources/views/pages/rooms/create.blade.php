@@ -36,6 +36,7 @@
         <input type="text" class="form-control" placeholder="Bruttomiete" name="title" id="title" required>
         <br>
         <button type="submit" class="btn btn-primary disabled">Speichern</button>
+        
         <td scope="col"><a href={{route('rooms.index')}} type="button" class="btn btn-primary" >Zurück</a></td>
       </div>
 

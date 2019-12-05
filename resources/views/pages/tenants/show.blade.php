@@ -87,7 +87,7 @@
         <input class="form-control" type="text" value="<?PHP echo $tenant->familyname; ?>" id="familyname" required>
         <br>
         <label for="dateOfBirth">Geburtsdatum</label>
-        <input class="form-control" type="text" value="<?PHP echo $tenant->dateOfBirth; ?>" id="dateOfBirth" required>
+        <input class="form-control" type="date" value="<?PHP echo $tenant->dateOfBirth; ?>" id="dateOfBirth" required>
         <br>
         <label for="phone">Telefon</label>
         <input class="form-control" type="text" value="<?PHP echo $tenant->phone; ?>" id="phone" required>

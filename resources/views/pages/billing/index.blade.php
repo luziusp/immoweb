@@ -66,7 +66,7 @@ Rechnung hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="save.php" method="post">
+      <form action="{{ route('billing.store') }}" method="post">
       <div class="modal-body">
       <br>
       <label for="id">Nr.</label>
@@ -89,11 +89,16 @@ Rechnung hinzufügen
       <input type="text" class="form-control" placeholder="CHF" name="amount" id="amount" required>
       <br>
 </div>
-</form>
+
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+<<<<<<< HEAD
   <button type="button" class="btn btn-success" type="submit">Speichern</button>
+=======
+  <button type="submit" class="btn btn-primary" >Speichern</button>
+>>>>>>> 584b15c5f55b2591cab5d21da9e4b9dfa0d6c375
 </div>
+</form>
 </div>
 </div>
 </div>
@@ -109,11 +114,11 @@ Rechnung hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="save.php" method="post">
+      <form action="{{ route('billing.update')/<?php echo $openInvoice->id; ?> }}" method="post">
       <div class="modal-body">
 
       </div>
-      </form>
+
       <div class="modal-footer">
       <!-- Buttons for Update NOT WORKING -->
                 <form id="userForm" action="/billing/{{ $openInvoice->id }}" method="post">
@@ -123,6 +128,7 @@ Rechnung hinzufügen
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
                     <button type="submit" class="btn btn-success">Speichern</button>     </div>
     </div>
+    </form>
   </div>
 </div>
 </div>

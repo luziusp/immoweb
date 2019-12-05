@@ -70,9 +70,20 @@ Wohnung hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="save.php" method="post">
+      <form action="{{ route('rooms.store') }}" method="post">
+
       <div class="modal-body">
       <br>
+<<<<<<< HEAD
+=======
+        <label for="appartmentName">Name</label>
+        <input type="text" class="form-control" placeholder="Name" name="appartmentName" id="appartmentName" required>
+        <br>
+        
+        <label for="noOfRooms">Anzahl Zimmer</label>
+        <input type="text" class="form-control" placeholder="Anzahl Zimmer" name="noOfRooms" id="noOfRooms" required>
+        <br>
+>>>>>>> 584b15c5f55b2591cab5d21da9e4b9dfa0d6c375
 
         <label for="Description">Beschreibung</label>
         <div class="form-group" type="text">
@@ -83,7 +94,6 @@ Wohnung hinzufügen
           <option>Erdgeschoss</option>
         </select>
         </div>
-
         <label for="squareMeters">Wohnfläche</label>
         <input type="text" class="form-control" placeholder="m²" name="squareMeters" id="squareMeters" required>
         <br>
@@ -97,11 +107,18 @@ Wohnung hinzufügen
         <input type="text" class="form-control" placeholder="Bruttomiete" name="title" id="title" required>
         <br>
       </div>
-      </form>
+      
+
+     
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+<<<<<<< HEAD
         <button type="button" class="btn btn-success" type="submit">Speichern</button>
+=======
+        <button type="submit" class="btn btn-primary" >Speichern</button>
+>>>>>>> 584b15c5f55b2591cab5d21da9e4b9dfa0d6c375
       </div>
+      </form>
     </div>
   </div>
 </div>
@@ -118,13 +135,19 @@ Wohnung hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="save.php" method="post">
+      <form action="{{ route('rooms.update')/<?php echo $room->id; ?> }}" method="post">
       <div class="modal-body">
       <br>
       <span id="modal-myvar"></span>
         <label for="title">#</label>
         <input type="text" class="form-control" value="<?PHP echo $room->id; ?>" >
         <br>
+<<<<<<< HEAD
+=======
+        <label for="noOfRooms">Name</label>
+        <input type="text" class="form-control" value="<?php echo $room->noOfRooms; ?>" name="noOfRooms" id="noOfRooms" required>
+        <br>
+>>>>>>> 584b15c5f55b2591cab5d21da9e4b9dfa0d6c375
         <label for="Description">Beschreibung</label>
         <input readonly type="text" class="form-control" name="Description" value="<?PHP echo $room->Description; ?>" >
         <br>
@@ -141,7 +164,7 @@ Wohnung hinzufügen
         <input type="text" class="form-control"  name="title" id="title" required>
         <br>
       </div>
-      </form>
+   
       <div class="modal-footer">
       <!-- Buttons for Update NOT WORKING -->
                 <form id="userForm" action="/rooms/{{ $room->id }}" method="post">
@@ -151,6 +174,7 @@ Wohnung hinzufügen
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
                     <button type="submit" class="btn btn-success">Speichern</button>     </div>
     </div>
+    </form>
   </div>
 </div>
 
