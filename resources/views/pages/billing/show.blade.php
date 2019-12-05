@@ -25,9 +25,9 @@
         <label for="email">Mietzinseingänge</label>
         <input readonly type="text" class="form-control" name="title" >
         <br>
-        <button type="submit" class="btn btn-primary disabled">Bearbeiten</button>
-        <button type="submit" class="btn btn-primary disabled">Löschen</button>
-        <button type="submit" class="btn btn-primary disabled">Zurück</button>
+        <button type="submit" class="btn btn-warning">Bearbeiten</button>
+        <button type="submit" class="btn btn-danger">Löschen</button>
+        <button type="submit" class="btn btn-secondary">Zurück</button>
       </div>
 
     <div class="col-4">
@@ -35,6 +35,34 @@
 
 
     </div>
+
+  <!-- Edit Billing -->
+    <div class="modal fade" id="editBilling" tabindex="-1" role="dialog" aria-labelledby="editBilling" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editBilling">Rechnung bearbeiten</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="save.php" method="post">
+          <div class="modal-body">
+
+          </div>
+          </form>
+          <div class="modal-footer">
+          <!-- Buttons for Update NOT WORKING -->
+                    <form id="userForm" action="/billing/{{ $openInvoice->id }}" method="post">
+                        @csrf
+                        @method('PUT')
+                        <input type="hidden" name="id">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+                        <button type="submit" class="btn btn-success">Speichern</button>     </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 

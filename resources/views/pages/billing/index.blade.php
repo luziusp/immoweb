@@ -9,16 +9,17 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">Nr.</th>
+        <th scope="col">#</th>
         <th scope="col">RG-Typ</th>
         <th scope="col">Datum</th>
         <th scope="col">CHF</th>
         <th scope="col">Verteilschlüssel</th>
         <th scope="col"></th>
+        <th scope="col"></th>
     </tr>
     </thead>
-    <tbody>
 
+    <tbody>
       @foreach( $openInvoices as $openInvoice)
         <tr>
             <td scope="col">{{$openInvoice->id}}</td>
@@ -26,33 +27,22 @@
             <td scope="col">{{$openInvoice->dueDate}}</td>
             <td scope="col">{{$openInvoice->amount}}</td>
             <td scope="col">Verteilschlüssel RG</td>
-            <td scope="col"><a href={{route('billing.show', [$billing->id])}} type="button" class="btn btn-primary" >Details</a></td>
-
-
-
-
+            <td scope="col"><a href={{route('billing.show', [$openInvoice->id])}} type="button" class="btn btn-primary" >Details</a></td>
             <td scope="col">
             @if ($openInvoice->id)
                 <form action="{{ url("/billing/$openInvoice->id") }}" method="POST">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
-                <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-warning disabled">Löschen</button>
+                <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
                 </form>
             </td>
-            <td scope="col">
-            <!-- Button with sending attributes to modal-->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editBilling"
-
-            >Bearbeiten</button>
-            </td>
             @endif
-
         </tr>
         @endforeach
-
-
     </tbody>
 </table>
+
+
 <!-- OLD, delete?-->
 <!--<a class="btn btn-primary" href={{route('billing.create')}}>Wohnung hinzufügen</a>-->
 
@@ -61,6 +51,9 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newBilling">
 Rechnung hinzufügen
 </button>
+
+
+
 
 <!-- Modals-->
 <!-- Modal  Create-->
@@ -99,7 +92,9 @@ Rechnung hinzufügen
 
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-  <button type="submit" class="btn btn-primary" >Speichern</button>
+
+  <button type="button" class="btn btn-success" type="submit">Speichern</button>
+
 </div>
 </form>
 </div>
@@ -128,8 +123,8 @@ Rechnung hinzufügen
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="id">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
-                    <button type="submit" class="btn btn-danger">Speichern</button>     </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+                    <button type="submit" class="btn btn-success">Speichern</button>     </div>
     </div>
     </form>
   </div>

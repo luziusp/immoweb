@@ -12,13 +12,13 @@
       <label for="title">Anrede</label>
       <input readonly type="text" class="form-control" name="title" value="<?PHP echo $tenant->title; ?>">
       <br>
-      <label for="name">Vorname</label>
+      <label for="surname">Vorname</label>
       <input readonly type="text" class="form-control" name="surname" value="<?PHP echo $tenant->surname; ?>">
       <br>
-      <label for="lastName">Name</label>
+      <label for="familyname">Name</label>
       <input readonly type="text" class="form-control" name="familyname" value="<?PHP echo $tenant->familyname; ?>">
       <br>
-      <label for="birthday">Geburtsdatum</label>
+      <label for="dateOfBirth">Geburtsdatum</label>
       <input readonly type="text" class="form-control" name="dateOfBirth" value="<?PHP echo $tenant->dateOfBirth; ?>">
       <br>
       <label for="phone">Telefon</label>
@@ -42,13 +42,25 @@
       <input readonly type="text" class="form-control" name="title" value="<?PHP echo $tenant->billingAddressFk; ?>">
       <br>
 
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editTenant">Bearbeiten</button>
 
-      <button type="button" class="btn btn-warning disabled" onclick="return confirm('Mieter wirklich löschen?')">Löschen</button>
+      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editTenant">Bearbeiten</button>
+      <td scope="col">
+      @if ($tenant->id)
+          <form action="{{ url("/tenants/$tenant->id") }}" method="POST">
+          {{ csrf_field() }}
+          {{ method_field('DELETE') }}
+          <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
+          </form>
+      </td>
+      @endif
       <a href={{route('tenants.index')}} type="button" class="btn btn-secondary">Zurück</a>
       @endforeach
+
+      </div>
     </div>
   </div>
+
+
 
 <!-- Modal  Edit-->
   <div class="modal fade" id="editTenant" tabindex="-1" role="dialog" aria-labelledby="editTenant" aria-hidden="true">
@@ -75,7 +87,7 @@
         <input class="form-control" type="text" value="<?PHP echo $tenant->familyname; ?>" id="familyname" required>
         <br>
         <label for="dateOfBirth">Geburtsdatum</label>
-        <input class="form-control" type="text" value="<?PHP echo $tenant->dateOfBirth; ?>" id="dateOfBirth" required>
+        <input class="form-control" type="date" value="<?PHP echo $tenant->dateOfBirth; ?>" id="dateOfBirth" required>
         <br>
         <label for="phone">Telefon</label>
         <input class="form-control" type="text" value="<?PHP echo $tenant->phone; ?>" id="phone" required>
@@ -95,14 +107,19 @@
         <br>
         </div>
         </form>
-        <div class="modal-footer">
+
+
+        <!-- Formstruktur?? -->
         <!-- Buttons for Update NOT WORKING -->
                   <form id="userForm" action="/tenants/{{ $tenant->id }}" method="post">
+                      <div class="modal-footer">
                       @csrf
                       @method('PUT')
                       <input type="hidden" name="id">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
-                      <button type="submit" class="btn btn-danger">Speichern</button>     </div>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+                      <button type="submit" class="btn btn-success">Speichern</button>
+                    </div>
+                    </form>
       </div>
     </div>
   </div>

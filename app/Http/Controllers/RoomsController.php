@@ -31,16 +31,31 @@ class RoomsController extends Controller
             $rooms = Rooms::getAll();
             return view('pages.rooms.index', ['rooms' => $rooms]);
 
-        
+
           }
-          
+
           public function update (request $request, $id){
 
           }
           public function store (request $request){
 
+
            Rooms::create($request->all());
             return back();
+
+           /*
+            Rooms::addRooms(
+              $request->appartmentName,
+              $request->noOfRooms,
+              $request->squareMeters,
+              $request->Description,
+              $request->rentCost,
+              $request->additionalCost
+            );
+            return back();
+            */
+            return $request->all();
+
           }
 
 

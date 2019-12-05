@@ -1,14 +1,18 @@
 @extends('layouts.app')
-
+<head>
+  <title>Overview - ImmoWeb</title>
+</head>
 @section('content')
 
       <div class="container box">
       <h3 align="left">Mieterspiegel - Gesamtkosten</h3>
+      <br>
       <div class="panel panel-default">
 
    <table class="table">
         <thead>
         <tr>
+            <th scope="col">Whg-#</th>
             <th scope="col">Mieter</th>
             <th scope="col">Rep.</th>
             <th scope="col">Öl</th>
@@ -20,43 +24,25 @@
 
         </tr>
         </thead>
+
+
         <tbody>
-
-
             <tr>
                 <td scope="col"></td>
                 <td scope="col"></td>
-
-                <td scope="col">
-                </td>
-
-                <td scope="col">
-                </td>
-
-                <td scope="col">
-                </td>
-
-                <td scope="col">
-                </td>
-
-                <td scope="col">
-                </td>
-
-                <td scope="col">
-                </td>
-
-                <td scope="col">
-                </td>
-
-                <td scope="col">
-                </td>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col"></td>
             </tr>
-
-
-
         </tbody>
    </table>
 
-   <button type="submit" class="btn btn-primary">Gesamtrechnung (PDF)</button>
 
+<!-- Button to open PDF -->
+   <button type="submit" class="btn btn-primary">Gesamtrechnung (PDF)</button>
+<!-- End Button to open PDF -->
 @endsection
