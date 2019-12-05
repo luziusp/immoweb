@@ -76,9 +76,7 @@
         </div>
         <form action="{{ route('tenants.store') }}" method="post">
         <div class="modal-body">
-          <br>
-          <span id="modal-myvar"></span>
-          <br>
+
           <label for="title">Anrede</label>
           <input class="form-control" type="text" placeholder="Frau / Herr" name="title" id="title" required>
           <br>
@@ -115,8 +113,9 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
 
-          <button type="button" class="btn btn-success" type="submit">Speichern</button>
-
+          <button type="submit" class="btn btn-success">Speichern</button>
+          
+          </div>
         </div>
 </form>
       </div>

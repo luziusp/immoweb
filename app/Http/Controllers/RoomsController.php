@@ -35,10 +35,13 @@ class RoomsController extends Controller
           }
 
           public function update (request $request, $id){
+           return $request->all();
 
+            $room = Rooms::findOrFail($id);
+           $room->update($request->all());
+            return back();
           }
           public function store (request $request){
-
 
            Rooms::create($request->all());
             return back();

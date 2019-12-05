@@ -131,16 +131,19 @@ Wohnung hinzufügen
       </div>
       <form action="{{ route('rooms.update')/<?php echo $room->id; ?> }}" method="post">
       <div class="modal-body">
+
+
+      <input type= "hidden" name = "id" value = "<?php echo $room->id; ?>">
+
       <br>
       <span id="modal-myvar"></span>
         <label for="title">#</label>
-        <input type="text" class="form-control" value="<?PHP echo $room->id; ?>" >
+        <input type="text" class="form-control" value="<?PHP echo $room->id; ?>" required readonly>
         <br>
 
         <label for="noOfRooms">Name</label>
         <input type="text" class="form-control" value="<?php echo $room->noOfRooms; ?>" name="noOfRooms" id="noOfRooms" required>
         <br>
-
         <label for="Description">Beschreibung</label>
         <input readonly type="text" class="form-control" name="Description" value="<?PHP echo $room->Description; ?>" >
         <br>
@@ -153,17 +156,14 @@ Wohnung hinzufügen
         <label for="additionalCost">Nebenkosten</label>
         <input type="text" class="form-control" value="<?php echo $room->additionalCost; ?>" name="additionalCost" id="additionalCost" required>
         <br>
-        <label for="title">Bruttomiete</label>
-        <input type="text" class="form-control"  name="title" id="title" required>
+        <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
         <br>
       </div>
 
       <div class="modal-footer">
-      <!-- Buttons for Update NOT WORKING -->
-                <form id="userForm" action="/rooms/{{ $room->id }}" method="post">
-                    @csrf
-                    @method('PUT')
-                    <input type="hidden" name="id">
+      
+              
+
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
                     <button type="submit" class="btn btn-success">Speichern</button>     </div>
     </div>

@@ -89,7 +89,7 @@ Vertrag hinzufügen
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
 
         <button type="submit" class="btn btn-success" >Speichern</button>
-
+        </div>
       </div>
       </form>
     </div>

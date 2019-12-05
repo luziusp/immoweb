@@ -59,7 +59,7 @@ class TenantsController extends Controller
             }
             public function store (request $request){
   
-  
+ 
              Tenants::create($request->all());
               return back();
   
