@@ -103,8 +103,8 @@ Wohnung hinzufügen
         <label for="additionalCost">Nebenkosten</label>
         <input type="text" class="form-control" placeholder="Nebenkosten" name="additionalCost" id="additionalCost" required>
         <br>
-        <label for="title">Bruttomiete</label>
-        <input type="text" class="form-control" placeholder="Bruttomiete" name="title" id="title" required>
+        <label for="isActive">isActive</label>
+        <input type="text" class="form-control" value="1" name="isActive" id="isActive" required readonly>
         <br>
       </div>
       

@@ -10,7 +10,7 @@ class Rooms extends Model
 
   protected $table = 'appartment';
 
-  protected $fillable =['appartmentName', 'noOfRooms', 'squareMeters', 'Description', 'rentCost', 'additionalCost', 'additionalCost'];
+  protected $fillable =['appartmentName', 'noOfRooms', 'squareMeters', 'Description', 'rentCost', 'additionalCost', 'additionalCost', 'isActive'];
 
   //Defining relationship to contract
   public function contract()
@@ -32,7 +32,7 @@ class Rooms extends Model
     $rooms = DB::table('appartment')->where('isActive',  true)->get();;
     return $rooms;
    }
-  
+       /*
     public static function addRooms($appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
         $id = DB::table('appartment')->insertGetId(
 
@@ -47,6 +47,7 @@ class Rooms extends Model
 
         }
 
+   
         public function store(Request $request)
         {
 
@@ -107,4 +108,5 @@ class Rooms extends Model
                                            ['additionalCost' => $additionalCost]
                                            );
           }
+          */
 }

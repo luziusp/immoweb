@@ -54,11 +54,11 @@ class CreateFkset1 extends Migration
     Schema::table('invoice', function (Blueprint $table) {
         $table->dropForeign('invoice_contractFk_foreign');
    });
-
+/*
     Schema::table('appartment', function (Blueprint $table) {
         $table->dropForeign('appartment_contractFk_foreign');
         });
-
+*/
          Schema::table('tenant', function (Blueprint $table) {
              $table->dropForeign('tenant_billingAddressFk_foreign');
         });

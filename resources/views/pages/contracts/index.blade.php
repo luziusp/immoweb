@@ -24,7 +24,7 @@
     </thead>
     <tbody>
 
-@foreach( $contracts as $contract )
+@foreach( (array) $contracts as $contract )
         <tr>
             <td scope="col">{{$contract->id}}</td>
             <td scope="col">Objekt-Typ aus Tabelle Wohnung</td>
@@ -49,6 +49,7 @@
             @endif
         </tr>
   @endforeach
+  @endif
 
 
 </table>
