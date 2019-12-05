@@ -9,16 +9,17 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">Nr.</th>
+        <th scope="col">#</th>
         <th scope="col">RG-Typ</th>
         <th scope="col">Datum</th>
         <th scope="col">CHF</th>
         <th scope="col">Verteilschlüssel</th>
         <th scope="col"></th>
+        <th scope="col"></th>
     </tr>
     </thead>
-    <tbody>
 
+    <tbody>
       @foreach( $openInvoices as $openInvoice)
         <tr>
             <td scope="col">{{$openInvoice->id}}</td>
@@ -27,7 +28,6 @@
             <td scope="col">{{$openInvoice->amount}}</td>
             <td scope="col">Verteilschlüssel RG</td>
             <td scope="col"><a href={{route('billing.show', [$openInvoice->id])}} type="button" class="btn btn-primary" >Details</a></td>
-
             <td scope="col">
             @if ($openInvoice->id)
                 <form action="{{ url("/billing/$openInvoice->id") }}" method="POST">
@@ -36,20 +36,13 @@
                 <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
                 </form>
             </td>
-            <td scope="col">
-            <!-- Button with sending attributes to modal-->
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editBilling"
-
-            >Bearbeiten</button>
-            </td>
             @endif
-
         </tr>
         @endforeach
-
-
     </tbody>
 </table>
+
+
 <!-- OLD, delete?-->
 <!--<a class="btn btn-primary" href={{route('billing.create')}}>Wohnung hinzufügen</a>-->
 
@@ -58,6 +51,9 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newBilling">
 Rechnung hinzufügen
 </button>
+
+
+
 
 <!-- Modals-->
 <!-- Modal  Create-->

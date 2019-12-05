@@ -7,7 +7,8 @@
   @section('content')
     <div class="container box">
 
-    <h3 align="left">Mieterübersicht</h3></br>
+    <h3 align="left">Mieterübersicht</h3>
+    <br>
 
   <table class="table">
       <thead>
@@ -16,9 +17,7 @@
           <th scope="col">Anrede</th>
           <th scope="col">Vorname</th>
           <th scope="col">Name</th>
-          <th scope="col">Adresse</th>
-          <th scope="col">Ort</th>
-          <th scope="col">PLZ</th>
+          <th scope="col">Geburtsdatum</th>
           <th scope="col">E-Mail</th>
           <th scope="col"></th>
           <th scope="col"></th>
@@ -32,42 +31,40 @@
               <td scope="col">{{$tenant->title}}</td>
               <td scope="col">{{$tenant->surname}}</td>
               <td scope="col">{{$tenant->familyname}}</td>
-              <td scope="col">{{$tenant->billingAddressFk}}</td>
-              <td scope="col">{{$tenant->billingAddressFk}}</td>
-              <td scope="col">{{$tenant->billingAddressFk}}</td>
-
+              <td scope="col">{{$tenant->dateOfBirth}}</td>
               <td scope="col"><a href="mailto:{{$tenant->email}}">{{$tenant->email}}</a></td>
-              <td scope="col"><a href={{route('tenants.show', [$tenant->id])}} type="button" class="btn btn-primary" >Details</a></td>
 
+              <!-- Buttons-->
+              <td scope="col"><a href={{route('tenants.show', [$tenant->id])}} type="button" class="btn btn-primary" >Details</a></td>
                 <td scope="col">
                 @if ($tenant->id)
                     <form action="{{ url("/tenants/$tenant->id") }}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                     <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
-
                     </form>
                 </td>
-                <td scope="col">
-                <!-- Button with sending attributes to modal-->
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editTenant">Bearbeiten</button>
-                </td>
+                <!-- End Buttons-->
                 @endif
         </tr>
           @endforeach
       </tbody>
-  </table>
+      </table>
+
 
   <!-- OLD, delete?-->
   <!--<a class="btn btn-primary" href={{route('tenants.create')}}>Mieter hinzufügen</a>-->
 
 
-  <!-- Button to open new Tenant creation -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newTenant">
+  <!-- Start Button to open new Tenant creation -->
+  <th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newTenant">
   Mieter hinzufügen
-  </button>
+  </button></th>
+  <!-- End of Button to open new Tenant creation -->
 
 
+
+<!-- Creation part-->
   <div class="modal fade" id="newTenant" tabindex="-1" role="dialog" aria-labelledby="newTenantLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">

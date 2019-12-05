@@ -11,7 +11,7 @@
   </div>
     <div class="col-4">
       @foreach($contract as $contract)
-        <label for="title">Nr.</label>
+        <label for="title">#</label>
         <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->id; ?>"  >
         <br>
         <label for="name">Beschreibung</label>
@@ -25,9 +25,6 @@
         <br>
         <label for="phone">Bis</label>
         <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->terminationDate; ?>">
-        <br>
-        <label for="email">Mietzinseingänge</label>
-        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->id; ?>">
         <br>
         <div class="btn-group">
         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editContract">Bearbeiten</button>
@@ -65,10 +62,12 @@
           <br>
           <span id="modal-myvar"></span>
           <br>
-
+          <label for="id">#</label>
+          <input class="form-control" type="text" value="<?php echo $contract->id; ?>" id="id" required>
+          <br>
           <label for="Description">Beschreibung</label>
           <div class="form-group">
-            <select class="form-control">
+            <select class="form-control" type="text">
             <option>Seeblick</option>
             <option>Hauptstrasse</option>
             <option>Altbau</option>
@@ -76,23 +75,15 @@
           </select>
           </div>
 
-          <label for="id">ID</label>
-          <input class="form-control" type="text" value="<?php echo $contract->id; ?>" id="id" required>
-          <br>
-            <label for="familyName">Name</label>
+            <label for="familyName">Mieter</label>
             <input type="text" class="form-control">
             <br>
-            <label for="squareMeters">Wohnfläche</label>
-            <input type="text" class="form-control">
+
+            <label for="birthday">Von</label>
+            <input type="date" class="form-control" name="title" value="<?PHP echo $contract->startDate; ?>">
             <br>
-            <label for="rentCost">Nettomiete</label>
-            <input type="text" class="form-control">
-            <br>
-            <label for="additionalCost">Nebenkosten</label>
-            <input type="text" class="form-control">
-            <br>
-            <label for="title">Bruttomiete</label>
-            <input type="text" class="form-control"  name="title" id="title" required>
+            <label for="phone">Bis</label>
+            <input type="date" class="form-control" name="title" value="<?PHP echo $contract->terminationDate; ?>">
             <br>
 
           </div>

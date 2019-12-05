@@ -12,13 +12,13 @@
       <label for="title">Anrede</label>
       <input readonly type="text" class="form-control" name="title" value="<?PHP echo $tenant->title; ?>">
       <br>
-      <label for="name">Vorname</label>
+      <label for="surname">Vorname</label>
       <input readonly type="text" class="form-control" name="surname" value="<?PHP echo $tenant->surname; ?>">
       <br>
-      <label for="lastName">Name</label>
+      <label for="familyname">Name</label>
       <input readonly type="text" class="form-control" name="familyname" value="<?PHP echo $tenant->familyname; ?>">
       <br>
-      <label for="birthday">Geburtsdatum</label>
+      <label for="dateOfBirth">Geburtsdatum</label>
       <input readonly type="text" class="form-control" name="dateOfBirth" value="<?PHP echo $tenant->dateOfBirth; ?>">
       <br>
       <label for="phone">Telefon</label>
@@ -42,7 +42,7 @@
       <input readonly type="text" class="form-control" name="title" value="<?PHP echo $tenant->billingAddressFk; ?>">
       <br>
 
-<tr>
+
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editTenant">Bearbeiten</button>
       <td scope="col">
       @if ($tenant->id)
@@ -55,7 +55,7 @@
       @endif
       <a href={{route('tenants.index')}} type="button" class="btn btn-secondary">Zurück</a>
       @endforeach
-    </tr>
+
       </div>
     </div>
   </div>
@@ -107,6 +107,8 @@
         <br>
         </div>
         </form>
+
+
         <!-- Formstruktur?? -->
         <!-- Buttons for Update NOT WORKING -->
                   <form id="userForm" action="/tenants/{{ $tenant->id }}" method="post">

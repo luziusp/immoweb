@@ -13,11 +13,12 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">Nr.</th>
+        <th scope="col">#</th>
         <th scope="col">Beschreibung</th>
         <th scope="col">Von</th>
         <th scope="col">Bis</th>
         <th scope="col">Mieter</th>
+        <th scope="col"></th>
         <th scope="col"></th>
     </tr>
     </thead>
@@ -40,10 +41,6 @@
                 {{ method_field('DELETE') }}
                 <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
                 </form>
-            </td>
-            <td scope="col">
-            <!-- Button with sending attributes to modal-->
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editContract">Bearbeiten</button>
             </td>
             @endif
         </tr>
@@ -76,16 +73,13 @@ Vertrag hinzufügen
       <br>
       <label for="Description">Beschreibung</label>
       <div class="form-group">
-        <select class="form-control"  id="Description" required>
+        <select class="form-control"  type="text" id="Description" required>
         <option>Seeblick</option>
         <option>Hauptstrasse</option>
         <option>Altbau</option>
         <option>Erdgeschoss</option>
       </select>
       </div>
-      <br>
-      <label for="squareMeters">Wohnfläche</label>
-      <input type="text" class="form-control" placeholder="m²" name="squareMeters" id="squareMeters" required>
       <br>
       <label for="familyname">Mieter</label>
       <input type="text" class="form-control" placeholder="Name" name="familyname" id="familyname" required>
@@ -126,7 +120,7 @@ Vertrag hinzufügen
 
       <label for="Description">Beschreibung</label>
       <div class="form-group">
-        <select class="form-control">
+        <select class="form-control" type="text">
         <option>Seeblick</option>
         <option>Hauptstrasse</option>
         <option>Altbau</option>

@@ -17,6 +17,7 @@
         <th scope="col">Nebenkosten</th>
         <th scope="col">Bruttomiete</th>
         <th scope="col"></th>
+        <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
@@ -25,7 +26,7 @@
 
         <tr>
             <td scope="col">{{$room->id}}</td>
-            <td scope="col">{{$room->appartmentName}}</td>
+            <td scope="col">{{$room->Description}}</td>
             <td scope="col">{{$room->squareMeters}}</td>
             <td scope="col">{{$room->rentCost}}</td>
             <td scope="col">{{$room->additionalCost}}</td>
@@ -40,10 +41,6 @@
                 <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
                 </form>
             </td>
-            <td scope="col">
-            <!-- Button with sending attributes to modal-->
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editAppartment">Bearbeiten</button>
-            </td>
             @endif
           </tr>
     @endforeach
@@ -57,7 +54,7 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newAppartment">
 Wohnung hinzufügen
 </button>
-
+<!-- End Button to open new Appartment creation -->
 
 
 
@@ -78,7 +75,7 @@ Wohnung hinzufügen
       <br>
 
         <label for="Description">Beschreibung</label>
-        <div class="form-group">
+        <div class="form-group" type="text">
           <select class="form-control"  id="Description" required>
           <option>Seeblick</option>
           <option>Hauptstrasse</option>
@@ -125,18 +122,12 @@ Wohnung hinzufügen
       <div class="modal-body">
       <br>
       <span id="modal-myvar"></span>
-      <br>
-
+        <label for="title">#</label>
+        <input type="text" class="form-control" value="<?PHP echo $room->id; ?>" >
+        <br>
         <label for="Description">Beschreibung</label>
-        <div class="form-group">
-          <select class="form-control"  id="Description" value="<?php echo $room->Description; ?>" required>
-          <option>Seeblick</option>
-          <option>Hauptstrasse</option>
-          <option>Altbau</option>
-          <option>Erdgeschoss</option>
-        </select>
-        </div>
-
+        <input readonly type="text" class="form-control" name="Description" value="<?PHP echo $room->Description; ?>" >
+        <br>
         <label for="squareMeters">Wohnfläche</label>
         <input type="text" class="form-control" value="<?php echo $room->squareMeters; ?>" name="squareMeters" id="squareMeters" required>
         <br>
