@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 class Tenants extends Model
 {
     protected $table = 'tenant';
+    protected $fillable =['title', 'familyname', 'surname', 'gender', 'phone','email','dateOfBirth', 'isActive'];
+  
+
+
+
     public static function find($id){
         $tenant = DB::table('tenant')->where('id',  $id)->get();
         return $tenant;
@@ -20,7 +25,7 @@ class Tenants extends Model
        }
 
 
-
+/*
     public static function addTenant($title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth, $room){
         $id = DB::table('tenant')->insertGetId(
 
@@ -35,12 +40,14 @@ class Tenants extends Model
          );
 
         }
-
+*/
         public static function deleteTenant($id){
         DB::table('tenantmap')->where('tenantFk', '=', $id)->update(['isActive' => false]);
         DB::table('tenant')->where('id', '=', $id)->update(['isActive' => false]);
 
         }
+
+        /*
         public static function updateTenant($id, $title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth){
                              DB::table('tenant')
                                          ->where('id', $id)
@@ -70,14 +77,14 @@ class Tenants extends Model
                  );
 
                 }
-
+*/
                 public static function deleteBillingAdress($id){
 
                         DB::table('billing_adress')->where('id', '=', $id)->update(['isActive' => false]);
 
                         }
 
-
+/*
                 public static function updateBillingAdress($id, $billingTitle, $billingFamilyName, $billingSurName, $billingZipCode, $billingCityName, $billingStreetName, $billingAdditionalStreetName){
                                              DB::table('billing_adress')
                                                          ->where('id', $id)
@@ -91,4 +98,5 @@ class Tenants extends Model
                                                                 ['dateOfBirth' => $dateOfBirth]
                                                          );
                           }
+                          */
 }

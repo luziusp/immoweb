@@ -7,7 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class Contracts extends Model
 {
-
+    
+    protected $table = 'contract';
+    protected $fillable =['startDate', 'terminationDate', 'rentPerMonth', 'tenantMapFk', 'appartmentFk', 'isActive'];
+  
 
 
     public function user()
@@ -15,7 +18,7 @@ class Contracts extends Model
         return $this->belongsTo('App\Rooms', 'id');
     }
 
-    protected $table = 'contract';
+
     public static function find($id){
         $contract = DB::table('contract')->where('id',  $id)->get();
         return $contract;

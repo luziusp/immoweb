@@ -45,7 +45,7 @@
             @endif
         </tr>
   @endforeach
-  @endif
+
 
 
 </table>
@@ -72,16 +72,6 @@ Vertrag hinzufügen
       <form action="{{ route('contracts.store') }}" method="post">
       <div class="modal-body">
       <br>
-      <label for="Description">Beschreibung</label>
-      <div class="form-group">
-        <select class="form-control"  type="text" id="Description" required>
-        <option>Seeblick</option>
-        <option>Hauptstrasse</option>
-        <option>Altbau</option>
-        <option>Erdgeschoss</option>
-      </select>
-      </div>
-      <br>
       <label for="familyname">Mieter</label>
       <input type="text" class="form-control" placeholder="Name" name="familyname" id="familyname" required>
       <br>
@@ -90,12 +80,15 @@ Vertrag hinzufügen
       <br>
       <label for="terminationDate">Bis</label>
       <input type="date" class="form-control" placeholder="Vertragsende" name="terminationDate" id="terminationDate" required>
+      <br>
+        <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
+        <br>
       </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
 
-        <button type="button" class="btn btn-success" type="submit">Speichern</button>
+        <button type="submit" class="btn btn-success" >Speichern</button>
 
       </div>
       </form>
@@ -122,15 +115,6 @@ Vertrag hinzufügen
       <span id="modal-myvar"></span>
       <br>
 
-      <label for="Description">Beschreibung</label>
-      <div class="form-group">
-        <select class="form-control" type="text">
-        <option>Seeblick</option>
-        <option>Hauptstrasse</option>
-        <option>Altbau</option>
-        <option>Erdgeschoss</option>
-      </select>
-      </div>
 
       <label for="id">ID</label>
       <input class="form-control" type="text" value="<?php echo $contract->id; ?>" id="id" required>
@@ -149,6 +133,9 @@ Vertrag hinzufügen
         <br>
         <label for="title">Bruttomiete</label>
         <input type="text" class="form-control"  name="title" id="title" required>
+        <br>
+               <br>
+        <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
         <br>
 
       </div>

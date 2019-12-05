@@ -90,7 +90,7 @@ class Rooms extends Model
             $room->save();
         }
 
-
+*/
         public static function deleteRoom($id){
         DB::table('appartment')->where('id', '=', $id)->update(['isActive' => false]);
 
@@ -108,5 +108,5 @@ class Rooms extends Model
                                            ['additionalCost' => $additionalCost]
                                            );
           }
-          */
+          
 }

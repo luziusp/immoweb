@@ -88,12 +88,15 @@ Rechnung hinzufügen
       <label for="amount">Betrag</label>
       <input type="text" class="form-control" placeholder="CHF" name="amount" id="amount" required>
       <br>
+      <br>
+        <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
+        <br>
 </div>
 
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
 
-  <button type="button" class="btn btn-success" type="submit">Speichern</button>
+  <button type="submit" class="btn btn-success" >Speichern</button>
 
 </div>
 </form>

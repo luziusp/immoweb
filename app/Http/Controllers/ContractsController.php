@@ -34,11 +34,24 @@ class ContractsController extends Controller
 
            return view('pages/contracts.index', ['contracts' => $contracts]);
          }
+
+         public function update (request $request, $id){
+
+        }
+        public function store (request $request){
+
+
+          Contracts::create($request->all());
+          return back();
+
+        }
+
+         /*
            public  function updateContract($id, $startDate, $tenantMapFk, $appartmentFk){
             Contracts::updateContract($id, $startDate, $tenantMapFk, $appartmentFk);
             $contracts = Contracts::getAll();
  
             return view('pages/contracts.index', ['contracts' => $contracts]);
            }
-
+*/
 }

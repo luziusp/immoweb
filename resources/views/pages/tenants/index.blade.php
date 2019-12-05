@@ -106,6 +106,9 @@
           <label for="billingCityName">Ort</label>
           <input type="text" class="form-control" placeholder="Ort" name="billingCityName" id="billingCityName">
           <br>
+          <br>
+        <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
+        <br>
         </div>
 
 

@@ -37,6 +37,7 @@ class TenantsController extends Controller
 
             return view('pages.tenants.index', ['tenants' => $tenants]);
           }
+          /*
           public static function updateBillingAdress($id, $billingTitle, $billingFamilyName, $billingSurName, $billingZipCode, $billingCityName, $billingStreetName, $billingAdditionalStreetName){
             
               Tenants::updateBillingAdress($id, $billingTitle, $billingFamilyName, $billingSurName, $billingZipCode, $billingCityName, $billingStreetName, $billingAdditionalStreetName);
@@ -51,6 +52,17 @@ class TenantsController extends Controller
               $tenants = Tenants::getAll();
   
               return view('pages.tenants.index', ['tenants' => $tenants]);
+            }
+*/
+            public function update (request $request, $id){
+
+            }
+            public function store (request $request){
+  
+  
+             Tenants::create($request->all());
+              return back();
+  
             }
           
 }

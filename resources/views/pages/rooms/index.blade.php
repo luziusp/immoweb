@@ -84,7 +84,7 @@ Wohnung hinzufügen
 
         <label for="Description">Beschreibung</label>
         <div class="form-group">
-          <select class="form-control"id="Description" required>
+          <select class="form-control"id="Description" name="Description" required>
           <option>Seeblick</option>
           <option>Hauptstrasse</option>
           <option>Altbau</option>
@@ -109,7 +109,7 @@ Wohnung hinzufügen
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
 
-        <button type="button" class="btn btn-success" type="submit">Speichern</button>
+        <button type="submit" class="btn btn-success" >Speichern</button>
 
       </div>
       </form>

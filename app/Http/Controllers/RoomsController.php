@@ -43,19 +43,6 @@ class RoomsController extends Controller
            Rooms::create($request->all());
             return back();
 
-           /*
-            Rooms::addRooms(
-              $request->appartmentName,
-              $request->noOfRooms,
-              $request->squareMeters,
-              $request->Description,
-              $request->rentCost,
-              $request->additionalCost
-            );
-            return back();
-            */
-            return $request->all();
-
           }
 
 
