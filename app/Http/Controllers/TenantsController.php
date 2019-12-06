@@ -37,26 +37,14 @@ class TenantsController extends Controller
 
             return view('pages.tenants.index', ['tenants' =>  $tenants]);
           }
-          /*
-          public static function updateBillingAdress($id, $billingTitle, $billingFamilyName, $billingSurName, $billingZipCode, $billingCityName, $billingStreetName, $billingAdditionalStreetName){
-            
-              Tenants::updateBillingAdress($id, $billingTitle, $billingFamilyName, $billingSurName, $billingZipCode, $billingCityName, $billingStreetName, $billingAdditionalStreetName);
-              $tenants = Tenants::getAll();
-  
-              return view('pages.tenants.index', ['tenants' => $tenants]);
-            }
 
-         public function updateTenant($id, $title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth){
+public function update (request $request, $id){
+  $data = request()->except(['_token', '_method', 'id']);
 
-              Tenants::updateTenant($id, $title, $familyname, $surname, $gender, $phone, $email, $dateOfBirth);
-              $tenants = Tenants::getAll();
-  
-              return view('pages.tenants.index', ['tenants' => $tenants]);
-            }
-*/
-            public function update (request $request, $id){
-
-            }
+  Tenants::whereId($id)->update($data);
+ 
+  return back();
+}
             public function store (request $request){
          
  

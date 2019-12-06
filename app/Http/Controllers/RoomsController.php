@@ -38,13 +38,7 @@ class RoomsController extends Controller
             $data = request()->except(['_token', '_method', 'id']);
      
             Rooms::whereId($id)->update($data);
-           /* return $request->all();
-
-            $room = Rooms::findOrFail($id);
-            $room->rentCost = 99999;
-            $room->save();
-*/
-      //     $room->update($request->all());
+           
             return back();
           }
 

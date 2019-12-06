@@ -30,8 +30,13 @@ class BillingController extends Controller
         $openInvoices = Billing::getAllOpenInvoices();
         return view('pages/billing.index', ['openInvoices' =>  $openInvoices]);
       }
-      public function update (request $request, $id){
 
+      public function update (request $request, $id){
+        $data = request()->except(['_token', '_method', 'id']);
+ 
+        Billing::whereId($id)->update($data);
+       
+        return back();
       }
       public function store (request $request){
 
