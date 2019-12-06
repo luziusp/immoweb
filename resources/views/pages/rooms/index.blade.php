@@ -130,6 +130,8 @@ Wohnung hinzufügen
         </button>
       </div>
       <form action="{{ route('rooms.update')/<?php echo $room->id; ?> }}" method="post">
+      @csrf
+    @method('PATCH')
       <div class="modal-body">
 
 
@@ -165,7 +167,8 @@ Wohnung hinzufügen
               
 
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
-                    <button type="submit" class="btn btn-success">Speichern</button>     </div>
+                    <button type="submit" class="btn btn-success">Speichern</button>     
+                    </div>
     </div>
     </form>
   </div>

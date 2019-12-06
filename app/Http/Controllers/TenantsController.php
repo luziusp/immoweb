@@ -35,7 +35,7 @@ class TenantsController extends Controller
             Tenants::deleteTenant($id);
             $tenants = Tenants::getAll();
 
-            return view('pages.tenants.index', ['tenants' => $tenants]);
+            return view('pages.tenants.index', ['tenants' =>  $tenants]);
           }
           /*
           public static function updateBillingAdress($id, $billingTitle, $billingFamilyName, $billingSurName, $billingZipCode, $billingCityName, $billingStreetName, $billingAdditionalStreetName){

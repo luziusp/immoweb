@@ -13,13 +13,12 @@ class Rooms extends Model
   protected $fillable =['appartmentName', 'noOfRooms', 'squareMeters', 'Description', 'rentCost', 'additionalCost', 'additionalCost', 'isActive'];
 
   //Defining relationship to contract
-  public function contract()
+
+
+  public function contracts()
   {
-    return $this->hasOne('App\Contracts', 'contractFk');
+      return $this->belongsTo('App\Contracts', 'id');
   }
-
-
-
 
 
 
@@ -32,7 +31,25 @@ class Rooms extends Model
     $rooms = DB::table('appartment')->where('isActive',  true)->get();;
     return $rooms;
    }
-       /*
+ 
+        public static function deleteRoom($id){
+        DB::table('appartment')->where('id', '=', $id)->update(['isActive' => false]);
+
+        }
+        public static function updateRoom($id, $appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
+                             DB::table('appartment')
+                                         ->where('id', $id)
+                                         ->update(
+
+                                           ['appartmentName' => $appartmentName ],
+                                           ['noOfRooms' => $noOfRooms],
+                                           ['squareMeters' => $squareMeters],
+                                           ['Description' => $Description],
+                                           ['rentCost' => $rentCost],
+                                           ['additionalCost' => $additionalCost]
+                                           );
+          }
+                /*
     public static function addRooms($appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
         $id = DB::table('appartment')->insertGetId(
 
@@ -91,22 +108,4 @@ class Rooms extends Model
         }
 
 */
-        public static function deleteRoom($id){
-        DB::table('appartment')->where('id', '=', $id)->update(['isActive' => false]);
-
-        }
-        public static function updateRoom($id, $appartmentName, $noOfRooms, $squareMeters, $Description, $rentCost, $additionalCost){
-                             DB::table('appartment')
-                                         ->where('id', $id)
-                                         ->update(
-
-                                           ['appartmentName' => $appartmentName ],
-                                           ['noOfRooms' => $noOfRooms],
-                                           ['squareMeters' => $squareMeters],
-                                           ['Description' => $Description],
-                                           ['rentCost' => $rentCost],
-                                           ['additionalCost' => $additionalCost]
-                                           );
-          }
-          
 }

@@ -13,11 +13,17 @@ class Contracts extends Model
   
 
 
-    public function user()
+ 
+    public function rooms()
     {
-        return $this->belongsTo('App\Rooms', 'id');
+      return $this->hasOne('App\Rooms', 'appartmentFk');
     }
-
+    
+    public function tenants()
+    {
+      return $this->hasOne('App\Tenants', 'tenantMapFk');
+    }
+  
 
     public static function find($id){
         $contract = DB::table('contract')->where('id',  $id)->get();

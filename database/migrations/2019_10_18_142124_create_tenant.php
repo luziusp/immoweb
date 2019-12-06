@@ -26,6 +26,8 @@ class CreateTenant extends Migration
             $table->date('dateOfBirth');
             $table->boolean('isActive');
 
+
+
         });
     }
 
