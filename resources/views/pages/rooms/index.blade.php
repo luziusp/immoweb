@@ -68,7 +68,6 @@ Wohnung hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-
       <form action="{{ route('rooms.store') }}" method="post">
       <div class="modal-body">
                 <label for="Description">Beschreibung</label>

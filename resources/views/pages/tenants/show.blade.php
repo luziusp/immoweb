@@ -26,39 +26,39 @@
       <br>
       <label for="email">E-Mail</label>
       <input readonly type="text" class="form-control" name="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" value="<?PHP echo $tenant->email; ?>">
-    </div>
+</div>
 
     <div class="col-1">
     </div>
 
     <div class="col-5">
-      <label for="street">Strasse</label>
-      <input readonly type="text" class="form-control" name="billingStreetName" value="<?PHP echo $tenant->billingAddressFk; ?>">
+      <label for="billingStreetName">Strasse</label>
+      <input readonly type="text" class="form-control" name="billingStreetName" value="<?PHP echo $tenant->billingStreetName; ?>">
       <br>
-      <label for="postal">PLZ</label>
-      <input readonly type="text" class="form-control" name="title" value="<?PHP echo $tenant->billingAddressFk; ?>">
+      <label for="billingZipCode">PLZ</label>
+      <input readonly type="text" class="form-control" name="billingZipCode" value="<?PHP echo $tenant->billingZipCode; ?>">
       <br>
-      <label for="city">Ort</label>
-      <input readonly type="text" class="form-control" name="title" value="<?PHP echo $tenant->billingAddressFk; ?>">
+      <label for="billingCityName">Ort</label>
+      <input readonly type="text" class="form-control" name="billingCityName" value="<?PHP echo $tenant->billingCityName; ?>">
       <br>
 
-
+      <div class="btn-group">
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editTenant">Bearbeiten</button>
-      <td scope="col">
+      <div scope="col">
       @if ($tenant->id)
           <form action="{{ url("/tenants/$tenant->id") }}" method="POST">
           {{ csrf_field() }}
           {{ method_field('DELETE') }}
           <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
           </form>
-      </td>
-      @endif
-      <a href={{route('tenants.index')}} type="button" class="btn btn-secondary">Zurück</a>
-      @endforeach
-
       </div>
-    </div>
-  </div>
+      @endif
+      <td scope="col"><a href={{route('tenants.index')}} type="button" class="btn btn-secondary">Zurück</a></td>
+      @endforeach
+      </div>
+</div>
+
+
 
 
 
@@ -72,57 +72,52 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="save.php" method="post">
+
+        <form method="post" action="{{ route('tenants.update', $tenant->id) }}">
+        @csrf
+        @method('PATCH')
+
         <div class="modal-body">
         <br>
-        <span id="modal-myvar"></span>
-        <br>
         <label for="title">Anrede</label>
-        <input class="form-control" type="text" value="<?PHP echo $tenant->title; ?>" id="title" required>
+        <input class="form-control" type="text" value="{{$tenant->title}}" name="title" id="title" required>
         <br>
         <label for="surname">Vorname</label>
-        <input class="form-control" type="text" value="<?PHP echo $tenant->surname; ?>" id="surname" required>
+        <input class="form-control" type="text" value="{{$tenant->surname}}" name="surname" id="surname" required>
         <br>
         <label for="familyname">Name</label>
-        <input class="form-control" type="text" value="<?PHP echo $tenant->familyname; ?>" id="familyname" required>
+        <input class="form-control" type="text" value="{{$tenant->familyname}}" name="familyname" id="familyname" required>
         <br>
         <label for="dateOfBirth">Geburtsdatum</label>
-        <input class="form-control" type="date" value="<?PHP echo $tenant->dateOfBirth; ?>" id="dateOfBirth" required>
+        <input class="form-control" type="date" value="{{$tenant->dateOfBirth}}" name="dateOfBirth" id="dateOfBirth" required>
         <br>
         <label for="phone">Telefon</label>
-        <input class="form-control" type="text" placeholder="+41" value="<?PHP echo $tenant->phone; ?>" id="phone" required>
+        <input class="form-control" type="text" placeholder="+41" value="{{$tenant->phone}}" name="phone" id="phone" required>
         <br>
         <label for="email">E-Mail</label>
-        <input class="form-control" type="text" placeholder="xyz@domain.ch" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" value="<?PHP echo $tenant->email; ?>" id="email" required>
+        <input class="form-control" type="text" placeholder="xyz@domain.ch" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" value="{{$tenant->email}}" name="email" id="email" required>
         <br>
         <label for="billingStreetName">Strasse</label>
-        <input type="text" class="form-control" value="<?PHP echo $tenant->billingAddressFk; ?>" id="billingStreetName" required>
+        <input type="text" class="form-control" value="{{$tenant->billingStreetName}}" name="billingStreetName" id="billingStreetName" required>
         <br>
         <label for="billingZipCode">PLZ</label>
-        <input type="text" class="form-control" value="<?PHP echo $tenant->billingAddressFk; ?>" id="billingZipCode" required>
+        <input type="text" class="form-control" value="{{$tenant->billingZipCode}}" name="billingZipCode" id="billingZipCode" required>
         <br>
         <label for="billingCityName">Ort</label>
-        <input type="text" class="form-control" value="<?PHP echo $tenant->billingAddressFk; ?>" id="billingCityName" required>
+        <input type="text" class="form-control" value="{{$tenant->billingCityName}}" name="billingCityName" id="billingCityName" required>
         <br>
+
+        <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+                      <button type="submit" class="btn btn-success">Speichern</button>
+                      </div>
         </div>
         </form>
 
-
-        <!-- Formstruktur?? -->
-        <!-- Buttons for Update NOT WORKING -->
-                  <form id="userForm" action="/tenants/{{ $tenant->id }}" method="post">
-                      <div class="modal-footer">
-                      @csrf
-                      @method('PUT')
-                      <input type="hidden" name="id">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
-                      <button type="submit" class="btn btn-success">Speichern</button>
-                    </div>
-                    </form>
       </div>
     </div>
   </div>
-
 </div>
+
 
 @endsection

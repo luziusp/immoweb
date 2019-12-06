@@ -76,7 +76,6 @@
         </div>
         <form action="{{ route('tenants.store') }}" method="post">
         <div class="modal-body">
-
           <label for="title">Anrede</label>
           <input class="form-control" type="text" placeholder="Frau / Herr" name="title" id="title" required>
           <br>
@@ -103,83 +102,26 @@
           <br>
           <label for="billingCityName">Ort</label>
           <input type="text" class="form-control" placeholder="Ort" name="billingCityName" id="billingCityName" required>
+          <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
 
-        <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
-    
-        </div>
 
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-
           <button type="submit" class="btn btn-success">Speichern</button>
+        </div>
 
+          </form>
+          </div>
           </div>
         </div>
-</form>
+
       </div>
-    </div>
-  </div>
 
 
 
-  <!-- Modal  Edit-->
-  <div class="modal fade" id="editTenant" tabindex="-1" role="dialog" aria-labelledby="editTenant" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editTenant">Mieter bearbeiten</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form method="post" action="{{ route('tenants.update', $tenant->id) }}">
-        <div class="modal-body">
-
-        <span id="modal-myvar"></span>
-
-        <label for="title">Anrede</label>
-        <input class="form-control" type="text" value="<?PHP echo $tenant->title; ?>" id="id" required>
-
-        <label for="surname">Vorname</label>
-        <input class="form-control" type="text" value="<?PHP echo $tenant->surname; ?>" id="surname" required>
-
-        <label for="familyname">Name</label>
-        <input class="form-control" type="text" value="<?PHP echo $tenant->familyname; ?>" id="familyname" required>
-
-        <label for="dateOfBirth">Geburtsdatum</label>
-        <input class="form-control" type="text" value="<?PHP echo $tenant->dateOfBirth; ?>" id="dateOfBirth" required>
-
-        <label for="phone">Telefon</label>
-        <input class="form-control" type="text" value="<?PHP echo $tenant->phone; ?>" id="phone" required>
-
-        <label for="email">E-Mail</label>
-        <input class="form-control" type="email" value="<?PHP echo $tenant->email; ?>" id="email" required>
 
 
-        <label for="billingStreetName">Strasse</label>
-        <input type="text" class="form-control" value="billingStreetName aus Billing" id="billingStreetName" required>
 
-        <label for="billingZipCode">PLZ</label>
-        <input type="text" class="form-control" value="billingZipCode" id="billingZipCode" required>
-
-        <label for="billingCityName">Ort</label>
-        <input type="text" class="form-control" value="billingCityName" id="billingCityName" required>
-
-        </div>
-
-        <div class="modal-footer">
-        <!-- Buttons for Update NOT WORKING -->
-                  <form id="userForm" action="/tenants/{{ $tenant->id }}" method="post">
-                      @csrf
-                      @method('PATCH')
-                      <input type="hidden" name="id">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
-                      <button type="submit" class="btn btn-success">Speichern</button>     </div>
-      </div>
-      </form>
-    </div>
-  </div>
-</div>
 
   @endsection
