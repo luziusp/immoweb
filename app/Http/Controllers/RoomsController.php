@@ -43,7 +43,6 @@ class RoomsController extends Controller
           }
 
           public function store (request $request){
-            return $request->all();
 
            Rooms::create($request->all());
             return back();
