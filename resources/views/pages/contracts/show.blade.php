@@ -14,11 +14,11 @@
         <label for="title">#</label>
         <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->id; ?>"  >
         <br>
-        <label for="name">Beschreibung</label>
-        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->id; ?>">
-        <br>
         <label for="lastName">Mieter</label>
         <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->tenantMapFk; ?>">
+        <br>
+        <label for="Description">Beschreibung</label>
+        <input readonly type="text" class="form-control" name="Description" value="Objekt-Typ aus Tabelle Wohnung" >
         <br>
         <label for="birthday">Von</label>
         <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->startDate; ?>">
@@ -62,25 +62,30 @@
           <form action="save.php" method="post">
           <div class="modal-body">
 
-          <br>
           <span id="modal-myvar"></span>
-          <br>
+          
           <label for="id">#</label>
           <input class="form-control" type="text" value="<?php echo $contract->id; ?>" id="id" required>
           <br>
-          <label for="Description">Beschreibung</label>
+          <label for="familyName">Mieter</label>
           <div class="form-group">
-            <select class="form-control" type="text">
-            <option>Seeblick</option>
-            <option>Hauptstrasse</option>
-            <option>Altbau</option>
-            <option>Erdgeschoss</option>
+            <select class="form-control"id="Description" name="Description" required>
+            <option>Mieter1 aus DB (Tenant)</option>
+            <option>Mieter2</option>
+            <option>Mieter3</option>
+            <option>Mieter4</option>
           </select>
           </div>
 
-            <label for="familyName">Mieter</label>
-            <input type="text" class="form-control">
-            <br>
+          <label for="familyName">Beschreibung</label>
+          <div class="form-group">
+            <select class="form-control"id="Description" name="Description" required>
+            <option>Wohnung1 aus DB (Room)</option>
+            <option>Wohnung2</option>
+            <option>Wohnung3</option>
+            <option>Wohnung4</option>
+          </select>
+          </div>
 
             <label for="birthday">Von</label>
             <input type="date" class="form-control" name="title" value="<?PHP echo $contract->startDate; ?>">
@@ -88,6 +93,7 @@
             <label for="phone">Bis</label>
             <input type="date" class="form-control" name="title" value="<?PHP echo $contract->terminationDate; ?>">
             <br>
+
 
           </div>
           </form>

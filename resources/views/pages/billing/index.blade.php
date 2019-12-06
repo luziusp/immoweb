@@ -75,11 +75,13 @@ Rechnung hinzufügen
       <label for="type">Rechnungstyp</label>
       <div class="form-group">
         <select class="form-control"  id="type" required>
+        <option></option>
         <option>Öl</option>
         <option>Wasser</option>
         <option>Strom</option>
         <option>Reparatur</option>
         <option>Heizung</option>
+        <option>Sonstige</option>
       </select>
       </div>
       <label for="dueDate">Rechnungsdatum</label>
@@ -88,14 +90,15 @@ Rechnung hinzufügen
       <label for="amount">Betrag</label>
       <input type="text" class="form-control" placeholder="CHF" name="amount" id="amount" required>
       <br>
-      <br>
+      <label for="amount">Kommentar</label>
+      <input textarea class="form-control" placeholder="Wenn Rechnungstyp 'Sonstige' oder bei Bedarf" name="text"id="text" ></input>
+
         <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
         <br>
 </div>
 
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-
   <button type="submit" class="btn btn-success" >Speichern</button>
   </div>
 
@@ -113,24 +116,24 @@ Rechnung hinzufügen
       <div class="modal-header">
         <h5 class="modal-title" id="editBilling">Rechnung bearbeiten</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="{{ route('billing.update')/<?php echo $openInvoice->id; ?> }}" method="post">
       <div class="modal-body">
 
       </div>
-
+      <form action="{{ route('billing.update')/<?php echo $openInvoice->id; ?> }}" method="post">
       <div class="modal-footer">
       <!-- Buttons for Update NOT WORKING -->
-                <form id="userForm" action="/billing/{{ $openInvoice->id }}" method="post">
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="id">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
                     <button type="submit" class="btn btn-success">Speichern</button>     </div>
-    </div>
+
     </form>
+    </div>
   </div>
 </div>
 </div>

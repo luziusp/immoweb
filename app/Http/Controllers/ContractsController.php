@@ -12,7 +12,7 @@ class ContractsController extends Controller
        public function index(){
         $contracts = Contracts::getAll();
         $tenants = Tenants::getAll();
-               return view('pages/contracts.index', ['contracts' => $contracts], ['tenants' => $tenants]);
+               return view('pages/contracts.index', ['contracts' => $contracts], ['tenants' =>  $tenants]);
 
        }
        public function show($id)
@@ -36,7 +36,11 @@ class ContractsController extends Controller
          }
 
          public function update (request $request, $id){
+          $data = request()->except(['_token', '_method', 'id']);
 
+          Contracts::whereId($id)->update($data);
+
+          return back();
         }
         public function store (request $request){
 

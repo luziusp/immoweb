@@ -26,6 +26,12 @@ class CreateTenant extends Migration
             $table->date('dateOfBirth');
             $table->boolean('isActive');
 
+
+            $table->string('billingZipCode');
+            $table->string('billingCityName');
+            $table->string('billingStreetName');
+            $table->string('billingAdditionalStreetName')->nullable();
+
         });
     }
 

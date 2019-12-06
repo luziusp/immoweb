@@ -103,10 +103,9 @@
           <br>
           <label for="billingCityName">Ort</label>
           <input type="text" class="form-control" placeholder="Ort" name="billingCityName" id="billingCityName" required>
-          <br>
-          <br>
+
         <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
-        <br>
+    
         </div>
 
 
@@ -134,46 +133,46 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="{{ route('tenants.update')/<?php echo $tenant->id; ?> }}" method="post">
+        <form method="post" action="{{ route('tenants.update', $tenant->id) }}">
         <div class="modal-body">
-        <br>
+
         <span id="modal-myvar"></span>
-        <br>
+
         <label for="title">Anrede</label>
         <input class="form-control" type="text" value="<?PHP echo $tenant->title; ?>" id="id" required>
-        <br>
+
         <label for="surname">Vorname</label>
         <input class="form-control" type="text" value="<?PHP echo $tenant->surname; ?>" id="surname" required>
-        <br>
+
         <label for="familyname">Name</label>
         <input class="form-control" type="text" value="<?PHP echo $tenant->familyname; ?>" id="familyname" required>
-        <br>
+
         <label for="dateOfBirth">Geburtsdatum</label>
         <input class="form-control" type="text" value="<?PHP echo $tenant->dateOfBirth; ?>" id="dateOfBirth" required>
-        <br>
+
         <label for="phone">Telefon</label>
         <input class="form-control" type="text" value="<?PHP echo $tenant->phone; ?>" id="phone" required>
-        <br>
+
         <label for="email">E-Mail</label>
         <input class="form-control" type="email" value="<?PHP echo $tenant->email; ?>" id="email" required>
 
 
         <label for="billingStreetName">Strasse</label>
-        <input type="text" class="form-control" value="<?PHP echo $tenant->billingAddressFk; ?>" id="billingStreetName" required>
-        <br>
+        <input type="text" class="form-control" value="billingStreetName aus Billing" id="billingStreetName" required>
+
         <label for="billingZipCode">PLZ</label>
-        <input type="text" class="form-control" value="<?PHP echo $tenant->billingAddressFk; ?>" id="billingZipCode" required>
-        <br>
+        <input type="text" class="form-control" value="billingZipCode" id="billingZipCode" required>
+
         <label for="billingCityName">Ort</label>
-        <input type="text" class="form-control" value="<?PHP echo $tenant->billingAddressFk; ?>" id="billingCityName" required>
-        <br>
+        <input type="text" class="form-control" value="billingCityName" id="billingCityName" required>
+
         </div>
 
         <div class="modal-footer">
         <!-- Buttons for Update NOT WORKING -->
                   <form id="userForm" action="/tenants/{{ $tenant->id }}" method="post">
                       @csrf
-                      @method('PUT')
+                      @method('PATCH')
                       <input type="hidden" name="id">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
                       <button type="submit" class="btn btn-success">Speichern</button>     </div>

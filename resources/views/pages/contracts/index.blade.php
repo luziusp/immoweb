@@ -68,12 +68,28 @@ Vertrag hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
       <form action="{{ route('contracts.store') }}" method="post">
+
       <div class="modal-body">
-      <br>
       <label for="familyname">Mieter</label>
-      <input type="text" class="form-control" placeholder="Name" name="familyname" id="familyname" required>
-      <br>
+      <div class="form-group">
+        <select class="form-control"id="Description" name="Description" required>
+        <option>Mieter1 aus DB (Tenant)</option>
+        <option>Mieter2</option>
+        <option>Mieter3</option>
+        <option>Mieter4</option>
+      </select>
+      </div>
+              <label for="Description">Beschreibung</label>
+              <div class="form-group">
+                <select class="form-control"id="Description" name="Description" required>
+                <option>Wohnung1 aus DB (Room)</option>
+                <option>Wohnung2</option>
+                <option>Wohnung3</option>
+                <option>Wohnung4</option>
+              </select>
+              </div>
       <label for="startDate">Von</label>
       <input type="date" class="form-control" placeholder="Vertragsstart" name="startDate" id="startDate" required>
       <br>
@@ -118,7 +134,10 @@ Vertrag hinzufügen
       <label for="id">#</label>
       <input class="form-control" type="text" value="<?php echo $contract->id; ?>" id="id" required>
       <br>
-        <label for="familyName">Name</label>
+        <label for="familyName">Mieter</label>
+        <input type="text" class="form-control" required>
+        <br>
+        <label for="familyName">Beschreibung</label>
         <input type="text" class="form-control" required>
         <br>
         <label for="squareMeters">Wohnfläche</label>

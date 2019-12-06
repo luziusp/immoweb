@@ -11,7 +11,7 @@ class BillingController extends Controller
     public function index(){
 
                     $openInvoices = Billing::getAllOpenInvoices();
-                   return view('pages/billing.index', ['openInvoices' => $openInvoices]);
+                   return view('pages/billing.index', ['openInvoices' =>  $openInvoices]);
 
     }
     public function show($id)
@@ -28,11 +28,15 @@ class BillingController extends Controller
       {
         Billing::deleteBilling($id);
         $openInvoices = Billing::getAllOpenInvoices();
-        return view('pages/billing.index', ['openInvoices' => $openInvoices]);
+        return view('pages/billing.index', ['openInvoices' =>  $openInvoices]);
       }
+
       public function update (request $request, $id){
+        $data = request()->except(['_token', '_method', 'id']);
 
+        Billing::whereId($id)->update($data);
 
+        return back();
       }
       public function store (request $request){
 

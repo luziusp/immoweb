@@ -68,103 +68,57 @@ Wohnung hinzufügen
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="{{ route('rooms.store') }}" method="post">
 
+      <form action="{{ route('rooms.store') }}" method="post">
       <div class="modal-body">
-      <br>
-      <label for="Description">Beschreibung</label>
-      <div class="form-group">
-        <select class="form-control"id="Description" name="Description" required>
-        <option></option>
-        <option>Seeblick</option>
-        <option>Hauptstrasse</option>
-        <option>Altbau</option>
-        <option>Erdgeschoss</option>
-      </select>
-      </div>
-      <label for="squareMeters">Wohnfläche</label>
-      <input type="text" class="form-control" placeholder="m²" name="squareMeters" id="squareMeters" required>
-      <br>
-        <label for="noOfRooms">Anzahl Zimmer</label>
-        <input type="text" class="form-control" placeholder="Anzahl Zimmer" name="noOfRooms" id="noOfRooms" required>
-        <br>
+        <div class="form-group">
+                <label for="Description">Beschreibung</label>
+                </div>
+                <div class="form-group">
+                  <select class="form-control" id="Description" name="Description" required>
+                  <option></option>
+                  <option>Seeblick</option>
+                  <option>Hauptstrasse</option>
+                  <option>Altbau</option>
+                  <option>Erdgeschoss</option>
+                </select>
+                </div>
+        <div class="form-group">
+        <label for="squareMeters">Wohnfläche</label>
+        <input type="text" class="form-control" placeholder="m²" name="squareMeters" id="squareMeters" required>
+        </div>
+        <div class="form-group">
+                <label for="noOfRooms">Anzahl Zimmer</label>
+                <input type="text" class="form-control" placeholder="Anzahl Zimmer" name="noOfRooms" id="noOfRooms" required>
+        </div>
+
+        <div class="form-group">
         <label for="rentCost">Nettomiete</label>
         <input type="text" class="form-control" placeholder="Nettomiete" name="rentCost" id="rentCost" required>
-        <br>
+        </div>
+        <div class="form-group">
         <label for="additionalCost">Nebenkosten</label>
         <input type="text" class="form-control" placeholder="Nebenkosten" name="additionalCost" id="additionalCost" required>
-        <br>
+        </div>
+        <div class="form-group">
         <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
-        <br>
+        </div>
       </div>
 
 
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-
         <button type="submit" class="btn btn-success" >Speichern</button>
-
       </div>
+
       </form>
+
     </div>
   </div>
 </div>
 
-
-
-<!-- Modal  Edit-->
-<div class="modal fade" id="editAppartment" tabindex="-1" role="dialog" aria-labelledby="editAppartment" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editAppartment">Wohnungsdaten bearbeiten</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form action="{{ route('rooms.update')/<?php echo $room->id; ?> }}" method="post">
-      <div class="modal-body">
-
-
-      <input type= "hidden" name = "id" value = "<?php echo $room->id; ?>">
-
-      <br>
-      <span id="modal-myvar"></span>
-        <label for="title">#</label>
-        <input type="text" class="form-control" value="<?PHP echo $room->id; ?>" required readonly>
-        <br>
-
-        <label for="noOfRooms">Name</label>
-        <input type="text" class="form-control" value="<?php echo $room->noOfRooms; ?>" name="noOfRooms" id="noOfRooms" required>
-        <br>
-        <label for="Description">Beschreibung</label>
-        <input readonly type="text" class="form-control" name="Description" value="<?PHP echo $room->Description; ?>" >
-        <br>
-        <label for="squareMeters">Wohnfläche</label>
-        <input type="text" class="form-control" value="<?php echo $room->squareMeters; ?>" name="squareMeters" id="squareMeters" required>
-        <br>
-        <label for="rentCost">Nettomiete</label>
-        <input type="text" class="form-control" value="<?php echo $room->rentCost; ?>" name="rentCost" id="rentCost" required>
-        <br>
-        <label for="additionalCost">Nebenkosten</label>
-        <input type="text" class="form-control" value="<?php echo $room->additionalCost; ?>" name="additionalCost" id="additionalCost" required>
-        <br>
-        <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
-        <br>
-      </div>
-
-      <div class="modal-footer">
-
-
-
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
-                    <button type="submit" class="btn btn-success">Speichern</button>     </div>
-    </div>
-    </form>
-  </div>
 </div>
 
-</div>
 
 @endsection
