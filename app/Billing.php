@@ -11,7 +11,7 @@ class Billing extends Model
     protected $table = 'invoice';
 
     protected $fillable =['contractFk', 'type', 'amount', 'dueDate', 'isPayed', 'isActive'];
-  
+
 
     public static function getAllOpenInvoices(){
         $openInvoices = DB::table('invoice')->where('isPayed',  false)->get();

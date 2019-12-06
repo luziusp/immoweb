@@ -11,12 +11,12 @@ class BillingController extends Controller
     public function index(){
 
                     $openInvoices = Billing::getAllOpenInvoices();
-                   return view('pages/billing.index', ['openInvoices' =>  $openInvoices]);
+                   return view('pages.billing.index', ['openInvoices' =>  $openInvoices]);
 
     }
     public function show($id)
       {
-        $billing = Billing::find($id);
+        $openInvoice = Billing::find($id);
         return view('pages.billing.show', ['openInvoice' => $openInvoice]);
       }
 

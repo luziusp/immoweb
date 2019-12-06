@@ -10,21 +10,23 @@
   <div class="col-4">
   </div>
     <div class="col-4">
+      @foreach($openInvoice as $openInvoice)
         <label for="title">#</label>
-        <input readonly type="text" class="form-control" name="title" >
+        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $openInvoice->id; ?>" >
         <br>
         <label for="name">Rechnungstyp</label>
-        <input readonly type="text" class="form-control" name="title" >
+        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $openInvoice->id; ?>" >
         <br>
         <label for="dueDate">Rechnungsdatum</label>
-        <input readonly type="text" class="form-control" name="dueDate" >
+        <input readonly type="text" class="form-control" name="dueDate" value="<?PHP echo $openInvoice->id; ?>" >
         <br>
         <label for="lastName">Betrag</label>
-        <input readonly type="text" class="form-control" name="title">
+        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $openInvoice->id; ?>" >
         <br>
         <button type="submit" class="btn btn-warning">Bearbeiten</button>
         <button type="submit" class="btn btn-danger">Löschen</button>
         <button type="submit" class="btn btn-secondary">Zurück</button>
+          @endforeach
       </div>
 
     <div class="col-4">

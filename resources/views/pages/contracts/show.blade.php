@@ -7,44 +7,81 @@
 
 <div class="container">
   <div class="row">
+
   <div class="col-4">
-  </div>
-    <div class="col-4">
-      @foreach($contract as $contract)
-        <label for="title">#</label>
-        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->id; ?>"  >
-        <br>
-        <label for="lastName">Mieter</label>
-        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->tenantMapFk; ?>">
-        <br>
-        <label for="Description">Beschreibung</label>
-        <input readonly type="text" class="form-control" name="Description" value="Objekt-Typ aus Tabelle Wohnung" >
-        <br>
-        <label for="birthday">Von</label>
-        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->startDate; ?>">
-        <br>
-        <label for="phone">Bis</label>
-        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->terminationDate; ?>">
-        <br>
-        <label for="phone">Monatsmiete</label>
-        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->rentPerMonth; ?>">
-        <br>
-        <div class="btn-group">
-        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editContract">Bearbeiten</button>
-        <br>
-        <div scope="col">
-        @if ($contract->id)
-            <form action="{{ url("/contracts/$contract->id") }}" method="POST">
-            {{ csrf_field() }}
-            {{ method_field('DELETE') }}
-            <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
-            </form>
-        </div>
-        @endif
-        <td scope="col"><a href={{route('contracts.index')}} type="button" class="btn btn-secondary" >Zurück</a></td>
-        @endforeach
+    @foreach($contract as $contract)
+      <label for="title">#</label>
+      <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->id; ?>"  >
+      <br>
+      <label for="lastName">Mieter</label>
+      <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->tenantMapFk; ?>">
+      <br>
+      <label for="Description">Beschreibung</label>
+      <input readonly type="text" class="form-control" name="Description" value="Objekt-Typ aus Tabelle Wohnung" >
+      <br>
+      <label for="birthday">Von</label>
+      <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->startDate; ?>">
+      <br>
+      <label for="phone">Bis</label>
+      <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->terminationDate; ?>">
+      <br>
+      <label for="phone">Monatsmiete</label>
+      <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->rentPerMonth; ?>">
+      <br>
+      <div class="btn-group">
+      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editContract">Bearbeiten</button>
+      <br>
+      <div scope="col">
+      @if ($contract->id)
+          <form action="{{ url("/contracts/$contract->id") }}" method="POST">
+          {{ csrf_field() }}
+          {{ method_field('DELETE') }}
+          <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
+          </form>
       </div>
-    </div>
+      @endif
+      <td scope="col"><a href={{route('contracts.index')}} type="button" class="btn btn-secondary" >Zurück</a></td>
+      @endforeach
+      </div>
+      </div>
+
+      <!--End Details-->
+
+      <!--Start Payments-->
+      <div class="col-6">
+        <h4 align="left">Mietzinseingänge</h4>
+        <table class="table table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <th>Jahr</th>
+              <th>Monat</th>
+              <th>Bezahlt - Offen</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th>2019</th>
+              <th>Dezember</th>
+              <th></th>
+            </tr>
+            <tr>
+              <th>2019</th>
+              <th>November</th>
+              <th>Bezahlt - Offen</th>
+            </tr>
+            <tr>
+              <th>2019</th>
+              <th>Oktober</th>
+              <th>Bezahlt - Offen</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
 
 
 
@@ -63,7 +100,7 @@
           <div class="modal-body">
 
           <span id="modal-myvar"></span>
-          
+
           <label for="id">#</label>
           <input class="form-control" type="text" value="<?php echo $contract->id; ?>" id="id" required>
           <br>
