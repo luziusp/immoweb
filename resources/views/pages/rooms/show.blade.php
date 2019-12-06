@@ -17,20 +17,23 @@
         <label for="Description">Beschreibung</label>
         <input readonly type="text" class="form-control" name="Description" value="<?PHP echo $room->Description; ?>" >
         <br>
-        <label for="lastName">Wohnfläche</label>
-        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $room->squareMeters; ?>" >
+        <label for="appartmentName">Wohnungstitel</label>
+        <input readonly type="text" class="form-control" name="appartmentName" value="<?PHP echo $room->appartmentName; ?>" >
+        <br>
+        <label for="squareMeters">Wohnfläche</label>
+        <input readonly type="text" class="form-control" name="squareMeters" value="<?PHP echo $room->squareMeters; ?>" >
         <br>
         <label for="noOfRooms">Anzahl Zimmer</label>
         <input readonly type="text" class="form-control" value="<?php echo $room->noOfRooms; ?>" >
         <br>
-        <label for="birthday">Nettomiete</label>
-        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $room->rentCost; ?>">
+        <label for="rentCost">Nettomiete</label>
+        <input readonly type="text" class="form-control" name="rentCost" value="<?PHP echo $room->rentCost; ?>">
         <br>
-        <label for="phone">Nebenkosten</label>
-        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $room->additionalCost; ?>" >
+        <label for="additionalCost">Nebenkosten</label>
+        <input readonly type="text" class="form-control" name="additionalCost" value="<?PHP echo $room->additionalCost; ?>" >
         <br>
-        <label for="email">Bruttomiete</label>
-        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $room->rentCost+$room->additionalCost; ?>">
+        <label for="totalCost">Bruttomiete</label>
+        <input readonly type="text" class="form-control" name="totalCost" value="<?PHP echo $room->rentCost+$room->additionalCost; ?>">
         <br>
 
 
@@ -83,6 +86,9 @@
         <div class="form-group">
         <label for="Description">Beschreibung</label>
         <input readonly type="text" class="form-control" name="Description" value="{{$room->Description}}" >
+        <br>
+        <label for="appartmentName">Wohnungstitel</label>
+        <input readonly type="text" class="form-control" name="appartmentName" value="{{$room->appartmentName}}" >
         <br>
         </div>
         <div class="form-group">

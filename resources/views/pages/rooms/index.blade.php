@@ -71,10 +71,7 @@ Wohnung hinzufügen
 
       <form action="{{ route('rooms.store') }}" method="post">
       <div class="modal-body">
-        <div class="form-group">
                 <label for="Description">Beschreibung</label>
-                </div>
-                <div class="form-group">
                   <select class="form-control" id="Description" name="Description" required>
                   <option></option>
                   <option>Seeblick</option>
@@ -82,27 +79,38 @@ Wohnung hinzufügen
                   <option>Altbau</option>
                   <option>Erdgeschoss</option>
                 </select>
-                </div>
+                <br>
         <div class="form-group">
+        <label for="appartmentName">Wohnungstitel</label>
+          <select class="form-control" id="Description"  id="appartmentName" name="appartmentName" required>
+          <option></option>
+          <option>Wohnung 1</option>
+          <option>Wohnung 2</option>
+          <option>Wohnung 3</option>
+          <option>Wohnung 4</option>
+          <option>Wohnung 5</option>
+          <option>Wohnung 6</option>
+          <option>Wohnung 7</option>
+          <option>Wohnung 8</option>
+          <option>Wohnung 9</option>
+          <option>Wohnung 10</option>
+          <option>Wohnung 11</option>
+          <option>Wohnung 12</option>
+        </select>
+        <br>
         <label for="squareMeters">Wohnfläche</label>
         <input type="text" class="form-control" placeholder="m²" name="squareMeters" id="squareMeters" required>
-        </div>
-        <div class="form-group">
-                <label for="noOfRooms">Anzahl Zimmer</label>
-                <input type="text" class="form-control" placeholder="Anzahl Zimmer" name="noOfRooms" id="noOfRooms" required>
-        </div>
-
-        <div class="form-group">
+        <br>
+        <label for="noOfRooms">Anzahl Zimmer</label>
+        <input type="text" class="form-control" placeholder="Anzahl Zimmer" name="noOfRooms" id="noOfRooms" required>
+        <br>
         <label for="rentCost">Nettomiete</label>
         <input type="text" class="form-control" placeholder="Nettomiete" name="rentCost" id="rentCost" required>
-        </div>
-        <div class="form-group">
+        <br>
         <label for="additionalCost">Nebenkosten</label>
         <input type="text" class="form-control" placeholder="Nebenkosten" name="additionalCost" id="additionalCost" required>
-        </div>
-        <div class="form-group">
+        <br>
         <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
-        </div>
       </div>
 
 
