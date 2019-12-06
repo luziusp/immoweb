@@ -18,7 +18,7 @@ class CreateRoom extends Migration
             $table->timestamps();
             $table->string('appartmentName');
             $table->double('noOfRooms');
-            $table->tinyInteger('squareMeters');
+            $table->unsignedBigInteger('squareMeters');
             $table->string('Description')->nullable();
             $table->double('rentCost')->nullable();
             $table->double('additionalCost')->nullable();
