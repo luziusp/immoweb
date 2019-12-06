@@ -21,19 +21,19 @@
         <input readonly type="text" class="form-control" name="appartmentName" value="<?PHP echo $room->appartmentName; ?>" >
         <br>
         <label for="squareMeters">Wohnfläche</label>
-        <input readonly type="text" class="form-control" name="squareMeters" value="<?PHP echo $room->squareMeters; ?>" >
+        <input readonly type="number" class="form-control" name="squareMeters" value="<?PHP echo $room->squareMeters; ?>" >
         <br>
         <label for="noOfRooms">Anzahl Zimmer</label>
-        <input readonly type="text" class="form-control" value="<?php echo $room->noOfRooms; ?>" >
+        <input readonly type="number" class="form-control" value="<?php echo $room->noOfRooms; ?>" >
         <br>
         <label for="rentCost">Nettomiete</label>
-        <input readonly type="text" class="form-control" name="rentCost" value="<?PHP echo $room->rentCost; ?>">
+        <input readonly type="number" class="form-control" name="rentCost" value="<?PHP echo $room->rentCost; ?>">
         <br>
         <label for="additionalCost">Nebenkosten</label>
-        <input readonly type="text" class="form-control" name="additionalCost" value="<?PHP echo $room->additionalCost; ?>" >
+        <input readonly type="number" class="form-control" name="additionalCost" value="<?PHP echo $room->additionalCost; ?>" >
         <br>
         <label for="totalCost">Bruttomiete</label>
-        <input readonly type="text" class="form-control" name="totalCost" value="<?PHP echo $room->rentCost+$room->additionalCost; ?>">
+        <input readonly type="number" class="form-control" name="totalCost" value="<?PHP echo $room->rentCost+$room->additionalCost; ?>">
         <br>
 
 
@@ -93,23 +93,23 @@
         </div>
         <div class="form-group">
         <label for="squareMeters">Wohnfläche</label>
-        <input type="text" class="form-control" value="{{$room->squareMeters}}" name="squareMeters" id="squareMeters" required>
+        <input type="number" class="form-control" value="{{$room->squareMeters}}" name="squareMeters" id="squareMeters" required>
         <br>
         </div>
         <div class="form-group">
         <label for="noOfRooms">Anzahl Zimmer</label>
-        <input type="text" class="form-control" value="{{$room->noOfRooms}}" name="noOfRooms" id="noOfRooms" required>
+        <input type="number" class="form-control" value="{{$room->noOfRooms}}" name="noOfRooms" id="noOfRooms" required>
         <br>
         </div>
 
         <div class="form-group">
         <label for="rentCost">Nettomiete</label>
-        <input type="text" class="form-control" value="{{$room->rentCost}}" name="rentCost" id="rentCost" required>
+        <input type="number" class="form-control" value="{{$room->rentCost}}" name="rentCost" id="rentCost" required>
         <br>
         </div>
         <div class="form-group">
         <label for="additionalCost">Nebenkosten</label>
-        <input type="text" class="form-control" value="{{$room->additionalCost}}" name="additionalCost" id="additionalCost" required>
+        <input type="number" class="form-control" value="{{$room->additionalCost}}" name="additionalCost" id="additionalCost" required>
         </div>
         <div class="form-group">
         <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
@@ -127,7 +127,6 @@
     </form>
   </div>
 </div>
-
 </div>
 
 

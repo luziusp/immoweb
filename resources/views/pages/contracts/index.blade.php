@@ -6,9 +6,7 @@
 
 @section('content')
   <div class="container box">
-
   <h3 align="left">Vertragsübersicht</h3></br>
-  <div class="panel panel-default">
 
 <table class="table">
     <thead>
@@ -22,12 +20,13 @@
         <th scope="col"></th>
     </tr>
     </thead>
+
     <tbody>
 
 @foreach( $contracts as $contract )
         <tr>
             <td scope="col">{{$contract->id}}</td>
-            <td scope="col">Objekt-Typ aus Tabelle Wohnung</td>
+            <td scope="col">{{$contract->appartmentFk}}</td>
             <td scope="col">{{$contract->startDate}}</td>
             <td scope="col">{{$contract->terminationDate}}</td>
             <td scope="col">{{$contract->tenantMapFk}}</td>
@@ -46,7 +45,7 @@
             @endif
         </tr>
   @endforeach
-
+</tbody>
 </table>
 <!-- OLD, delete?-->
 <!--<a class="btn btn-primary" href={{route('contracts.create')}}>Wohnung hinzufügen</a>-->
@@ -98,6 +97,9 @@ Vertrag hinzufügen
       <br>
         <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
         <br>
+        <label for="rentPerMonth">Monatsmiete</label>
+        <input type="number" class="form-control" placeholder="CHF" name="rentPerMonth" id="rentPerMonth" required>
+        <br>
       </div>
 
       <div class="modal-footer">
@@ -109,75 +111,5 @@ Vertrag hinzufügen
       </form>
     </div>
   </div>
-</div>
-
-
-
-<!-- Modal  Edit-->
-<div class="modal fade" id="editContract" tabindex="-1" role="dialog" aria-labelledby="editContract" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editContract">Vertragsdaten bearbeiten</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form action="{{ route('contracts.update')/<?php echo $contract->id; ?> }}" method="post">
-      <div class="modal-body">
-
-      <br>
-      <span id="modal-myvar"></span>
-      <br>
-
-
-      <label for="id">#</label>
-      <input class="form-control" type="text" value="<?php echo $contract->id; ?>" id="id" required>
-      <br>
-        <label for="familyName">Mieter</label>
-        <input type="text" class="form-control" required>
-        <br>
-        <label for="familyName">Beschreibung</label>
-        <input type="text" class="form-control" required>
-        <br>
-        <label for="squareMeters">Wohnfläche</label>
-        <input type="text" class="form-control" required>
-        <br>
-        <label for="rentCost">Nettomiete</label>
-        <input type="text" class="form-control" required>
-        <br>
-        <label for="additionalCost">Nebenkosten</label>
-        <input type="text" class="form-control" required>
-        <br>
-        <label for="title">Bruttomiete</label>
-        <input type="text" class="form-control"  name="title" id="title" required>
-        <br>
-               <br>
-        <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
-        <br>
-
-      </div>
-
-      <div class="modal-footer">
-      <!-- Buttons for Update NOT WORKING -->
-                <form id="userForm" action="/contracts/{{ $contract->id }}" method="post">
-                    @csrf
-                    @method('PUT')
-                    <input type="hidden" name="id">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
-                    <button type="submit" class="btn btn-success">Speichern</button>     </div>
-    </div>
-    </form>
-  </div>
-</div>
-
-
-</div>
-</div>
-</div>
-
-
-
-
 
 @endsection

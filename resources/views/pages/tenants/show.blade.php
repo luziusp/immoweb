@@ -19,10 +19,10 @@
       <input readonly type="text" class="form-control" name="familyname" value="<?PHP echo $tenant->familyname; ?>">
       <br>
       <label for="dateOfBirth">Geburtsdatum</label>
-      <input readonly type="text" class="form-control" name="dateOfBirth" value="<?PHP echo $tenant->dateOfBirth; ?>">
+      <input readonly type="date" class="form-control" name="dateOfBirth" value="<?PHP echo $tenant->dateOfBirth; ?>">
       <br>
       <label for="phone">Telefon</label>
-      <input readonly type="text" class="form-control" name="phone" value="<?PHP echo $tenant->phone; ?>">
+      <input readonly type="number" class="form-control" name="phone" value="<?PHP echo $tenant->phone; ?>">
       <br>
       <label for="email">E-Mail</label>
       <input readonly type="text" class="form-control" name="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" value="<?PHP echo $tenant->email; ?>">
@@ -36,7 +36,7 @@
       <input readonly type="text" class="form-control" name="billingStreetName" value="<?PHP echo $tenant->billingStreetName; ?>">
       <br>
       <label for="billingZipCode">PLZ</label>
-      <input readonly type="text" class="form-control" name="billingZipCode" value="<?PHP echo $tenant->billingZipCode; ?>">
+      <input readonly type="number" class="form-control" name="billingZipCode" value="<?PHP echo $tenant->billingZipCode; ?>">
       <br>
       <label for="billingCityName">Ort</label>
       <input readonly type="text" class="form-control" name="billingCityName" value="<?PHP echo $tenant->billingCityName; ?>">
@@ -92,7 +92,7 @@
         <input class="form-control" type="date" value="{{$tenant->dateOfBirth}}" name="dateOfBirth" id="dateOfBirth" required>
         <br>
         <label for="phone">Telefon</label>
-        <input class="form-control" type="text" placeholder="+41" value="{{$tenant->phone}}" name="phone" id="phone" required>
+        <input class="form-control" type="number" placeholder="+41" value="{{$tenant->phone}}" name="phone" id="phone" required>
         <br>
         <label for="email">E-Mail</label>
         <input class="form-control" type="text" placeholder="xyz@domain.ch" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" value="{{$tenant->email}}" name="email" id="email" required>
@@ -101,7 +101,7 @@
         <input type="text" class="form-control" value="{{$tenant->billingStreetName}}" name="billingStreetName" id="billingStreetName" required>
         <br>
         <label for="billingZipCode">PLZ</label>
-        <input type="text" class="form-control" value="{{$tenant->billingZipCode}}" name="billingZipCode" id="billingZipCode" required>
+        <input type="number" class="form-control" value="{{$tenant->billingZipCode}}" name="billingZipCode" id="billingZipCode" required>
         <br>
         <label for="billingCityName">Ort</label>
         <input type="text" class="form-control" value="{{$tenant->billingCityName}}" name="billingCityName" id="billingCityName" required>

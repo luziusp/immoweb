@@ -10,23 +10,23 @@
 
   <div class="col-4">
     @foreach($contract as $contract)
-      <label for="title">#</label>
-      <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->id; ?>"  >
+      <label for="id">#</label>
+      <input readonly type="number" class="form-control" name="id" value="<?PHP echo $contract->id; ?>"  >
       <br>
-      <label for="lastName">Mieter</label>
-      <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->tenantMapFk; ?>">
+      <label for="tenantMapFk">Mieter</label>
+      <input readonly type="text" class="form-control" name="tenantMapFk" value="<?PHP echo $contract->tenantMapFk; ?>">
       <br>
-      <label for="Description">Beschreibung</label>
-      <input readonly type="text" class="form-control" name="Description" value="Objekt-Typ aus Tabelle Wohnung" >
+      <label for="appartmentFk">Beschreibung</label>
+      <input readonly type="number" class="form-control" name="appartmentFk" value="<?PHP echo $contract->appartmentFk; ?>" >
       <br>
-      <label for="birthday">Von</label>
-      <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->startDate; ?>">
+      <label for="startDate">Von</label>
+      <input readonly type="date" class="form-control" name="startDate" value="<?PHP echo $contract->startDate; ?>">
       <br>
-      <label for="phone">Bis</label>
-      <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->terminationDate; ?>">
+      <label for="terminationDate">Bis</label>
+      <input readonly type="date" class="form-control" name="terminationDate" value="<?PHP echo $contract->terminationDate; ?>">
       <br>
-      <label for="phone">Monatsmiete</label>
-      <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->rentPerMonth; ?>">
+      <label for="rentPerMonth">Monatsmiete</label>
+      <input readonly type="number" class="form-control" name="rentPerMonth" value="<?PHP echo $contract->rentPerMonth; ?>">
       <br>
       <div class="btn-group">
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editContract">Bearbeiten</button>
@@ -80,12 +80,6 @@
       </div>
 
 
-
-
-
-
-
-
     <!-- Modal  Edit-->
     <div class="modal fade" id="editContract" tabindex="-1" role="dialog" aria-labelledby="editContract" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -96,56 +90,55 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="save.php" method="post">
+
+          <form method="post" action="{{ route('contracts.update', $contract->id) }}">
+          @csrf
+          @method('PATCH')
           <div class="modal-body">
 
-          <span id="modal-myvar"></span>
-
           <label for="id">#</label>
-          <input class="form-control" type="text" value="<?php echo $contract->id; ?>" id="id" required>
+          <input class="form-control" readonly type="text" value="<?php echo $contract->id; ?>" required>
           <br>
-          <label for="familyName">Mieter</label>
+          <label for="tenantMapFk">Mieter</label>
           <div class="form-group">
-            <select class="form-control"id="Description" name="Description" required>
-            <option>Mieter1 aus DB (Tenant)</option>
-            <option>Mieter2</option>
-            <option>Mieter3</option>
-            <option>Mieter4</option>
+            <select class="form-control" type="number" name="tenantMapFk" required>
+            <option>4</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
           </select>
           </div>
 
-          <label for="familyName">Beschreibung</label>
+          <label for="appartmentFk">Beschreibung</label>
           <div class="form-group">
-            <select class="form-control"id="Description" name="Description" required>
-            <option>Wohnung1 aus DB (Room)</option>
-            <option>Wohnung2</option>
-            <option>Wohnung3</option>
-            <option>Wohnung4</option>
+            <select class="form-control" type="number" name="appartmentFk" required>
+            <option>2</option>
+            <option>2</option>
+            <option>1</option>
+            <option>3</option>
           </select>
           </div>
 
-            <label for="birthday">Von</label>
-            <input type="date" class="form-control" name="title" value="<?PHP echo $contract->startDate; ?>">
+            <label for="startDate">Von</label>
+            <input type="date" class="form-control" name="startDate" value="{{$contract->startDate}}" >
             <br>
-            <label for="phone">Bis</label>
-            <input type="date" class="form-control" name="title" value="<?PHP echo $contract->terminationDate; ?>">
+            <label for="terminationDate">Bis</label>
+            <input type="date" class="form-control" name="terminationDate" value="{{$contract->terminationDate}}" >
             <br>
-
-
+            <label for="rentPerMonth">Monatsmiete</label>
+            <input type="number" class="form-control" name="rentPerMonth" value="{{$contract->rentPerMonth}}" >
+            <br>
           </div>
-          </form>
           <div class="modal-footer">
-          <!-- Buttons for Update NOT WORKING -->
-                    <form id="userForm" action="/contracts/{{ $contract->id }}" method="post">
-                        @csrf
-                        @method('PUT')
-                        <input type="hidden" name="id">
+
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
-                        <button type="submit" class="btn btn-success">Speichern</button>     </div>
+                        <button type="submit" class="btn btn-success">Speichern</button>
+                        </div>
+
         </div>
+        </form>
       </div>
     </div>
-  </div>
   </div>
 
 
