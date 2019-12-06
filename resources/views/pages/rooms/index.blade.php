@@ -21,9 +21,7 @@
     </tr>
     </thead>
     <tbody>
-
       @foreach($rooms as $room )
-
         <tr>
             <td scope="col">{{$room->id}}</td>
             <td scope="col">{{$room->Description}}</td>
@@ -74,25 +72,21 @@ Wohnung hinzufügen
 
       <div class="modal-body">
       <br>
-        <label for="appartmentName">Name</label>
-        <input type="text" class="form-control" placeholder="Name" name="appartmentName" id="appartmentName" required>
-        <br>
-
+      <label for="Description">Beschreibung</label>
+      <div class="form-group">
+        <select class="form-control"id="Description" name="Description" required>
+        <option></option>
+        <option>Seeblick</option>
+        <option>Hauptstrasse</option>
+        <option>Altbau</option>
+        <option>Erdgeschoss</option>
+      </select>
+      </div>
+      <label for="squareMeters">Wohnfläche</label>
+      <input type="text" class="form-control" placeholder="m²" name="squareMeters" id="squareMeters" required>
+      <br>
         <label for="noOfRooms">Anzahl Zimmer</label>
         <input type="text" class="form-control" placeholder="Anzahl Zimmer" name="noOfRooms" id="noOfRooms" required>
-        <br>
-
-        <label for="Description">Beschreibung</label>
-        <div class="form-group">
-          <select class="form-control"id="Description" name="Description" required>
-          <option>Seeblick</option>
-          <option>Hauptstrasse</option>
-          <option>Altbau</option>
-          <option>Erdgeschoss</option>
-        </select>
-        </div>
-        <label for="squareMeters">Wohnfläche</label>
-        <input type="text" class="form-control" placeholder="m²" name="squareMeters" id="squareMeters" required>
         <br>
         <label for="rentCost">Nettomiete</label>
         <input type="text" class="form-control" placeholder="Nettomiete" name="rentCost" id="rentCost" required>
@@ -161,8 +155,8 @@ Wohnung hinzufügen
       </div>
 
       <div class="modal-footer">
-      
-              
+
+
 
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
                     <button type="submit" class="btn btn-success">Speichern</button>     </div>

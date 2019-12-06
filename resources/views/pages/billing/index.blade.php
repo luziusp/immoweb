@@ -69,7 +69,7 @@ Rechnung hinzufügen
       <form action="{{ route('billing.store') }}" method="post">
       <div class="modal-body">
       <br>
-      <label for="id">Nr.</label>
+      <label for="id">#</label>
       <input type="text" class="form-control" placeholder="Rechnungsnummer" name="id" id="id" required>
       <br>
       <label for="type">Rechnungstyp</label>

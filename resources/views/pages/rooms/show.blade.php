@@ -20,6 +20,9 @@
         <label for="lastName">Wohnfläche</label>
         <input readonly type="text" class="form-control" name="title" value="<?PHP echo $room->squareMeters; ?>" >
         <br>
+        <label for="noOfRooms">Anzahl Zimmer</label>
+        <input readonly type="text" class="form-control" value="<?php echo $room->noOfRooms; ?>" >
+        <br>
         <label for="birthday">Nettomiete</label>
         <input readonly type="text" class="form-control" name="title" value="<?PHP echo $room->rentCost; ?>">
         <br>
@@ -68,21 +71,18 @@
           <div class="modal-body">
           <br>
           <span id="modal-myvar"></span>
-            <label for="title">#</label>
+            <label for="id">#</label>
             <input type="text" class="form-control" value="<?PHP echo $room->id; ?>" >
             <br>
             <label for="Description">Beschreibung</label>
             <div class="form-group">
-              <select class="form-control">
-              <option>Seeblick</option>
-              <option>Hauptstrasse</option>
-              <option>Altbau</option>
-              <option>Erdgeschoss</option>
-            </select>
+            <input readonly type="text" class="form-control" name="Description" value="<?PHP echo $room->Description; ?>" >
             </div>
-            <br>
             <label for="squareMeters">Wohnfläche</label>
-            <input type="text" class="form-control" value="<?php echo $room->squareMeters; ?>" name="squareMeters" id="squareMeters" required>
+            <input type="text" class="form-control" placeholder="m²" value="<?php echo $room->squareMeters; ?>" name="squareMeters" id="squareMeters" required>
+            <br>
+            <label for="noOfRooms">Anzahl Zimmer</label>
+            <input type="text" class="form-control" value="<?php echo $room->noOfRooms; ?>" name="noOfRooms" id="noOfRooms" required>
             <br>
             <label for="rentCost">Nettomiete</label>
             <input type="text" class="form-control" value="<?php echo $room->rentCost; ?>" name="rentCost" id="rentCost" required>
@@ -91,7 +91,7 @@
             <input type="text" class="form-control" value="<?php echo $room->additionalCost; ?>" name="additionalCost" id="additionalCost" required>
             <br>
             <label for="title">Bruttomiete</label>
-            <input readonly type="text" class="form-control"  name="title" id="title" required>
+            <input readonly type="text" class="form-control" value="<?php echo $room->rentCost+$room->additionalCost; ?>"   name="title" id="title" required>
             <br>
           </div>
         </form>

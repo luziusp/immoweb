@@ -10,20 +10,17 @@
   <div class="col-4">
   </div>
     <div class="col-4">
-        <label for="title">Nr.</label>
+        <label for="title">#</label>
         <input readonly type="text" class="form-control" name="title" >
         <br>
-        <label for="name">Beschreibung</label>
-        <input readonly type="text" class="form-control" name="title" >
-        <br>
-        <label for="lastName">Mieter</label>
+        <label for="name">Rechnungstyp</label>
         <input readonly type="text" class="form-control" name="title" >
         <br>
         <label for="dueDate">Rechnungsdatum</label>
         <input readonly type="text" class="form-control" name="dueDate" >
         <br>
-        <label for="email">Mietzinseingänge</label>
-        <input readonly type="text" class="form-control" name="title" >
+        <label for="lastName">Betrag</label>
+        <input readonly type="text" class="form-control" name="title">
         <br>
         <button type="submit" class="btn btn-warning">Bearbeiten</button>
         <button type="submit" class="btn btn-danger">Löschen</button>
@@ -48,7 +45,18 @@
           </div>
           <form action="save.php" method="post">
           <div class="modal-body">
-
+            <label for="id">#</label>
+            <input type="text" class="form-control" name="id" id="id" value="<?PHP echo $openInvoice->id; ?>" required>
+            <br>
+            <label for="name">Rechnungstyp</label>
+            <input readonly type="text" class="form-control" name="name" id="name" value="<?PHP echo $openInvoice->id; ?>" required>
+            <br>
+            <label for="dueDate">Rechnungsdatum</label>
+            <input type="date" class="form-control" name="dueDate" id="dueDate" value="<?PHP echo $openInvoice->id; ?>" required>
+            <br>
+            <label for="amount">Betrag</label>
+            <input type="date" class="form-control" name="amount" id="amount" value="<?PHP echo $openInvoice->id; ?>" required>
+            <br>
           </div>
           </form>
           <div class="modal-footer">

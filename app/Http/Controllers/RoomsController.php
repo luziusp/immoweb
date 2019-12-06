@@ -30,6 +30,7 @@ class RoomsController extends Controller
             Rooms::deleteRoom($id);
             $rooms = Rooms::getAll();
             return view('pages.rooms.index', ['rooms' => $rooms]);
+            
 
 
           }

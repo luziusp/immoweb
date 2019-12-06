@@ -87,22 +87,22 @@
           <input class="form-control" type="text" placeholder="Nachname" name="familyname" id="familyname" required>
           <br>
           <label for="dateOfBirth">Geburtsdatum</label>
-          <input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth">
+          <input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth" required>
           <br>
           <label for="phone">Telefon</label>
-          <input type="text" class="form-control" placeholder="+41" name="phone" id="phone">
+          <input type="text" class="form-control" placeholder="+41" name="phone" id="phone" required>
           <br>
           <label for="email">E-Mail</label>
-          <input class="form-control" type="text" placeholder="xyz@domain.ch" name="email" id="email">
+          <input class="form-control" type="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" placeholder="xyz@domain.ch" name="email" id="email" required>
           <br>
           <label for="billingStreetName">Strasse</label>
-          <input type="text" class="form-control" placeholder="Strasse" name="billingStreetName" id="billingStreetName">
+          <input type="text" class="form-control" placeholder="Strasse" name="billingStreetName" id="billingStreetName" required>
           <br>
           <label for="billingZipCode">PLZ</label>
-          <input type="text" class="form-control" placeholder="PLZ" name="billingZipCode" id="billingZipCode">
+          <input type="text" class="form-control" placeholder="PLZ" name="billingZipCode" id="billingZipCode" required>
           <br>
           <label for="billingCityName">Ort</label>
-          <input type="text" class="form-control" placeholder="Ort" name="billingCityName" id="billingCityName">
+          <input type="text" class="form-control" placeholder="Ort" name="billingCityName" id="billingCityName" required>
           <br>
           <br>
         <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
@@ -114,7 +114,7 @@
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
 
           <button type="submit" class="btn btn-success">Speichern</button>
-          
+
           </div>
         </div>
 </form>
@@ -155,7 +155,7 @@
         <input class="form-control" type="text" value="<?PHP echo $tenant->phone; ?>" id="phone" required>
         <br>
         <label for="email">E-Mail</label>
-        <input class="form-control" type="text" value="<?PHP echo $tenant->email; ?>" id="email" required>
+        <input class="form-control" type="email" value="<?PHP echo $tenant->email; ?>" id="email" required>
 
 
         <label for="billingStreetName">Strasse</label>

@@ -24,13 +24,14 @@
     </thead>
     <tbody>
 
-@foreach( (array) $contracts as $contract )
+@foreach( $contracts as $contract )
         <tr>
             <td scope="col">{{$contract->id}}</td>
             <td scope="col">Objekt-Typ aus Tabelle Wohnung</td>
             <td scope="col">{{$contract->startDate}}</td>
             <td scope="col">{{$contract->terminationDate}}</td>
-            <td scope="col">Mietername aus Tabelle Mieter</td>
+            <td scope="col">{{$contract->tenantMapFk}}</td>
+
             <td scope="col"><a href={{route('contracts.show', [$contract->id])}} type="button" class="btn btn-primary" >Details</a></td>
 
 
@@ -45,8 +46,6 @@
             @endif
         </tr>
   @endforeach
-
-
 
 </table>
 <!-- OLD, delete?-->
@@ -116,20 +115,20 @@ Vertrag hinzufügen
       <br>
 
 
-      <label for="id">ID</label>
+      <label for="id">#</label>
       <input class="form-control" type="text" value="<?php echo $contract->id; ?>" id="id" required>
       <br>
         <label for="familyName">Name</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" required>
         <br>
         <label for="squareMeters">Wohnfläche</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" required>
         <br>
         <label for="rentCost">Nettomiete</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" required>
         <br>
         <label for="additionalCost">Nebenkosten</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" required>
         <br>
         <label for="title">Bruttomiete</label>
         <input type="text" class="form-control"  name="title" id="title" required>

@@ -18,13 +18,16 @@
         <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->id; ?>">
         <br>
         <label for="lastName">Mieter</label>
-        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->id; ?>">
+        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->tenantMapFk; ?>">
         <br>
         <label for="birthday">Von</label>
         <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->startDate; ?>">
         <br>
         <label for="phone">Bis</label>
         <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->terminationDate; ?>">
+        <br>
+        <label for="phone">Monatsmiete</label>
+        <input readonly type="text" class="form-control" name="title" value="<?PHP echo $contract->rentPerMonth; ?>">
         <br>
         <div class="btn-group">
         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editContract">Bearbeiten</button>

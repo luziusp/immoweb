@@ -25,7 +25,7 @@
       <input readonly type="text" class="form-control" name="phone" value="<?PHP echo $tenant->phone; ?>">
       <br>
       <label for="email">E-Mail</label>
-      <input readonly type="text" class="form-control" name="email" value="<?PHP echo $tenant->email; ?>">
+      <input readonly type="text" class="form-control" name="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" value="<?PHP echo $tenant->email; ?>">
     </div>
 
     <div class="col-1">
@@ -78,7 +78,7 @@
         <span id="modal-myvar"></span>
         <br>
         <label for="title">Anrede</label>
-        <input class="form-control" type="text" value="<?PHP echo $tenant->title; ?>" id="id" required>
+        <input class="form-control" type="text" value="<?PHP echo $tenant->title; ?>" id="title" required>
         <br>
         <label for="surname">Vorname</label>
         <input class="form-control" type="text" value="<?PHP echo $tenant->surname; ?>" id="surname" required>
@@ -90,12 +90,11 @@
         <input class="form-control" type="date" value="<?PHP echo $tenant->dateOfBirth; ?>" id="dateOfBirth" required>
         <br>
         <label for="phone">Telefon</label>
-        <input class="form-control" type="text" value="<?PHP echo $tenant->phone; ?>" id="phone" required>
+        <input class="form-control" type="text" placeholder="+41" value="<?PHP echo $tenant->phone; ?>" id="phone" required>
         <br>
         <label for="email">E-Mail</label>
-        <input class="form-control" type="text" value="<?PHP echo $tenant->email; ?>" id="email" required>
-
-
+        <input class="form-control" type="text" placeholder="xyz@domain.ch" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" value="<?PHP echo $tenant->email; ?>" id="email" required>
+        <br>
         <label for="billingStreetName">Strasse</label>
         <input type="text" class="form-control" value="<?PHP echo $tenant->billingAddressFk; ?>" id="billingStreetName" required>
         <br>

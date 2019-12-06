@@ -18,7 +18,7 @@ class ContractsController extends Controller
        public function show($id)
          {
           $contract = Contracts::find($id);
-          
+
            return view('pages.contracts.show', ['contract' => $contract]);
          }
 
@@ -50,7 +50,7 @@ class ContractsController extends Controller
            public  function updateContract($id, $startDate, $tenantMapFk, $appartmentFk){
             Contracts::updateContract($id, $startDate, $tenantMapFk, $appartmentFk);
             $contracts = Contracts::getAll();
- 
+
             return view('pages/contracts.index', ['contracts' => $contracts]);
            }
 */
