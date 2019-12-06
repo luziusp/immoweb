@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class Tenants extends Model
 {
     protected $table = 'tenant';
-    protected $fillable =['title', 'familyname', 'surname', 'gender', 'phone','email','dateOfBirth', 'isActive'];
+    protected $fillable =['title', 'familyname', 'surname', 'gender', 'phone','email','dateOfBirth', 'isActive','billingCityName', 'billingZipCode' , 'billingStreetName','billingAdditionalStreetName'];
   
 
 

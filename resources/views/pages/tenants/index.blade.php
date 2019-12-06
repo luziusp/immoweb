@@ -134,7 +134,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="{{ route('tenants.update')/<?php echo $tenant->id; ?> }}" method="post">
+        <form method="post" action="{{ route('tenants.update', $tenant->id) }}">
         <div class="modal-body">
         <br>
         <span id="modal-myvar"></span>
@@ -159,13 +159,13 @@
 
 
         <label for="billingStreetName">Strasse</label>
-        <input type="text" class="form-control" value="<?PHP echo $tenant->billingAddressFk; ?>" id="billingStreetName" required>
+        <input type="text" class="form-control" value="<?PHP echo $tenant->billingStreetName; ?>" id="billingStreetName" required>
         <br>
         <label for="billingZipCode">PLZ</label>
-        <input type="text" class="form-control" value="<?PHP echo $tenant->billingAddressFk; ?>" id="billingZipCode" required>
+        <input type="text" class="form-control" value="<?PHP echo $tenant->billingZipCode; ?>" id="billingZipCode" required>
         <br>
         <label for="billingCityName">Ort</label>
-        <input type="text" class="form-control" value="<?PHP echo $tenant->billingAddressFk; ?>" id="billingCityName" required>
+        <input type="text" class="form-control" value="<?PHP echo $tenant->billingCityName; ?>" id="billingCityName" required>
         <br>
         </div>
 
@@ -173,7 +173,7 @@
         <!-- Buttons for Update NOT WORKING -->
                   <form id="userForm" action="/tenants/{{ $tenant->id }}" method="post">
                       @csrf
-                      @method('PUT')
+                      @method('PATCH')
                       <input type="hidden" name="id">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
                       <button type="submit" class="btn btn-success">Speichern</button>     </div>

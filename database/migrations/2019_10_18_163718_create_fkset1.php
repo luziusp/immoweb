@@ -23,12 +23,12 @@ class CreateFkset1 extends Migration
 
         $table->foreign('contractFk')->references('id')->on('contract');
 });
-*/
+
     Schema::table('tenant', function (Blueprint $table) {
 
         $table->foreign('billingAddressFk')->references('id')->on('billing_address');
 });
-
+*/
     Schema::table('tenantmap', function (Blueprint $table) {
 
         $table->foreign('contractFk')->references('id')->on('contract');
@@ -58,12 +58,12 @@ class CreateFkset1 extends Migration
     Schema::table('appartment', function (Blueprint $table) {
         $table->dropForeign('appartment_contractFk_foreign');
         });
-*/
+
          Schema::table('tenant', function (Blueprint $table) {
              $table->dropForeign('tenant_billingAddressFk_foreign');
         });
 
-
+*/
 
          Schema::table('tenantmap', function (Blueprint $table) {
              $table->dropForeign('tenantmap_contractFk_foreign');

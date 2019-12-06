@@ -54,65 +54,79 @@
     </div>
 
 
-    <!-- Modal  Edit-->
-    <div class="modal fade" id="editAppartment" tabindex="-1" role="dialog" aria-labelledby="editAppartment" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="editAppartment">Wohnungsdaten bearbeiten</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form action="save.php" method="post">
-          <div class="modal-body">
-          <br>
-          <span id="modal-myvar"></span>
-            <label for="title">#</label>
-            <input type="text" class="form-control" value="<?PHP echo $room->id; ?>" >
-            <br>
-            <label for="Description">Beschreibung</label>
-            <div class="form-group">
-              <select class="form-control">
-              <option>Seeblick</option>
-              <option>Hauptstrasse</option>
-              <option>Altbau</option>
-              <option>Erdgeschoss</option>
-            </select>
-            </div>
-            <br>
-            <label for="squareMeters">Wohnfläche</label>
-            <input type="text" class="form-control" value="<?php echo $room->squareMeters; ?>" name="squareMeters" id="squareMeters" required>
-            <br>
-            <label for="rentCost">Nettomiete</label>
-            <input type="text" class="form-control" value="<?php echo $room->rentCost; ?>" name="rentCost" id="rentCost" required>
-            <br>
-            <label for="additionalCost">Nebenkosten</label>
-            <input type="text" class="form-control" value="<?php echo $room->additionalCost; ?>" name="additionalCost" id="additionalCost" required>
-            <br>
-            <label for="title">Bruttomiete</label>
-            <input readonly type="text" class="form-control"  name="title" id="title" required>
-            <br>
-          </div>
-        </form>
+<!-- Modal  Edit-->
+<div class="modal fade" id="editAppartment" tabindex="-1" role="dialog" aria-labelledby="editAppartment" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editAppartment">Wohnungsdaten bearbeiten</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post" action="{{ route('rooms.update', $room->id) }}">
+      @csrf
+    @method('PATCH')
+      <div class="modal-body">
 
-
-          <!-- Formstruktur?? -->
-          <!-- Buttons for Update NOT WORKING -->
-                    <form id="userForm" action="/rooms/{{ $room->id }}" method="post">
-                      <div class="modal-footer">
-                        @csrf
-                        @method('PUT')
-                        <input type="hidden" name="id">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
-                        <button type="submit" class="btn btn-success">Speichern</button>
-                      </div>
-                      </form>
-
+      <div class="form-group">
+      <input type= "hidden" name = "id" value = "<?php echo $room->id; ?>">
+</div>
+<div class="form-group">
+      <br>
+        <label for="title">#</label>
+        <input type="text" class="form-control" value="<?PHP echo $room->id; ?>" required readonly>
+        <br>
+</div>
+<div class="form-group">
+        <label for="noOfRooms">Name</label>
+        <input type="text" class="form-control" value="{{$room->appartmentName}}" name="appartmentName" id="appartmentName" required>
+        <br>
+        </div>
+<div class="form-group">
+        <label for="noOfRooms">Anzahl Zimmer</label>
+        <input type="text" class="form-control" value="{{$room->noOfRooms}}" name="noOfRooms" id="noOfRooms" required>
+        <br>
+        </div>
+        <div class="form-group">
+        <label for="Description">Beschreibung</label>
+        <input readonly type="text" class="form-control" name="Description" value="{{$room->Description}}" >
+        <br>
+        </div>
+        <div class="form-group">
+        <label for="squareMeters">Wohnfläche</label>
+        <input type="text" class="form-control" value="{{$room->squareMeters}}" name="squareMeters" id="squareMeters" required>
+        <br>
+        </div>
+        <div class="form-group">
+        <label for="rentCost">Nettomiete</label>
+        <input type="text" class="form-control" value="{{$room->rentCost}}" name="rentCost" id="rentCost" required>
+        <br>
+        </div>
+        <div class="form-group">
+        <label for="additionalCost">Nebenkosten</label>
+        <input type="text" class="form-control" value="{{$room->additionalCost}}" name="additionalCost" id="additionalCost" required>
+        <br>
+        </div>
+        <div class="form-group">
+        <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
+        <br>
         </div>
       </div>
+
+      <div class="modal-footer">
+      
+              
+
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+                    <button type="submit" class="btn btn-success">Speichern</button>     
+                    </div>
     </div>
+    </form>
   </div>
+</div>
+
+</div>
 
 
 

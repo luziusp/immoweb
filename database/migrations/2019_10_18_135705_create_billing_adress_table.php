@@ -13,19 +13,7 @@ class CreateBillingAdressTable extends Migration
      */
     public function up()
     {
-        Schema::create('billing_address', function (Blueprint $table) {
-            $table->bigIncrements('id' );
-            $table->timestamps();
-                                $table->string('billingTitle');
-                                $table->string('billingFamilyName');
-                                $table->string('billingSurName');
-                                $table->string('billingZipCode');
-                                $table->string('billingCityName');
-                                $table->string('billingStreetName');
-                                $table->string('billingAdditionalStreetName')->nullable();
-                                $table->boolean('isActive');
 
-        });
 
     }
 
