@@ -19,6 +19,7 @@
         <th scope="col"></th>
     </tr>
     </thead>
+
     <tbody>
       @foreach($rooms as $room )
         <tr>
@@ -80,7 +81,7 @@ Wohnung hinzufügen
                 <br>
         <div class="form-group">
         <label for="appartmentName">Wohnungstitel</label>
-          <select class="form-control" id="Description"  id="appartmentName" name="appartmentName" required>
+          <select class="form-control" id="appartmentName" name="appartmentName" required>
           <option></option>
           <option>Wohnung 1</option>
           <option>Wohnung 2</option>
@@ -123,7 +124,6 @@ Wohnung hinzufügen
     </div>
   </div>
 </div>
-
 </div>
 
 

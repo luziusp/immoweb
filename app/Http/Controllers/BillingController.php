@@ -28,7 +28,7 @@ class BillingController extends Controller
       {
         Billing::deleteBilling($id);
         $openInvoices = Billing::getAllOpenInvoices();
-        return view('pages/billing.index', ['openInvoices' =>  $openInvoices]);
+        return view('pages.billing.index', ['openInvoices' =>  $openInvoices]);
       }
 
       public function update (request $request, $id){
