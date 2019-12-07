@@ -13,6 +13,7 @@ class CreateTenantmap extends Migration
      */
     public function up()
     {
+        /*
         Schema::create('tenantmap', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
@@ -21,6 +22,7 @@ class CreateTenantmap extends Migration
             $table->boolean('isActive');
 
         });
+        */
     }
 
     /**

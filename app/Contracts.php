@@ -9,21 +9,25 @@ class Contracts extends Model
 {
     
     protected $table = 'contract';
-    protected $fillable =['startDate', 'terminationDate', 'rentPerMonth', 'tenantMapFk', 'appartmentFk', 'isActive'];
+    protected $fillable =['startDate', 'terminationDate', 'rentPerMonth', 'tenantFk', 'appartmentFk', 'isActive'];
   
 
 
  
     public function rooms()
     {
-      return $this->hasOne('App\Rooms', 'appartmentFk');
+      return $this->belongsTo('App\Rooms', 'id');
     }
     
     public function tenants()
     {
-      return $this->hasOne('App\Tenants', 'tenantMapFk');
+      return $this->belongsTo('App\Tenants', 'id');
     }
-  
+
+    public function billing()
+  {
+      return $this->hasMany('App\Billing', 'contractFk');
+  }
 
     public static function find($id){
         $contract = DB::table('contract')->where('id',  $id)->get();

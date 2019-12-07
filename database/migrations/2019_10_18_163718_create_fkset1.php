@@ -28,14 +28,14 @@ class CreateFkset1 extends Migration
 
         $table->foreign('billingAddressFk')->references('id')->on('billing_address');
 });
-*/
+
     Schema::table('tenantmap', function (Blueprint $table) {
 
         $table->foreign('contractFk')->references('id')->on('contract');
 });
+*/
 
-
-    Schema::table('tenantmap', function (Blueprint $table) {
+    Schema::table('contract', function (Blueprint $table) {
 
         $table->foreign('tenantFk')->references('id')->on('tenant');
 });

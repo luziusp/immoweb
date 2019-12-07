@@ -73,14 +73,18 @@ Vertrag hinzufügen
       <div class="modal-body">
       <label for="familyname">Mieter</label>
       <div class="form-group">
-        <select class="form-control"id="Description" name="Description" required>
-        <option>Mieter1 aus DB (Tenant)</option>
-        <option>Mieter2</option>
-        <option>Mieter3</option>
-        <option>Mieter4</option>
+        <select class="form-control"id="tenantFK" name="tenantFK" required>
+           <?php
+           foreach($tenants as $tenant ):
+           echo '<option value="'.$tenant->id.'">'.$tenant->surname.'</option>'; //close your tags!!
+           endforeach;
+           ?>
+        </select>
+
+
       </select>
       </div>
-              <label for="Description">Beschreibung</label>
+              <label for="Description">Wohnung</label>
               <div class="form-group">
                 <select class="form-control"id="Description" name="Description" required>
                 <option>Wohnung1 aus DB (Room)</option>

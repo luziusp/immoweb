@@ -17,7 +17,7 @@ class Rooms extends Model
 
   public function contracts()
   {
-      return $this->belongsTo('App\Contracts', 'id');
+      return $this->hasMany('App\Contracts', 'appartmentFk');
   }
 
 

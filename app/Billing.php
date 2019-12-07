@@ -13,6 +13,12 @@ class Billing extends Model
     protected $fillable =['contractFk', 'type', 'amount', 'dueDate', 'isPayed', 'isActive'];
 
 
+    public function contracts()
+    {
+      return $this->belongsTo('App\Contracts', 'id');
+    }
+
+
     public static function getAllOpenInvoices(){
         $openInvoices = DB::table('invoice')->where('isPayed',  false)->get();
         return $openInvoices;
@@ -24,38 +30,13 @@ class Billing extends Model
 
    }
 
-    public static function addBilling($contractFk, $type, $amount, $dueDate){
-        $id = DB::table('invoice')->insertGetId(
-
-         ['contractFk' => $contractFk],
-         ['type' => $type],
-         ['isActive' => true],
-         ['amount' => $amount],
-         ['dueDate' => $dueDate],
-         ['isPayed' => false]
-
-         );
-
-    }
+   
 
         public static function deleteBilling($id){
         DB::table('invoice')->where('id', '=', $id)->update(['isActive' => false]);
 
         }
-
-        public static function updateBilling($id, $contractFk, $type, $amount, $dueDate, $isPayed){
-                             DB::table('invoice')
-                                         ->where('id', $id)
-                                         ->update(
-                                            ['contractFk' => $contractFk],
-                                            ['type' => $type],
-                                            ['isActive' => true],
-                                            ['amount' => $amount],
-                                            ['dueDate' => $dueDate],
-                                            ['isPayed' => $isPayed]
-
-        );
-        }
+     
 
         public function payBilling($id){
             DB::table('invoice')

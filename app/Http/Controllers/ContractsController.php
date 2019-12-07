@@ -6,15 +6,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Contracts;
 use App\Tenants;
+use App\Rooms;
 
 class ContractsController extends Controller
 {
        public function index(){
         $contracts = Contracts::getAll();
         $tenants = Tenants::getAll();
-               return view('pages/contracts.index', ['contracts' => $contracts], ['tenants' =>  $tenants]);
+        $rooms = Rooms::getAll();
+               return view('pages/contracts.index', ['contracts' => $contracts], ['tenants' =>  $tenants], ['rooms' =>  $rooms]);
 
        }
+       
        public function show($id)
          {
           $contract = Contracts::find($id);
@@ -31,8 +34,9 @@ class ContractsController extends Controller
          {
            Contracts::deleteContract($id);
            $contracts = Contracts::getAll();
-
-           return view('pages/contracts.index', ['contracts' => $contracts]);
+           $tenants = Tenants::getAll();
+           $rooms = Rooms::getAll();
+                  return view('pages/contracts.index', ['contracts' => $contracts], ['tenants' =>  $tenants], ['rooms' =>  $rooms]);
          }
 
          public function update (request $request, $id){
@@ -50,12 +54,5 @@ class ContractsController extends Controller
 
         }
 
-         /*
-           public  function updateContract($id, $startDate, $tenantMapFk, $appartmentFk){
-            Contracts::updateContract($id, $startDate, $tenantMapFk, $appartmentFk);
-            $contracts = Contracts::getAll();
 
-            return view('pages/contracts.index', ['contracts' => $contracts]);
-           }
-*/
 }
