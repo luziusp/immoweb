@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class Billing extends Model
 {
@@ -26,6 +27,23 @@ class Billing extends Model
     public static function getAllPayedInvoices(){
         $openInvoices = DB::table('invoice')->where('isPayed',  true)->where('isActive',  true)->get();
         return $openInvoices;
+    }
+
+    public static function getAllYearlyInvoices(){
+        $yearlyInvoices = DB::table('invoice')->whereBetween('created_at',  [
+            Carbon::now()->startOfYear(),
+            Carbon::now()->endOfYear(), 
+            ])
+            ->whereBetween('dueDate',  [
+                Carbon::now()->startOfYear(),
+                Carbon::now()->endOfYear(), 
+                ])
+            ;
+            
+
+
+
+        return $yearlyInvoices;
     }
 
    public static function find($id){
