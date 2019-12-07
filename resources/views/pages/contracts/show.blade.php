@@ -13,8 +13,8 @@
       <label for="id">#</label>
       <input readonly type="number" class="form-control" name="id" value="<?PHP echo $contract->id; ?>"  >
       <br>
-      <label for="tenantMapFk">Mieter</label>
-      <input readonly type="text" class="form-control" name="tenantMapFk" value="<?PHP echo $contract->tenantMapFk; ?>">
+      <label for="tenantFk">Mieter</label>
+      <input readonly type="text" class="form-control" name="tenantFk" value="<?PHP echo $contract->tenantFk; ?>">
       <br>
       <label for="appartmentFk">Beschreibung</label>
       <input readonly type="number" class="form-control" name="appartmentFk" value="<?PHP echo $contract->appartmentFk; ?>" >
@@ -99,9 +99,9 @@
           <label for="id">#</label>
           <input class="form-control" readonly type="text" value="<?php echo $contract->id; ?>" required>
           <br>
-          <label for="tenantMapFk">Mieter</label>
+          <label for="tenantFk">Mieter</label>
           <div class="form-group">
-            <select class="form-control" type="number" name="tenantMapFk" required>
+            <select class="form-control" type="number" name="tenantFk" required>
             <option>4</option>
             <option>1</option>
             <option>2</option>

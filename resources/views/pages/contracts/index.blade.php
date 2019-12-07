@@ -29,7 +29,7 @@
             <td scope="col">{{$contract->appartmentFk}}</td>
             <td scope="col">{{$contract->startDate}}</td>
             <td scope="col">{{$contract->terminationDate}}</td>
-            <td scope="col">{{$contract->tenantMapFk}}</td>
+            <td scope="col">{{$contract->tenantFk}}</td>
 
             <td scope="col"><a href={{route('contracts.show', [$contract->id])}} type="button" class="btn btn-primary" >Details</a></td>
 
