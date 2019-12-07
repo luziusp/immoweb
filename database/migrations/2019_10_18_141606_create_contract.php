@@ -18,10 +18,10 @@ class CreateContract extends Migration
             $table->timestamps();
             $table->date('startDate');
             $table->date('terminationDate')->nullable();
-            $table->unsignedBigInteger('tenantFk')->nullable();
-            $table->unsignedBigInteger('appartmentFk')->nullable();
+            $table->unsignedBigInteger('tenantFk');
+            $table->unsignedBigInteger('appartmentFk');
             $table->boolean('isActive');
-            $table->double('rentPerMonth');
+            
         });
     }
 

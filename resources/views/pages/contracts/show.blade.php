@@ -9,16 +9,25 @@
   <div class="row">
 
   <div class="col-4">
-    @foreach($contract as $contract)
+
       <label for="id">#</label>
       <input readonly type="number" class="form-control" name="id" value="<?PHP echo $contract->id; ?>"  >
       <br>
+
+      
+      @foreach($tenant as $tenant)
       <label for="tenantFk">Mieter</label>
-      <input readonly type="text" class="form-control" name="tenantFk" value="<?PHP echo $contract->tenantFk; ?>">
+      <input readonly type="text" class="form-control" name="tenantFk" value="<?PHP echo $tenant->surname; ?>">
       <br>
-      <label for="appartmentFk">Beschreibung</label>
-      <input readonly type="number" class="form-control" name="appartmentFk" value="<?PHP echo $contract->appartmentFk; ?>" >
+      @endforeach
       <br>
+
+      
+      @foreach($room as $room)
+      <label for="tenantFk">Wohnung</label>
+      <input readonly type="text" class="form-control" name="appartmentFk" value="<?PHP echo $room->name; ?>">
+      <br>
+      @endforeach
       <label for="startDate">Von</label>
       <input readonly type="date" class="form-control" name="startDate" value="<?PHP echo $contract->startDate; ?>">
       <br>
@@ -41,7 +50,7 @@
       </div>
       @endif
       <td scope="col"><a href={{route('contracts.index')}} type="button" class="btn btn-secondary" >Zurück</a></td>
-      @endforeach
+
       </div>
       </div>
 
@@ -100,22 +109,25 @@
           <input class="form-control" readonly type="text" value="<?php echo $contract->id; ?>" required>
           <br>
           <label for="tenantFk">Mieter</label>
-          <div class="form-group">
-            <select class="form-control" type="number" name="tenantFk" required>
-            <option>4</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
+          <select class="form-control"id="tenantFk" name="tenantFk" required>
+           <?php
+           foreach($tenants as $tenant ):
+           echo '<option value="'.$tenant->id.'">'.$tenant->surname.'</option>'; 
+           endforeach;
+           ?>
+        </select>
+
+
           </div>
 
-          <label for="appartmentFk">Beschreibung</label>
+          <label for="appartmentFk">Wohnung</label>
           <div class="form-group">
-            <select class="form-control" type="number" name="appartmentFk" required>
-            <option>2</option>
-            <option>2</option>
-            <option>1</option>
-            <option>3</option>
+            <select class="form-control" id="appartmentFk" name="appartmentFk" required>
+            <?php
+           foreach($rooms as $room ):
+           echo '<option value="'.$room->id.'">'.$room->name.'</option>'; 
+           endforeach;
+           ?>
           </select>
           </div>
 

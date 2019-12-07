@@ -14,15 +14,21 @@ class ContractsController extends Controller
         $contracts = Contracts::getAll();
         $tenants = Tenants::getAll();
         $rooms = Rooms::getAll();
-               return view('pages/contracts.index', ['contracts' => $contracts], ['tenants' =>  $tenants], ['rooms' =>  $rooms]);
-
+         //      return view('pages/contracts.index', ['contracts' => $contracts], ['tenants' =>  $tenants], ['rooms' =>  $rooms]);
+         return view('pages/contracts.index', compact('contracts', 'tenants','rooms'));
        }
        
        public function show($id)
          {
-          $contract = Contracts::find($id);
 
-           return view('pages.contracts.show', ['contract' => $contract]);
+          $contracts = Contracts::getAll();
+          $tenants = Tenants::getAll();
+          $rooms = Rooms::getAll();
+
+          $contract = Contracts::find($id)[0];
+          $tenant = Tenants::where('id', $contract->tenantFk)->get();
+          $room = Rooms::where('id', $contract->appartmentFk)->get();
+           return view('pages.contracts.show', compact('contracts', 'tenants','rooms','contract', 'tenant','room'));
          }
 
        public function create()

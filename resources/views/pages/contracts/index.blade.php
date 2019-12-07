@@ -86,11 +86,12 @@ Vertrag hinzufügen
       </div>
               <label for="Description">Wohnung</label>
               <div class="form-group">
-                <select class="form-control"id="Description" name="Description" required>
-                <option>Wohnung1 aus DB (Room)</option>
-                <option>Wohnung2</option>
-                <option>Wohnung3</option>
-                <option>Wohnung4</option>
+                <select class="form-control"id="appartmentFk" name="appartmentFk" required>
+                <?php
+           foreach($rooms as $room ):
+           echo '<option value="'.$room->id.'">'.$room->name.'</option>'; 
+           endforeach;
+           ?>
               </select>
               </div>
       <label for="startDate">Von</label>
