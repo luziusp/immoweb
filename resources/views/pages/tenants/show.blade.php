@@ -49,7 +49,7 @@
           <form action="{{ url("/tenants/$tenant->id") }}" method="POST">
           {{ csrf_field() }}
           {{ method_field('DELETE') }}
-          <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
+          <button style="border-radius: 0px;" type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
           </form>
       </div>
       @endif

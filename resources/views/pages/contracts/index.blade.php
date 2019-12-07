@@ -76,7 +76,7 @@ Vertrag hinzufügen
         <select class="form-control"id="tenantFk" name="tenantFk" required>
            <?php
            foreach($tenants as $tenant ):
-           echo '<option value="'.$tenant->id.'">'.$tenant->surname.'</option>'; 
+           echo '<option value="'.$tenant->id.'">'.$tenant->surname.'</option>';
            endforeach;
            ?>
         </select>
@@ -89,7 +89,7 @@ Vertrag hinzufügen
                 <select class="form-control"id="appartmentFk" name="appartmentFk" required>
                 <?php
            foreach($rooms as $room ):
-           echo '<option value="'.$room->id.'">'.$room->appartmentName.'</option>'; 
+           echo '<option value="'.$room->id.'">'.$room->appartmentName.'</option>';
            endforeach;
            ?>
               </select>
@@ -98,13 +98,11 @@ Vertrag hinzufügen
       <input type="date" class="form-control" placeholder="Vertragsstart" name="startDate" id="startDate" required>
       <br>
       <label for="terminationDate">Bis</label>
-      <input type="date" class="form-control" placeholder="Vertragsende" name="terminationDate" id="terminationDate" required>
+      <input type="date" class="form-control" placeholder="Vertragsende" name="terminationDate" id="terminationDate">
       <br>
         <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
         <br>
-        <label for="rentPerMonth">Monatsmiete</label>
-        <input type="number" class="form-control" placeholder="CHF" name="rentPerMonth" id="rentPerMonth" required>
-        <br>
+
       </div>
 
       <div class="modal-footer">

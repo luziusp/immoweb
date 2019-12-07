@@ -36,7 +36,7 @@
             <form action="{{ url("/billing/$openInvoice->id") }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
-            <button type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
+            <button style="border-radius: 0px;" type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
             </form>
         </div>
         @endif
@@ -84,7 +84,7 @@
             <select class="form-control" id="contractFk" name="contractFk" value="<?PHP echo $openInvoice->contractFk; ?>" required>
             <?php
            foreach($contracts as $contract ):
-           echo '<option value="'.$contract->id.'">'.$contract->id.'</option>'; 
+           echo '<option value="'.$contract->id.'">'.$contract->id.'</option>';
            endforeach;
            ?>
           </select>
