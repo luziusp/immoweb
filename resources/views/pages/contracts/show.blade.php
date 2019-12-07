@@ -20,12 +20,12 @@
       <input readonly type="text" class="form-control" name="tenantFk" value="<?PHP echo $tenant->surname; ?>">
       <br>
       @endforeach
-      <br>
+      
 
       
       @foreach($room as $room)
       <label for="tenantFk">Wohnung</label>
-      <input readonly type="text" class="form-control" name="appartmentFk" value="<?PHP echo $room->name; ?>">
+      <input readonly type="text" class="form-control" name="appartmentFk" value="<?PHP echo $room->appartmentName; ?>">
       <br>
       @endforeach
       <label for="startDate">Von</label>
@@ -108,8 +108,10 @@
           <label for="id">#</label>
           <input class="form-control" readonly type="text" value="<?php echo $contract->id; ?>" required>
           <br>
+
+          
           <label for="tenantFk">Mieter</label>
-          <select class="form-control"id="tenantFk" name="tenantFk" required>
+          <select class="form-control"id="tenantFk" name="tenantFk" value="{{$contract->tenantFk}}" required>
            <?php
            foreach($tenants as $tenant ):
            echo '<option value="'.$tenant->id.'">'.$tenant->surname.'</option>'; 
@@ -117,12 +119,12 @@
            ?>
         </select>
 
-
-          </div>
+<br>
+         
 
           <label for="appartmentFk">Wohnung</label>
           <div class="form-group">
-            <select class="form-control" id="appartmentFk" name="appartmentFk" required>
+            <select class="form-control" id="appartmentFk" name="appartmentFk"  value="{{$contract->appartmentFk}}" required>
             <?php
            foreach($rooms as $room ):
            echo '<option value="'.$room->id.'">'.$room->appartmentName.'</option>'; 
@@ -130,6 +132,7 @@
            ?>
           </select>
           </div>
+
 
             <label for="startDate">Von</label>
             <input type="date" class="form-control" name="startDate" value="{{$contract->startDate}}" >
