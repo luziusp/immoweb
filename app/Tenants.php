@@ -29,7 +29,6 @@ class Tenants extends Model
 
 
         public static function deleteTenant($id){
-        DB::table('tenantmap')->where('tenantFk', '=', $id)->update(['isActive' => false]);
         DB::table('tenant')->where('id', '=', $id)->update(['isActive' => false]);
 
         }
