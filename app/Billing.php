@@ -20,11 +20,11 @@ class Billing extends Model
 
 
     public static function getAllOpenInvoices(){
-        $openInvoices = DB::table('invoice')->where('isPayed',  false)->get();
+        $openInvoices = DB::table('invoice')->where('isPayed',  false)->where('isActive',  true)->get();
         return $openInvoices;
     }
     public static function getAllPayedInvoices(){
-        $openInvoices = DB::table('invoice')->where('isPayed',  true)->get();
+        $openInvoices = DB::table('invoice')->where('isPayed',  true)->where('isActive',  true)->get();
         return $openInvoices;
     }
 

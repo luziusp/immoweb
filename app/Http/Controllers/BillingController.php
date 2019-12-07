@@ -30,8 +30,10 @@ class BillingController extends Controller
       public function destroy($id)
       {
         Billing::deleteBilling($id);
+        $contracts = Contracts::getAll();
         $openInvoices = Billing::getAllOpenInvoices();
-        return view('pages.billing.index', ['openInvoices' =>  $openInvoices]);
+        $payedInvoices = Billing::getAllPayedInvoices();
+       return view('pages.billing.index', compact('openInvoices', 'payedInvoices', 'contracts'));
       }
 
       public function update (request $request, $id){
