@@ -17,7 +17,6 @@ Route::resource('tenants', 'TenantsController')->middleware('auth');
 Route::resource('rooms', 'RoomsController')->middleware('auth');
 Route::resource('contracts', 'ContractsController')->middleware('auth');
 Route::resource('billing', 'BillingController')->middleware('auth');
-Route::resource('overview', 'OverviewController')->middleware('auth');
 
 //Laravel
 Auth::routes();
