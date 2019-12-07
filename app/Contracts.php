@@ -9,7 +9,7 @@ class Contracts extends Model
 {
     
     protected $table = 'contract';
-    protected $fillable =['startDate', 'terminationDate', 'rentPerMonth', 'tenantFk', 'appartmentFk', 'isActive'];
+    protected $fillable =['startDate', 'terminationDate', 'tenantFk', 'appartmentFk', 'isActive'];
   
 
 
