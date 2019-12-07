@@ -89,7 +89,7 @@ Vertrag hinzufügen
                 <select class="form-control"id="appartmentFk" name="appartmentFk" required>
                 <?php
            foreach($rooms as $room ):
-           echo '<option value="'.$room->id.'">'.$room->name.'</option>'; 
+           echo '<option value="'.$room->id.'">'.$room->appartmentName.'</option>'; 
            endforeach;
            ?>
               </select>

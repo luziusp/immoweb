@@ -98,18 +98,18 @@
         </div>
         <div class="form-group">
         <label for="noOfRooms">Anzahl Zimmer</label>
-        <input type="number" class="form-control" value="{{$room->noOfRooms}}" name="noOfRooms" id="noOfRooms" required>
+        <input type="double" class="form-control" value="{{$room->noOfRooms}}" name="noOfRooms" id="noOfRooms" required>
         <br>
         </div>
 
         <div class="form-group">
         <label for="rentCost">Nettomiete</label>
-        <input type="number" class="form-control" value="{{$room->rentCost}}" name="rentCost" id="rentCost" required>
+        <input type="double" class="form-control" value="{{$room->rentCost}}" name="rentCost" id="rentCost" required>
         <br>
         </div>
         <div class="form-group">
         <label for="additionalCost">Nebenkosten</label>
-        <input type="number" class="form-control" value="{{$room->additionalCost}}" name="additionalCost" id="additionalCost" required>
+        <input type="double" class="form-control" value="{{$room->additionalCost}}" name="additionalCost" id="additionalCost" required>
         </div>
         <div class="form-group">
         <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>

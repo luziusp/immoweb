@@ -5,7 +5,7 @@
 @section('content')
 
   <div class="container box">
-  <h3 align="left">Offene Rechnunge</h3></br>
+  <h3 align="left">Offene Rechnungen</h3></br>
   <table class="table">
     <thead>
     <tr>

@@ -101,13 +101,13 @@ Wohnung hinzufügen
         <input type="number" class="form-control" placeholder="m²" name="squareMeters" id="squareMeters" required>
         <br>
         <label for="noOfRooms">Anzahl Zimmer</label>
-        <input type="number" class="form-control" placeholder="Anzahl Zimmer" name="noOfRooms" id="noOfRooms" required>
+        <input type="double" class="form-control" placeholder="Anzahl Zimmer" name="noOfRooms" id="noOfRooms" required>
         <br>
         <label for="rentCost">Nettomiete</label>
-        <input type="number" class="form-control" placeholder="Nettomiete" name="rentCost" id="rentCost" required>
+        <input type="double" class="form-control" placeholder="Nettomiete" name="rentCost" id="rentCost" required>
         <br>
         <label for="additionalCost">Nebenkosten</label>
-        <input type="number" class="form-control" placeholder="Nebenkosten" name="additionalCost" id="additionalCost" required>
+        <input type="double" class="form-control" placeholder="Nebenkosten" name="additionalCost" id="additionalCost" required>
         <br>
         <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
       </div>
