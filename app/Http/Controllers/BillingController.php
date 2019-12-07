@@ -5,19 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Billing;
+use App\Contracts;
 
 class BillingController extends Controller
 {
     public function index(){
-
+                    $contracts = Contracts::getAll();
                     $openInvoices = Billing::getAllOpenInvoices();
-                   return view('pages.billing.index', ['openInvoices' =>  $openInvoices]);
+                    $payedInvoices = Billing::getAllPayedInvoices();
+                   return view('pages.billing.index', compact('openInvoices', 'payedInvoices', 'contracts'));
 
     }
     public function show($id)
       {
+        $contracts = Contracts::getAll();
         $openInvoice = Billing::find($id);
-        return view('pages.billing.show', ['openInvoice' => $openInvoice]);
+        return view('pages.billing.show', compact('openInvoice', 'contracts'));
       }
 
     public function create()

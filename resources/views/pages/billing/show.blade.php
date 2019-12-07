@@ -80,7 +80,16 @@
 
             <br>
             <label for="contractFk">Vertragsnummer</label>
-            <input type="number" class="form-control" value="1" name="contractFk" id="contractFk" value="<?PHP echo $openInvoice->contractFk; ?>" required >
+      <div class="form-group">
+            <select class="form-control" id="contractFk" name="contractFk" value="<?PHP echo $openInvoice->contractFk; ?>" required>
+            <?php
+           foreach($contracts as $contract ):
+           echo '<option value="'.$contract->id.'">'.$contract->id.'</option>'; 
+           endforeach;
+           ?>
+          </select>
+          </div>
+
             <br>
             <label for="dueDate">Rechnungsdatum</label>
             <input type="date" class="form-control" name="dueDate" id="dueDate" value="<?PHP echo $openInvoice->dueDate; ?>" required>

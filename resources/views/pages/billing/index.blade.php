@@ -5,7 +5,7 @@
 @section('content')
 
   <div class="container box">
-  <h3 align="left">Rechnungsübersicht</h3></br>
+  <h3 align="left">Offene Rechnunge</h3></br>
   <table class="table">
     <thead>
     <tr>
@@ -41,12 +41,49 @@
     </tbody>
 </table>
 
-
-
-<!-- Button to open new Appartment creation -->
+<!-- Button to open new Billing creation -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newBilling">
 Rechnung hinzufügen
 </button>
+
+
+<br>
+<br>
+<br>
+
+
+
+
+
+<div class="container box">
+  <h3 align="left">Bezahlte Rechnungen</h3></br>
+  <table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">RG-Typ</th>
+        <th scope="col">Datum</th>
+        <th scope="col">CHF</th>
+       
+        
+    </tr>
+    </thead>
+
+    <tbody>
+      @foreach($payedInvoices as $payedInvoice)
+        <tr>
+            <td scope="col">{{$payedInvoice->id}}</td>
+            <td scope="col">{{$payedInvoice->type}}</td>
+            <td scope="col">{{$payedInvoice->dueDate}}</td>
+            <td scope="col">{{$payedInvoice->amount}}</td>
+
+          
+          
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+
 
 
 
@@ -83,8 +120,16 @@ Rechnung hinzufügen
 
       <br>
       <label for="contractFk">Vertragsnummer</label>
-      <input type="number" class="form-control" value="1" name="contractFk" id="contractFk" required >
-      <br>
+      <div class="form-group">
+            <select class="form-control" id="contractFk" name="contractFk" required>
+            <?php
+           foreach($contracts as $contract ):
+           echo '<option value="'.$contract->id.'">'.$contract->id.'</option>'; 
+           endforeach;
+           ?>
+          </select>
+          </div>
+
       <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
       <input type="hidden" class="form-control" value="0" name="isPayed" id="isPayed" required readonly>
 
