@@ -12,7 +12,7 @@
     <thead>
     <tr>
         <th scope="col">#</th>
-        <th scope="col">Beschreibung</th>
+        <th scope="col">Wohnung</th>
         <th scope="col">Von</th>
         <th scope="col">Bis</th>
         <th scope="col">Mieter</th>
