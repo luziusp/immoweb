@@ -6,39 +6,31 @@
 </div>
 
 <div class="container">
-  <div class="row">
-  <div class="col-5">
+  <div class="container box">
+    <h3 align="left">Bezahlte Rechnungen</h3></br>
+    <table class="table table-striped table-dark" style="border-radius: 20px;">
+      <thead>
+      <tr>
+          <th scope="col">#</th>
+          <th scope="col">RG-Typ</th>
+          <th scope="col">Datum</th>
+          <th scope="col">CHF</th>
 
-            <div class="form-group">
-              <select class="form-control" id="type">
-              <option>Öl</option>
-              <option>Wasser</option>
-              <option>Strom</option>
-              <option>Hauswart</option>
-              <option>Heizung</option>
-            </select>
-            </div>
 
-        <br>
-        <label for="dueDate">Datum</label>
-        <input type="date" class="form-control" name="dueDate" id="dueDate">
+      </tr>
+      </thead>
 
-        <br>
-        <label for="phone">Verteilschlüssel</label>
-        <input readonly type="text" class="form-control" name="title" >
-        <br>
-        <label for="amount">CHF</label>
-        <input type="text" class="form-control" placeholder="Rechnungsbetrag" name="amount" id="amount" required>
-      </div>
+      <tbody>
+        @foreach($yearlyInvoices as $yearlyInvoice)
+          <tr>
+              <td scope="col">{{$yearlyInvoice->id}}</td>
+              <td scope="col">{{$yearlyInvoice->type}}</td>
+              <td scope="col">{{$yearlyInvoice->dueDate}}</td>
+              <td scope="col">{{$yearlyInvoice->amount}}</td>
 
-    <div class="col-1">
-    </div>
-
-    <div class="col-5">
-      <br>
-      <button type="submit" class="btn btn-primary disabled">Speichern</button>
-      <td scope="col"><a href={{route('billing.index')}} type="button" class="btn btn-primary" >Zurück</a></td>
-    </div>
-    </div>
+          </tr>
+          @endforeach
+      </tbody>
+  </table>
   </div>
 @endsection

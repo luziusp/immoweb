@@ -45,9 +45,9 @@
 <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#newBilling">
 Rechnung hinzufügen
 </button>
-<button type="button" class="btn btn-dark">
+  <a href={{route('billing.create')}} type="button" class="btn btn-dark" >
 Abrechnung ausdrucken (PDF)
-</button>
+</a>
 
 
 <br>

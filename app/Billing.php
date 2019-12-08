@@ -32,14 +32,14 @@ class Billing extends Model
     public static function getAllYearlyInvoices(){
         $yearlyInvoices = DB::table('invoice')->whereBetween('created_at',  [
             Carbon::now()->startOfYear(),
-            Carbon::now()->endOfYear(), 
+            Carbon::now()->endOfYear(),
             ])
             ->whereBetween('dueDate',  [
                 Carbon::now()->startOfYear(),
-                Carbon::now()->endOfYear(), 
+                Carbon::now()->endOfYear(),
                 ])
             ;
-            
+
 
 
 
@@ -52,13 +52,13 @@ class Billing extends Model
 
    }
 
-   
+
 
         public static function deleteBilling($id){
         DB::table('invoice')->where('id', '=', $id)->update(['isActive' => false]);
 
         }
-     
+
 
         public function payBilling($id){
             DB::table('invoice')
