@@ -9,7 +9,8 @@ location @rewriteapp {
     rewrite ^(.*)$ /index.php/$1 last;
 }
 
-location ~ ^/(app|app_dev|config)\.php(/|$) {
-    try_files @heroku-fcgi @heroku-fcgi;
+location ~ ^/(app|app_dev|config)\.php(/|$) {$
+try_files $uri $uri/ /index.php?$query_string;
+  # try_files @heroku-fcgi @heroku-fcgi;
     internal;
 }
