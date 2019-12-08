@@ -10,7 +10,7 @@
     <h3 align="left">Mieterübersicht</h3>
     <br>
 
-  <table class="table">
+    <table class="table table-striped table-dark" style="border-radius: 20px;">
       <thead>
       <tr>
           <th scope="col">#</th>
@@ -57,7 +57,7 @@
 
 
   <!-- Start Button to open new Tenant creation -->
-  <th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newTenant">
+  <th><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#newTenant">
   Mieter hinzufügen
   </button></th>
   <!-- End of Button to open new Tenant creation -->

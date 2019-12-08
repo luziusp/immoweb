@@ -29,18 +29,6 @@
 
         <div class="btn-group">
         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editBilling">Bearbeiten</button>
-        <br>
-        <br>
-        <div scope="col">
-        @if ($openInvoice->id)
-            <form action="{{ url("/billing/$openInvoice->id") }}" method="POST">
-            {{ csrf_field() }}
-            {{ method_field('DELETE') }}
-            <button style="border-radius: 0px;" type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
-            </form>
-        </div>
-        @endif
-        <br>
         <td scope="col"><a href={{route('billing.index')}} type="button" class="btn btn-secondary" >Zurück</a></td>
         @endforeach
       </div>

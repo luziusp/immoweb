@@ -1,5 +1,12 @@
-@extends('layouts.app')
-
+@extends('layouts.appAuth')
+<head>
+  <style>
+      html, body {
+          background-image: url("Startseite.jpeg");
+          background-size: 100%;
+      }
+      </style>
+</head>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

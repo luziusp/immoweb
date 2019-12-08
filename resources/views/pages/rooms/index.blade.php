@@ -6,7 +6,7 @@
 <div class="container box">
 <h3 align="left">Wohnungsübersicht</h3></br>
 
-<table class="table">
+<table class="table table-striped table-dark" style="border-radius: 20px;">
     <thead>
     <tr>
         <th scope="col">#</th>
@@ -49,7 +49,7 @@
 
 
 <!-- Button to open new Appartment creation -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newAppartment">
+<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#newAppartment">
 Wohnung hinzufügen
 </button>
 <!-- End Button to open new Appartment creation -->

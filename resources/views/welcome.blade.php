@@ -113,5 +113,5 @@
             </div>
         </div>
     </body>
-    <footer class=footer> <p>Copyright © ImmoWeb 2019</p></footer>
+    
 </html>

@@ -6,7 +6,7 @@
 
   <div class="container box">
   <h3 align="left">Offene Rechnungen</h3></br>
-  <table class="table">
+  <table class="table table-striped table-dark" style="border-radius: 20px;">
     <thead>
     <tr>
         <th scope="col">#</th>
@@ -42,10 +42,10 @@
 </table>
 
 <!-- Button to open new Billing creation -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newBilling">
+<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#newBilling">
 Rechnung hinzufügen
 </button>
-<button type="button" class="btn btn-primary">
+<button type="button" class="btn btn-dark">
 Abrechnung ausdrucken (PDF)
 </button>
 
@@ -60,7 +60,7 @@ Abrechnung ausdrucken (PDF)
 
 <div class="container box">
   <h3 align="left">Bezahlte Rechnungen</h3></br>
-  <table class="table">
+  <table class="table table-striped table-dark" style="border-radius: 20px;">
     <thead>
     <tr>
         <th scope="col">#</th>
@@ -108,7 +108,7 @@ Abrechnung ausdrucken (PDF)
       <input type="hidden" class="form-control" placeholder="Rechnungsnummer" name="id" id="id" required>
       <br>
       <label for="type">Rechnungstyp</label>
-      
+
       <div class="form-group">
 
         <select class="form-control"  id="type" required>

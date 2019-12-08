@@ -37,19 +37,6 @@
 
       <div class="btn-group">
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editContract">Bearbeiten</button>
-
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editLoan">Mietzinsen</button>
-
-      <br>
-      <div scope="col">
-      @if ($contract->id)
-          <form action="{{ url("/contracts/$contract->id") }}" method="POST">
-          {{ csrf_field() }}
-          {{ method_field('DELETE') }}
-          <button style="border-radius: 0px;" type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
-          </form>
-      </div>
-      @endif
       <td scope="col"><a href={{route('contracts.index')}} type="button" class="btn btn-secondary" >Zurück</a></td>
       </div>
 

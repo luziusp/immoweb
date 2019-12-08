@@ -39,18 +39,7 @@
 
         <div class="btn-group">
         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editAppartment">Bearbeiten</button>
-        <br>
-        <br>
-        <div scope="col">
-        @if ($room->id)
-            <form action="{{ url("/rooms/$room->id") }}" method="POST">
-            {{ csrf_field() }}
-            {{ method_field('DELETE') }}
-            <button style="border-radius: 0px;" type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
-            </form>
-        </div>
-        @endif
-        <br>
+        
         <td scope="col"><a href={{route('rooms.index')}} type="button" class="btn btn-secondary" >Zurück</a></td>
         @endforeach
       </div>

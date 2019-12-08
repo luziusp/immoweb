@@ -8,7 +8,7 @@
   <div class="container box">
   <h3 align="left">Vertragsübersicht</h3></br>
 
-<table class="table">
+  <table class="table table-striped table-dark" style="border-radius: 20px;">
     <thead>
     <tr>
         <th scope="col">#</th>
@@ -51,7 +51,7 @@
 <!--<a class="btn btn-primary" href={{route('contracts.create')}}>Wohnung hinzufügen</a>-->
 
 <!-- Button to open new Contract creation -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newContract">
+<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#newContract">
 Vertrag hinzufügen
 </button>
 

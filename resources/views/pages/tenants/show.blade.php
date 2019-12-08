@@ -44,15 +44,8 @@
 
       <div class="btn-group">
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editTenant">Bearbeiten</button>
-      <div scope="col">
-      @if ($tenant->id)
-          <form action="{{ url("/tenants/$tenant->id") }}" method="POST">
-          {{ csrf_field() }}
-          {{ method_field('DELETE') }}
-          <button style="border-radius: 0px;" type="submit" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</button>
-          </form>
-      </div>
-      @endif
+
+      
       <td scope="col"><a href={{route('tenants.index')}} type="button" class="btn btn-secondary">Zurück</a></td>
       @endforeach
       </div>

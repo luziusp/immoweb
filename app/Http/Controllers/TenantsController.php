@@ -35,7 +35,7 @@ class TenantsController extends Controller
             Tenants::deleteTenant($id);
             $tenants = Tenants::getAll();
 
-            return view('pages.tenants.index', ['tenants' =>  $tenants]);
+            return back(); //('pages.tenants.index', ['tenants' =>  $tenants]);
           }
 
 public function update (request $request, $id){
