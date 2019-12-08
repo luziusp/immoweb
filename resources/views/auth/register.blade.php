@@ -11,10 +11,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Registrieren') }}</div>
+            <div class="card bg-dark">
+                <div class="card-header card text-white bg-dark">{{ __('Registrieren') }}</div>
 
-                <div class="card-body">
+                <div class="card-body card text-white bg-secondary">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -22,8 +22,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" placeholder="" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
+                                <input id="name" type="text" placeholder="Name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -64,13 +63,13 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __(' Passwort bestätigen') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" placeholder="" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" placeholder="Passwort wiederholen" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-dark">
                                     {{ __('Bestätigen') }}
                                 </button>
                             </div>

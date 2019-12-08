@@ -45,7 +45,7 @@
       <div class="btn-group">
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editTenant">Bearbeiten</button>
 
-      
+
       <td scope="col"><a href={{route('tenants.index')}} type="button" class="btn btn-secondary">Zurück</a></td>
       @endforeach
       </div>
@@ -71,7 +71,6 @@
         @method('PATCH')
 
         <div class="modal-body">
-        <br>
         <label for="title">Anrede</label>
         <input class="form-control" type="text" value="{{$tenant->title}}" name="title" id="title" required>
         <br>

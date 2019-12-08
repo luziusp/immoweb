@@ -19,15 +19,14 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-
     <style>
         html, body {
             background-image: url("Startseite.jpeg");
             background-size: 100%;
         }
       </style>
-
 </head>
+
 <body>
     <div id="app">
         <nav class="navbar navbar-dark bg-dark">
@@ -38,9 +37,7 @@
                     <a class="navbar-brand" href="http://localhost:8888/contracts">Verträge</a>
                     <a class="navbar-brand" href="http://localhost:8888/billing">Rechnungen</a>
 
-
                     <ul class="navbar-nav mr-auto">
-
                     </ul>
 
                     <!-- Right Side Of Navbar -->

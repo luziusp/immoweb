@@ -29,6 +29,11 @@ class Billing extends Model
         return $openInvoices;
     }
 
+    public static function getAllInvoices(){
+        $openInvoices = DB::table('invoice')->where('isActive',  true)->get();
+        return $openInvoices;
+    }
+
     public static function getAllYearlyInvoices(){
         $yearlyInvoices = DB::table('invoice')->whereBetween('created_at',  [
             Carbon::now()->startOfYear(),

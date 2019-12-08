@@ -39,7 +39,7 @@
 
         <div class="btn-group">
         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editAppartment">Bearbeiten</button>
-        
+
         <td scope="col"><a href={{route('rooms.index')}} type="button" class="btn btn-secondary" >Zurück</a></td>
         @endforeach
       </div>
@@ -70,7 +70,6 @@
 <div class="form-group">
         <label for="title">#</label>
         <input type="text" class="form-control" value="<?PHP echo $room->id; ?>" required readonly>
-        <br>
         </div>
         <div class="form-group">
         <label for="Description">Beschreibung</label>
@@ -85,11 +84,11 @@
         <input type="number" class="form-control" value="{{$room->squareMeters}}" name="squareMeters" id="squareMeters" required>
         <br>
         </div>
-        <div class="form-group">
+
         <label for="noOfRooms">Anzahl Zimmer</label>
         <input type="double" class="form-control" value="{{$room->noOfRooms}}" name="noOfRooms" id="noOfRooms" required>
         <br>
-        </div>
+
 
         <div class="form-group">
         <label for="rentCost">Nettomiete</label>

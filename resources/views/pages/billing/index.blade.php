@@ -6,7 +6,7 @@
 
   <div class="container box">
   <h3 align="left">Offene Rechnungen</h3></br>
-  <table class="table table-striped table-dark" style="border-radius: 20px;">
+  <table class="table table-striped table-dark table-borderless" style="border-radius: 20px;">
     <thead>
     <tr>
         <th scope="col">#</th>
