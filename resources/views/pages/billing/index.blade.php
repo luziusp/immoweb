@@ -45,6 +45,9 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newBilling">
 Rechnung hinzufügen
 </button>
+<button type="button" class="btn btn-primary">
+Abrechnung ausdrucken (PDF)
+</button>
 
 
 <br>
@@ -64,8 +67,8 @@ Rechnung hinzufügen
         <th scope="col">RG-Typ</th>
         <th scope="col">Datum</th>
         <th scope="col">CHF</th>
-       
-        
+
+
     </tr>
     </thead>
 
@@ -77,8 +80,8 @@ Rechnung hinzufügen
             <td scope="col">{{$payedInvoice->dueDate}}</td>
             <td scope="col">{{$payedInvoice->amount}}</td>
 
-          
-          
+
+
         </tr>
         @endforeach
     </tbody>
@@ -105,6 +108,7 @@ Rechnung hinzufügen
       <input type="hidden" class="form-control" placeholder="Rechnungsnummer" name="id" id="id" required>
       <br>
       <label for="type">Rechnungstyp</label>
+      
       <div class="form-group">
 
         <select class="form-control"  id="type" required>
@@ -123,7 +127,7 @@ Rechnung hinzufügen
             <select class="form-control" id="contractFk" name="contractFk" required>
             <?php
            foreach($contracts as $contract ):
-           echo '<option value="'.$contract->id.'">'.$contract->id.'</option>'; 
+           echo '<option value="'.$contract->id.'">'.$contract->id.'</option>';
            endforeach;
            ?>
           </select>

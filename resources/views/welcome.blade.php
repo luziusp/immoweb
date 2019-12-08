@@ -109,7 +109,6 @@
                     <a href="http://localhost:8888/rooms">Wohnungen</a>
                     <a href="http://localhost:8888/contracts">Verträge</a>
                     <a href="http://localhost:8888/billing">Rechnungen</a>
-                    <a href="http://localhost:8888/overview">Overview</a>
                 </div>
             </div>
         </div>
