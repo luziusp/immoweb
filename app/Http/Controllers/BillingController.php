@@ -27,8 +27,8 @@ class BillingController extends Controller
     public function create()
       {
         $yearlyInvoices = Billing::getAllOpenInvoices();
-        return $yearlyInvoices;
-       //return view('pages.billing.create', compact('yearlyInvoices'));
+        //return $yearlyInvoices;
+       return view('pages.billing.create', compact('yearlyInvoices'));
       }
       public function destroy($id)
       {
