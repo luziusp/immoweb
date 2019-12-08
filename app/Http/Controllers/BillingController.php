@@ -39,6 +39,7 @@ class BillingController extends Controller
       }
 
       public function update (request $request, $id){
+  
         $data = request()->except(['_token', '_method', 'id']);
 
         Billing::whereId($id)->update($data);
@@ -52,5 +53,5 @@ class BillingController extends Controller
         return back();
 
       }
-      
+
 }

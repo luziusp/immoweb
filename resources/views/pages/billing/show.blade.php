@@ -62,7 +62,9 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="save.php" method="post">
+          <form method="post" action="{{ route('billing.update', $openInvoice->id) }}">
+          @csrf
+        @method('PATCH')
           <div class="modal-body">
             <label for="id">Rechnungsnummer</label>
             <input readonly type="number" class="form-control" name="id" id="id" value="<?PHP echo $openInvoice->id; ?>" required>
@@ -97,17 +99,17 @@
             <label for="amount">Betrag</label>
             <input type="number" class="form-control" name="amount" id="amount" value="<?PHP echo $openInvoice->amount; ?>" required>
             <br>
+            <label for="isPayed">Status (1=Bezahlt, 0=Nicht bezahlt)</label>
+            <input type="text" class="form-control" name="isPayed" id="isPayed" value="<?PHP echo $openInvoice->isPayed; ?>" required>
           </div>
-          </form>
+
           <div class="modal-footer">
-          <!-- Buttons for Update NOT WORKING -->
-                    <form id="userForm" action="/billing/{{ $openInvoice->id }}" method="post">
-                        @csrf
-                        @method('PUT')
-                        <input type="hidden" name="id">
+
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
-                        <button type="submit" class="btn btn-success">Speichern</button>     </div>
+                        <button type="submit" class="btn btn-success">Speichern</button>
+                      </div>
         </div>
+          </form>
       </div>
     </div>
 
