@@ -12,6 +12,7 @@
           <th scope="col">RG-Typ</th>
           <th scope="col">Vertrags-Nr.</th>
           <th scope="col">Rechnungsdatum</th>
+          <th scope="col">Fälligkeitsdatum</th>
           <th scope="col">Betrag</th>
           <th scope="col">Status</th>
 
@@ -28,6 +29,7 @@
              <td scope="col">{{$yearlyInvoice->type}}</td>
              <td scope="col">{{$yearlyInvoice->contractFk}}</td>
              <td scope="col">{{$yearlyInvoice->created_at}}</td>
+             <td scope="col">{{$yearlyInvoice->dueDate}}</td>
              <td scope="col">{{$yearlyInvoice->amount}}</td>
              <td scope="col">{{$yearlyInvoice->isPayed}}</td>
 
