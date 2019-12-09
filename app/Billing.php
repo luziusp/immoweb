@@ -74,14 +74,14 @@ class Billing extends Model
 
 );
 }
-public function reopenBilling($id){
-    DB::table('invoice')
-                ->where('id', $id)
-                ->update(
+        public function reopenBilling($id){
+            DB::table('invoice')
+                        ->where('id', $id)
+                        ->update(
 
-                   ['isPayed' => false]
+                           ['isPayed' => false]
 
-);
-}
+        );
+        }
 
 }

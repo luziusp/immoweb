@@ -22,6 +22,7 @@ Route::resource('billing', 'BillingController')->middleware('auth');
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LogoutController@logout');
 
+Route::get('dynamic_pdf', 'BillingController@pdf');
 
 /*
 Route::get('/contracts', 'ContractsController@index' ) ;

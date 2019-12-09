@@ -24,7 +24,6 @@
       </tr>
       </thead>
       <tbody>
-
         @foreach( $tenants as $tenant )
           <tr>
               <td scope="col">{{$tenant->id}}</td>
@@ -103,8 +102,6 @@
           <label for="billingCityName">Ort</label>
           <input type="text" class="form-control" placeholder="Ort" name="billingCityName" id="billingCityName" required>
           <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
-
-
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>

@@ -46,16 +46,12 @@
 Rechnung hinzufügen
 </button>
   <a href={{route('billing.create')}} type="button" class="btn btn-dark" >
-Abrechnung ausdrucken (PDF)
+Gesamtabrechnung
 </a>
 
-
 <br>
 <br>
 <br>
-
-
-
 
 
 <div class="container box">
@@ -67,8 +63,6 @@ Abrechnung ausdrucken (PDF)
         <th scope="col">RG-Typ</th>
         <th scope="col">Datum</th>
         <th scope="col">CHF</th>
-
-
     </tr>
     </thead>
 
@@ -79,9 +73,6 @@ Abrechnung ausdrucken (PDF)
             <td scope="col">{{$payedInvoice->type}}</td>
             <td scope="col">{{$payedInvoice->dueDate}}</td>
             <td scope="col">{{$payedInvoice->amount}}</td>
-
-
-
         </tr>
         @endforeach
     </tbody>
@@ -104,9 +95,9 @@ Abrechnung ausdrucken (PDF)
       </div>
       <form action="{{ route('billing.store') }}" method="post">
       <div class="modal-body">
-      <br>
+
       <input type="hidden" class="form-control" placeholder="Rechnungsnummer" name="id" id="id" required>
-      <br>
+
       <label for="type">Rechnungstyp</label>
 
       <div class="form-group">
@@ -120,7 +111,6 @@ Abrechnung ausdrucken (PDF)
         <option value="maintenance">Wartung</option>
         <option value="other">Sonstige</option>
       </select>
-
       <br>
       <label for="contractFk">Vertragsnummer</label>
       <div class="form-group">

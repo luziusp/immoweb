@@ -38,5 +38,9 @@
          @endforeach
      </tbody>
   </table>
+<div class="btn-group">
+  <a href="{{ url('billing') }}" class="btn btn-danger">Abrechnung als PDF</a>
+  <a href="{{ url('billing') }}" class="btn btn-secondary">Zurück</a>
+</div>
   </div>
 @endsection

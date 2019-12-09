@@ -26,7 +26,7 @@
       <br>
       <label for="email">E-Mail</label>
       <input readonly type="text" class="form-control" name="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" value="<?PHP echo $tenant->email; ?>">
-</div>
+    </div>
 
     <div class="col-1">
     </div>
@@ -44,13 +44,11 @@
 
       <div class="btn-group">
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editTenant">Bearbeiten</button>
-
-
       <td scope="col"><a href={{route('tenants.index')}} type="button" class="btn btn-secondary">Zurück</a></td>
       @endforeach
       </div>
+    </div>
 </div>
-
 
 
 

@@ -61,39 +61,35 @@
       </div>
       <form method="post" action="{{ route('rooms.update', $room->id) }}">
       @csrf
-    @method('PATCH')
+      @method('PATCH')
       <div class="modal-body">
 
       <div class="form-group">
       <input type= "hidden" name = "id" value = "<?php echo $room->id; ?>">
-</div>
-<div class="form-group">
+      </div>
+        <div class="form-group">
         <label for="title">#</label>
         <input type="text" class="form-control" value="<?PHP echo $room->id; ?>" required readonly>
         </div>
         <div class="form-group">
         <label for="Description">Beschreibung</label>
         <input readonly type="text" class="form-control" name="Description" value="{{$room->Description}}" >
-        <br>
+        </div>
+        <div class="form-group">
         <label for="appartmentName">Wohnungstitel</label>
         <input readonly type="text" class="form-control" name="appartmentName" value="{{$room->appartmentName}}" >
-        <br>
         </div>
         <div class="form-group">
         <label for="squareMeters">Wohnfläche</label>
         <input type="number" class="form-control" value="{{$room->squareMeters}}" name="squareMeters" id="squareMeters" required>
-        <br>
         </div>
-
+        <div class="form-group">
         <label for="noOfRooms">Anzahl Zimmer</label>
         <input type="double" class="form-control" value="{{$room->noOfRooms}}" name="noOfRooms" id="noOfRooms" required>
-        <br>
-
-
+        </div>
         <div class="form-group">
         <label for="rentCost">Nettomiete</label>
         <input type="double" class="form-control" value="{{$room->rentCost}}" name="rentCost" id="rentCost" required>
-        <br>
         </div>
         <div class="form-group">
         <label for="additionalCost">Nebenkosten</label>

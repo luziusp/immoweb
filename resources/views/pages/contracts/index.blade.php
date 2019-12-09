@@ -99,9 +99,8 @@ Vertrag hinzufügen
       <br>
       <label for="terminationDate">Bis</label>
       <input type="date" class="form-control" placeholder="Vertragsende" name="terminationDate" id="terminationDate">
-      <br>
+      
         <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
-        <br>
 
       </div>
 
