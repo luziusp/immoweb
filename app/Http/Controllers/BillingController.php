@@ -13,8 +13,8 @@ class BillingController extends Controller
                     $contracts = Contracts::getAll();
                     $openInvoices = Billing::getAllOpenInvoices();
                     $payedInvoices = Billing::getAllPayedInvoices();
-                    $yearlyInvoices = Billing::getAllYearlyInvoices();
-                   return view('pages.billing.index', compact('openInvoices', 'payedInvoices', 'contracts', 'yearlyInvoices'));
+
+                   return view('pages.billing.index', compact('openInvoices', 'payedInvoices', 'contracts'));
 
     }
     public function show($id)
@@ -36,8 +36,8 @@ class BillingController extends Controller
         $contracts = Contracts::getAll();
         $openInvoices = Billing::getAllOpenInvoices();
         $payedInvoices = Billing::getAllPayedInvoices();
-        $yearlyInvoices = Billing::getAllYearlyInvoices();
-        return back(); //('pages.billing.index', compact('openInvoices', 'payedInvoices', 'contracts', 'yearlyInvoices'));
+        
+        return back(); //('pages.billing.index', compact('openInvoices', 'payedInvoices', 'contracts'));
       }
 
       public function update (request $request, $id){
