@@ -102,7 +102,7 @@ Gesamtabrechnung
 
       <div class="form-group">
 
-        <select class="form-control"  id="type" required>
+        <select class="form-control"  id="type" name="type" required>
         <option></option>
         <option value="rent">Miete</option>
         <option value="oil">Öl</option>
@@ -111,6 +111,7 @@ Gesamtabrechnung
         <option value="maintenance">Wartung</option>
         <option value="other">Sonstige</option>
       </select>
+
       <br>
       <label for="contractFk">Vertragsnummer</label>
       <div class="form-group">

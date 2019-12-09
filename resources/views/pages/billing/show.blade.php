@@ -59,14 +59,16 @@
               <input readonly type="number" class="form-control" name="id" id="id" value="<?PHP echo $openInvoice->id; ?>" required>
               <br>
               <label for="type">Rechnungstyp</label>
-              <select class="form-control"  id="type" value="<?PHP echo $openInvoice->type; ?>" required>
+
+
+              <select class="form-control"  id="type" name="type" required>
               <option></option>
-              <option value="rent">Miete</option>
-              <option value="oil">Öl</option>
-              <option value="repairs">Reparatur</option>
-              <option value="energy">Strom</option>
-              <option value="maintenance">Wartung</option>
-              <option value="other">Sonstige</option>
+              <option value="rent" <?php if($openInvoice->type == "rent") { echo "SELECTED"; } ?>>Miete</option>
+              <option value="oil" <?php if($openInvoice->type == "oil") { echo "SELECTED"; } ?>>Öl</option>
+              <option value="repairs" <?php if($openInvoice->type == "repairs") { echo "SELECTED"; } ?>>Reparatur</option>
+              <option value="energy" <?php if($openInvoice->type == "energy") { echo "SELECTED"; } ?>>Strom</option>
+              <option value="maintenance" <?php if($openInvoice->type == "maintenance") { echo "SELECTED"; } ?>>Wartung</option>
+              <option value="other" <?php if($openInvoice->type == "other") { echo "SELECTED"; } ?>>Sonstige</option>
               </select>
 
               <br>
