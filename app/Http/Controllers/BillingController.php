@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Billing;
 use App\Contracts;
+use PDF;
 
 class BillingController extends Controller
 {
@@ -26,17 +27,24 @@ class BillingController extends Controller
 
     public function create()
       {
+
+        //$yearlyInvoices = Billing::getAllInvoices();
+        //return view('pages.billing.create', compact('yearlyInvoices'));
+
         $yearlyInvoices = Billing::getAllInvoices();
-        //return $yearlyInvoices;
-       return view('pages.billing.create', compact('yearlyInvoices'));
+        $pdf = PDF::loadView('pages.billing.create', compact('yearlyInvoices'));
+        return $pdf->download('downloadtest.pdf');
+
       }
+
+
       public function destroy($id)
       {
         Billing::deleteBilling($id);
         $contracts = Contracts::getAll();
         $openInvoices = Billing::getAllOpenInvoices();
         $payedInvoices = Billing::getAllPayedInvoices();
-        
+
         return back(); //('pages.billing.index', compact('openInvoices', 'payedInvoices', 'contracts'));
       }
 
