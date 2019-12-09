@@ -131,7 +131,7 @@ Gesamtabrechnung
       <input type="date" class="form-control" placeholder="Datum" name="dueDate" id="dueDate" required>
       <br>
       <label for="amount">Betrag</label>
-      <input type="number" class="form-control" placeholder="CHF" name="amount" id="amount" required>
+      <input type="number" step="0.01" class="form-control" placeholder="CHF" name="amount" id="amount" required>
       <br>
 
         <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>

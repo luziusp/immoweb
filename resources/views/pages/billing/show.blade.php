@@ -86,7 +86,7 @@
               <input type="date" class="form-control" name="dueDate" id="dueDate" value="<?PHP echo $openInvoice->dueDate; ?>" required>
               <br>
               <label for="amount">Betrag</label>
-              <input type="number" class="form-control" name="amount" id="amount" value="<?PHP echo $openInvoice->amount; ?>" required>
+              <input type="number" step="0.01" class="form-control" name="amount" id="amount" value="<?PHP echo $openInvoice->amount; ?>" required>
               <br>
               <label for="isPayed">Status (1=Bezahlt, 0=Nicht bezahlt)</label>
               <input type="text" class="form-control" name="isPayed" id="isPayed" value="<?PHP echo $openInvoice->isPayed; ?>" required>

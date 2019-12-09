@@ -88,7 +88,7 @@
           <input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth" required>
           <br>
           <label for="phone">Telefon</label>
-          <input type="number" class="form-control" placeholder="+41" name="phone" id="phone" required>
+          <input type="text" class="form-control" placeholder="+41" name="phone" id="phone" required>
           <br>
           <label for="email">E-Mail</label>
           <input class="form-control" type="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" placeholder="xyz@domain.ch" name="email" id="email" required>

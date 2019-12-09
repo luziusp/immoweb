@@ -89,11 +89,11 @@
         </div>
         <div class="form-group">
         <label for="rentCost">Nettomiete</label>
-        <input type="double" class="form-control" value="{{$room->rentCost}}" name="rentCost" id="rentCost" required>
+        <input type="double"step="0.01" class="form-control" value="{{$room->rentCost}}" name="rentCost" id="rentCost" required>
         </div>
         <div class="form-group">
         <label for="additionalCost">Nebenkosten</label>
-        <input type="double" class="form-control" value="{{$room->additionalCost}}" name="additionalCost" id="additionalCost" required>
+        <input type="double" step="0.01" class="form-control" value="{{$room->additionalCost}}" name="additionalCost" id="additionalCost" required>
         </div>
         <div class="form-group">
         <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
