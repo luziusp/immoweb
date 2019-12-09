@@ -46,9 +46,7 @@
   <div class="information">
       <table width="100%">
           <tr>
-              <td align="center">
-                  <img src="immowebicon.png" alt="Logo" width="240" class="logo"/>
-              </td>
+          
               <td align="right" style="width: 40%;">
 
                   <h3>ImmoWeb AG</h3>
