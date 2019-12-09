@@ -17,7 +17,7 @@
 
       @foreach($tenant as $tenant)
       <label for="tenantFk">Mieter</label>
-      <input readonly type="text" class="form-control" name="tenantFk" value="<?PHP echo $tenant->surname; ?>">
+      <input readonly type="text" class="form-control" name="tenantFk" value="<?PHP echo $tenant->surname.' '.$tenant->familyname; ?>">
       <br>
       @endforeach
 
@@ -25,7 +25,7 @@
 
       @foreach($room as $room)
       <label for="tenantFk">Wohnung</label>
-      <input readonly type="text" class="form-control" name="appartmentFk" value="<?PHP echo $room->appartmentName; ?>">
+      <input readonly type="text" class="form-control" name="appartmentFk" value="<?PHP echo $room->appartmentName.' - '.$room->Description; ?>">
       <br>
       @endforeach
       <label for="startDate">Von</label>
@@ -46,65 +46,6 @@
     </div>
 
       <!--End Details-->
-
-
-
-
-      <!--Modal Rents-->
-           <div class="modal fade" id="editLoan" tabindex="-1" role="dialog" aria-labelledby="editLoan" aria-hidden="true">
-             <div class="modal-dialog" role="document">
-               <div class="modal-content">
-                 <div class="modal-header">
-                   <h4 class="modal-title" id="editLoan">Mietzinsüberblick</h4>
-                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                     <span aria-hidden="true">&times;</span>
-                   </button>
-                 </div>
-
-                 <form method="post" action="{{ route('contracts.update', $contract->id) }}">
-                 @csrf
-                 @method('PATCH')
-                 <div class="modal-body">
-
-
-                     <table class="table table-light">
-                       <thead class="thead-dark">
-                         <tr>
-                           <th>Jahr</th>
-                           <th>Monat</th>
-                           <th>Bezahlt - Offen</th>
-                         </tr>
-                       </thead>
-
-                       <tbody>
-                         <tr>
-                           <th>2019</th>
-                           <th>Dezember</th>
-                           <th></th>
-                         </tr>
-                         <tr>
-                           <th>2019</th>
-                           <th>November</th>
-                           <th>Bezahlt - Offen</th>
-                         </tr>
-                         <tr>
-                           <th>2019</th>
-                           <th>Oktober</th>
-                           <th>Bezahlt - Offen</th>
-                         </tr>
-                       </tbody>
-                     </table>
-
-                 </div>
-                 <div class="modal-footer">
-                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
-                   <button type="submit" class="btn btn-success">Speichern</button>
-                 </div>
-               </div>
-               </form>
-             </div>
-           </div>
-           <!--End Modal Rents-->
 
 
     <!-- Modal  Edit-->
@@ -132,7 +73,7 @@
           <select class="form-control"id="tenantFk" name="tenantFk" value="{{$contract->tenantFk}}" required>
            <?php
            foreach($tenants as $tenant ):
-           echo '<option value="'.$tenant->id.'">'.$tenant->surname.'</option>';
+           echo '<option value="'.$tenant->id.'">'.$tenant->surname.' '.$tenant->familyname.'</option>';
            endforeach;
            ?>
         </select>
@@ -145,7 +86,7 @@
             <select class="form-control" id="appartmentFk" name="appartmentFk"  value="{{$contract->appartmentFk}}" required>
             <?php
            foreach($rooms as $room ):
-           echo '<option value="'.$room->id.'">'.$room->appartmentName.'</option>';
+           echo '<option value="'.$room->id.'">'.$room->appartmentName.' - '.$room->Description.'</option>';
            endforeach;
            ?>
           </select>
