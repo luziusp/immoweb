@@ -33,7 +33,7 @@ class BillingController extends Controller
 
         $yearlyInvoices = Billing::getAllInvoices();
         $pdf = PDF::loadView('pages.billing.create', compact('yearlyInvoices'));
-        return $pdf->download('downloadtest.pdf');
+        return $pdf->download('Gesamtabrechnung.pdf');
 
       }
 

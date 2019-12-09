@@ -46,7 +46,7 @@
 Rechnung hinzufügen
 </button>
   <a href={{route('billing.create')}} type="button" class="btn btn-dark" >
-Gesamtabrechnung
+Gesamtabrechnung (PDF)
 </a>
 
 <br>
