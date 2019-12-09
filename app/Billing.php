@@ -35,7 +35,7 @@ class Billing extends Model
     }
 
     public static function getAllYearlyInvoices(){
-        $yearlyInvoices = DB::table('invoice')->whereBetween('created_at',  [
+       /* $yearlyInvoices = DB::table('invoice')->whereBetween('created_at',  [
             Carbon::now()->startOfYear(),
             Carbon::now()->endOfYear(),
             ])
@@ -45,7 +45,8 @@ class Billing extends Model
                 ])
             ;
 
-
+*/
+$yearlyInvoices = Billing::where(DB::raw('YEAR(created_at)', '=', '2019')->get());
 
 
         return $yearlyInvoices;
