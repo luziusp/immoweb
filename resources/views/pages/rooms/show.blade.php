@@ -63,7 +63,6 @@
       @csrf
       @method('PATCH')
       <div class="modal-body">
-
       <div class="form-group">
       <input type= "hidden" name = "id" value = "<?php echo $room->id; ?>">
       </div>

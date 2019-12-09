@@ -82,8 +82,6 @@ Vertrag hinzufügen
            ?>
         </select>
 
-
-      </select>
       </div>
               <label for="Description">Wohnung</label>
               <div class="form-group">

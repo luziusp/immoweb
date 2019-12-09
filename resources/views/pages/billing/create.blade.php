@@ -23,7 +23,8 @@
       <tbody>
        @foreach($yearlyInvoices as $yearlyInvoice)
 
-       @if(($date = new DateTime($yearlyInvoice->dueDate)) < new DateTime())
+       @if(($date = new DateTime($yearlyInvoice->created_at)) < new DateTime('2019-12-31'))
+       @if(($date = new DateTime($yearlyInvoice->created_at)) > new DateTime('2019-01-01'))
          <tr>
              <td scope="col">{{$yearlyInvoice->id}}</td>
              <td scope="col">{{$yearlyInvoice->type}}</td>
@@ -32,8 +33,8 @@
              <td scope="col">{{$yearlyInvoice->dueDate}}</td>
              <td scope="col">{{$yearlyInvoice->amount}}</td>
              <td scope="col">{{$yearlyInvoice->isPayed}}</td>
-
          </tr>
+         @endif
          @endif
          @endforeach
      </tbody>

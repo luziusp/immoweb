@@ -32,10 +32,10 @@
         <nav class="navbar navbar-dark bg-dark">
           <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
             <div class="container">
-                    <a class="navbar-brand" href="http://localhost:8888/tenants">Mieter</a>
-                    <a class="navbar-brand" href="http://localhost:8888/rooms">Wohnungen</a>
-                    <a class="navbar-brand" href="http://localhost:8888/contracts">Verträge</a>
-                    <a class="navbar-brand" href="http://localhost:8888/billing">Rechnungen</a>
+                    <a class="navbar-brand" href={{route('tenants.index')}}>Mieter</a>
+                    <a class="navbar-brand" href={{route('rooms.index')}}>Wohnungen</a>
+                    <a class="navbar-brand" href={{route('contracts.index')}}>Verträge</a>
+                    <a class="navbar-brand" href={{route('billing.index')}}>Rechnungen</a>
 
                     <ul class="navbar-nav mr-auto">
                     </ul>

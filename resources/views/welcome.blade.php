@@ -105,10 +105,10 @@
                 </div>
 
                 <div class="links">
-                    <a href="http://localhost:8888/tenants">Mieter</a>
-                    <a href="http://localhost:8888/rooms">Wohnungen</a>
-                    <a href="http://localhost:8888/contracts">Verträge</a>
-                    <a href="http://localhost:8888/billing">Rechnungen</a>
+                    <a href={{route('tenants.index')}}>Mieter</a>
+                    <a href={{route('rooms.index')}}>Wohnungen</a>
+                    <a href={{route('contracts.index')}}>Verträge</a>
+                    <a href={{route('billing.index')}}>Rechnungen</a>
                 </div>
             </div>
         </div>

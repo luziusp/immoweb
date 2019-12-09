@@ -116,16 +116,15 @@ Gesamtabrechnung
       <div class="form-group">
             <select class="form-control" id="contractFk" name="contractFk" required>
             <?php
-           foreach($contracts as $contract ):
-           echo '<option value="'.$contract->id.'">'.$contract->id.'</option>';
-           endforeach;
-           ?>
-          </select>
-          </div>
+              foreach($contracts as $contract ):
+              echo '<option value="'.$contract->id.'">'.$contract->id.'</option>';
+              endforeach;
+            ?>
+            </select>
+      </div>
 
       <input type="hidden" class="form-control" value="1" name="isActive" id="isActive" required readonly>
       <input type="hidden" class="form-control" value="0" name="isPayed" id="isPayed" required readonly>
-
 
       <label for="dueDate">Rechnungsdatum</label>
       <input type="date" class="form-control" placeholder="Datum" name="dueDate" id="dueDate" required>
